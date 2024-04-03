@@ -34,3 +34,6 @@ Route::get('/dashboard/threads/create', [PageController::class, 'threadsCreate']
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+Route::delete('/admin/categories/{category}', 'App\Http\Controllers\Admin\CategoryController@destroy')
+    ->name('admin.categories.destroy');

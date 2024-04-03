@@ -20,20 +20,40 @@
                 </thead>
 
                 <tbody class="divide-y divide-gray-200 divide-solid">
-                    <tr>
-                        <x-table.data>
-                            <div>1</div>
-                        </x-table.data>
-                        <x-table.data>
-                            <div>Category Name</div>
-                        </x-table.data>
-                        <x-table.data>
-                            <div>category-name</div>
-                        </x-table.data>
-                        <x-table.data>
-                            <div class="text-center">2005-14-06</div>
-                        </x-table.data>
-                    </tr>
+                    @foreach ($categories as $category)
+                        <tr>
+                            <x-table.data>
+                                <div>{{ $category->id }}</div>
+                            </x-table.data>
+                            <x-table.data>
+                                <div>{{ $category->name }}</div>
+                            </x-table.data>
+                            <x-table.data>
+                                <div>{{ $category->slug}}</div>
+                            </x-table.data>
+                            <x-table.data>
+                                <div class="text-center">{{ $category->created_at }}</div>
+                            </x-table.data>
+                            <x-table.data>
+                                <div class="flex justify-center space-x-4">
+
+                                    <a href="{{ route('admin.categories.edit', $category) }}" class="text-yellow-400">
+                                        <x-zondicon-edit-pencil class="w-5 h-5" />
+                                    </a>
+
+                                    <x-form action="{{ route('admin.categories.destroy', $category) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="text-red-400">
+                                            <x-zondicon-trash class="w-5 h-5" />
+                                        </button>
+                                    </x-form>
+
+
+                                </div>
+                            </x-table.data>
+                        </tr>
+                    @endforeach
                 </tbody>
 
             </table>
