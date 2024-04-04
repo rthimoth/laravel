@@ -6,6 +6,10 @@ module.exports = {
     ],
     theme: {
         extend: {
+            fontSize: {
+                'xxs': '.625rem', // 10px
+                'xxx-small': '.5rem', // 8px
+              },
             minHeight: {
                 '1/2': '50%',
             },
@@ -28,7 +32,7 @@ module.exports = {
                 'custom':'#262D34',
                 'customyellow' : '#E69D45',
                 'customorange' : '#FF571A',
-                'customlightblue' : '#A0ECFF',
+                'customlightblue' : '#5D95E8',
                 'customdarkblue' : '#A0C0FF',
                 'customdarkerblue' : '#015C92',
                 'custommiddleblue' : '#2D82B5',

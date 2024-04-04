@@ -15,11 +15,11 @@ buttonPreference.setAttribute("id", `preference-button-${index}`);
 //     buttonPreference.classList.add("rounded-b-lg");
 // };
 
-const imagePreferencesSide = document.createElement("img");
-imagePreferencesSide.src= preference.imageUrl;
-imagePreferencesSide.alt= preference.text;
-imagePreferencesSide.classList.add("logosize");
-buttonPreference.appendChild(imagePreferencesSide);
+// const imagePreferencesSide = document.createElement("img");
+// imagePreferencesSide.src= preference.imageUrl;
+// imagePreferencesSide.alt= preference.text;
+// imagePreferencesSide.classList.add("logosize");
+// buttonPreference.appendChild(imagePreferencesSide);
 
 if (index== 1 ){
     buttonNewToOldContainer.appendChild(buttonPreference);

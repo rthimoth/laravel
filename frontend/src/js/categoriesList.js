@@ -18,11 +18,11 @@ buttonCategory.setAttribute("id", `category-button-${index}`);
 //     buttonCategory.classList.add("rounded-b-lg");
 // };
 
-const imageSide = document.createElement("img");
-imageSide.src= category.imageUrl;
-imageSide.alt= category.text;
-imageSide.classList.add("logosize");
-buttonCategory.appendChild(imageSide);
+// const imageSide = document.createElement("img");
+// imageSide.src= category.imageUrl;
+// imageSide.alt= category.text;
+// imageSide.classList.add("logosize");
+// buttonCategory.appendChild(imageSide);
 
 containerSidebar.appendChild(buttonCategory);
 });

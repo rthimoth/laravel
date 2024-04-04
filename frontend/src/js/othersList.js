@@ -12,11 +12,11 @@ buttonOther.classList.add("optionSidebar");
 buttonOther.setAttribute("id", `other-button-${index}`);
 
 
-const imageOtherSide = document.createElement("img");
-imageOtherSide.src= other.imageUrl;
-imageOtherSide.alt= other.text;
-imageOtherSide.classList.add("logosize");
-buttonOther.appendChild(imageOtherSide);
+// const imageOtherSide = document.createElement("img");
+// imageOtherSide.src= other.imageUrl;
+// imageOtherSide.alt= other.text;
+// imageOtherSide.classList.add("logosize");
+// buttonOther.appendChild(imageOtherSide);
 
 if (index == 0 ){
     createPostContainerSidebar.appendChild(buttonOther);

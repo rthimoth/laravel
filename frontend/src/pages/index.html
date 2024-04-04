@@ -15,7 +15,7 @@ overflow-auto
 bg-gray-900
  ">
     <div id="header-wrap" class="
-    fixed top-0 px-2 w-full py-2
+    fixed top-0 px-2 w-full pb-2
     bg-transparent
     z-10">
         <div id="topper" class="
@@ -90,7 +90,7 @@ bg-gray-900
         ml-0
         flex flex-col space-y-4
         fixed left-0 top-24
-        h-auto 
+        h-full 
         w-48
         px-2
         pb-20
@@ -104,34 +104,31 @@ bg-gray-900
         justify-center
         ">
 
-        <div id="categoriesSideContainer" class="h-auto w-full pb-2 rounded-2xl bg-custom flex flex-col">
+        <div id="categoriesSideContainer" class=" h-3/4 w-full pl-4 p-6 pt-4 rounded-2xl bg-custom flex flex-col space-y-4">
 
             <h2 id="titleMyposts"
-                    class="
-                    p-2
-                    h-max
-                    titlegrayStart
-                    ">Categories</h2>
+            class="
+            titlegrayStart
+            ">Categories</h2>
 
 
             <div id="categoriesList" class="
-            h-44 w-full pt-1
+            w-full 
             flex flex-col
             overflow-y-auto
              "></div>
         </div>
-        <div id="preferencesSideContainer" class="pt-2 h-auto rounded-2xl bg-custom w-full flex flex-col">
+        <div id="preferencesSideContainer" class="pl-4 p-6 pt-4 h-auto rounded-2xl bg-custom w-full flex flex-col space-y-4">
 
             <h2 id="preferencesTitle"
                 class="
-                px-2
                 h-max w-max
                 titlegrayStart
                 ">Preferences</h2>
 
 
             <div id="preferencesList" class="
-            pt-2 rounded-b 
+            rounded-b 
             h-auto w-full
             flex flex-col
             overflow-y-auto
@@ -145,34 +142,11 @@ bg-gray-900
             </div>
         </div>
 
-        <div id="othersSideContainer" class=" rounded-2xl bg-custom overflow-auto pt-2 h-auto w-full flex flex-col">
-
-            <h2 id="othersTitle"
-                class="
-                px-2
-                h-max w-max
-                titlegrayStart
-                ">Others</h2>
-
-
-            <div id="othersList" class="
-            pt-2 rounded-b
-            h-auto w-full
-            flex flex-col
-            overflow-y-auto
-             ">
-                <form action="/CreationPostPage" method="post" id="CreatePostButtonContainerSide" class="group mb-0 ">
-                </form>
-            </div>
-        </div>
-
     </div>
 
     <div id="sidebarRightContainer" class="
         overflow-auto
-        mr-0
-        bg-custom
-        fixed right-0 top-24
+        fixed right-0 top-20
         h-auto
         xs:hidden
         sm:hidden
@@ -180,10 +154,8 @@ bg-gray-900
         xl:block
         2xl:block
         w-1/4
-        px-4
-        py-4
+        p-4
         rounded-2xl
-        mt-0
         text-white
         flex flex-col
         items-start
@@ -191,115 +163,167 @@ bg-gray-900
         space-y-2
         ">
             
-        <div id="myPostsWrapper" class="
-        flex flex-col
-        justify-start items-start
-        w-full h-44
-        rounded-lg
-        overflow-y-auto
-        space-y-2
-        
-        ">
-            
-            <div id="createContainer" class=" flex flex-row space-x-1 rounded-full">
+            <div id="myPostsWrapper" class="
+            flex flex-col
+            hover:bg-white hover:bg-opacity-10
+            justify-start items-start
+            w-full h-auto
+            rounded-lg
+            overflow-y-auto
+            space-y-4
+            bg-custom
+            p-6
+            ">
+                
+                <div id="createContainer" class=" flex flex-row rounded-full">
 
-                <button  type="submit" id="myPostsButton" 
-            class="
-            hover:cursor-pointer
-            hover:underline 
-            p-2
-            h-max
-            titlegrayStart
-            ">My Lasts Posts</button>
-            <button id="ReadMypost" class=" rounded-xl focus:border  w-auto h-auto px-2 border-white "><img src="/frontend/src/pics/right-arrow.png" class="logosize2"></button>
+                    <button  type="submit" id="myPostsButton" 
+                    class="
+                    
+                    hover:cursor-pointer
+                    hover:underline 
+                    h-max
+                    titlegrayStart
+                    ">My Lasts Posts</button>
+                    <button id="ReadMypost" class=" rounded-xl focus:border  w-auto h-auto px-2 border-white "><img src="/frontend/src/pics/right-arrow.png" class="h-3 w-3 mt-1"></button>
+
+                </div>
+
+                <form action="/ReadMore/{{.Title}}" method="get" name="MyLastsPostsWrapper" class="
+                rounded-xl
+                flex flex-col
+                space-y-1
+                ">
+                    <div id ="myLastPostContainer" class="flex flex-row space-x-4">
+                        <div id="datePostContainer" class=" rounded-2xl w-auto
+                        p-2 bg-customgray flex flex-col space-y-1 justify-center items-center">
+                            <p id ="monthPost" class="text-sm 
+                            font-bold
+                            text-white"> FEB</p>
+                            <p id="dayPost" class="text-xl font-bold text-customlightblue w-max">3</p>
+                        </div>
+                        <div id="mainContentPost" class="flex flex-col
+                        space-y-1">
+                            <button type="submit" name="postTitleReactionsContainer" class="
+                            hover:cursor-pointer
+                            flex flex-row items-center justify-between
+                            h-auto w-full
+                            ">
+                                <div id="titlePost" class="
+                                shrink-0
+                                text-sm 
+                                font-bold
+                                text-white
+                                ">Title
+                                </div>
+
+                                <div id="reactionsContainer" class="flex flex-row space-x-8
+                                items-center justify-between ">
+                                    <p class="
+                                    text-xs
+                                    font-bold
+                                    text-gun"
+                                    >180 likes</p>
+                                    <p class="
+                                    text-xs
+                                    font-bold
+                                    text-gun"
+                                    >184 comments</p>
+                                </div>
+                            </button>
+                            <div id="postContentContainer" class="h-full w-full">
+                                <p id ="contentPost" class="
+                                text-xxs
+                                text-gun
+                                font-bold">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nunc. Nulla facilisi
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </form>
 
             </div>
-
-        {{range .Posts}}
-
-        {{if eq $.User.Name .CreatedBy}}
-
-            <form action="/ReadMore/{{.Title}}" method="get" name="myPostsContainer" class="
-            rounded-xl
+            <div id="myCommentsWrapper" class="
             flex flex-col
-            space-y-1
-            h-auto w-full
+            hover:bg-white hover:bg-opacity-10
+            justify-start items-start
+            w-full h-auto
+            rounded-lg
+            overflow-y-auto
+            space-y-4
+            bg-custom
+            p-6
+
             ">
-            
-                <button type="submit" name="myPostsSubContainer" class="
-                p-0.5
-                bg-orange-200 bg-opacity-20 hover:bg-opacity-50
-                hover:cursor-pointer
-                flex flex-row items-center justify-center
-                space-x-1
-                h-auto w-full pl-1.5
+                
+                <div id="createContainer" class=" flex flex-row rounded-full">
+
+                    <button  type="submit" id="myCommentsButton" 
+                    class="
+                    hover:cursor-pointer
+                    hover:underline 
+                    h-max
+                    titlegrayStart
+                    ">My Lasts Comments</button>
+                    <button id="ReadMypost" class=" rounded-xl focus:border  w-auto h-auto px-2 border-white "><img src="/frontend/src/pics/right-arrow.png" class="h-3 w-3 mt-1"></button>
+
+                </div>
+
+                <form action="/ReadMore/{{.Title}}" method="get" name="MyLastsCommentsWrapper" class="
+                rounded-xl
+                flex flex-col
+                space-y-1
                 ">
-                    <div id="titlePost" class="
-                    shrink-0
-                    w-max h-max
-                    tracking-wide
-                    font-yanice font-bold
-                    ">{{.Title}}
-                    </div>
-
-                    <div id="Like&DislikeContainer" class="
-                    flex flex-row 
-                    my-0
-                    justify-center
-                    items-center"> 
-                        <div name="likeBtnDisplay" id="likeBtnDisplay" class=
-                        "
-                        bg-opacity-80
-                        flex flex-row 
-                        items-center
-                        space-x-1
-                        w-max h-max
-                        p-1
-                        ">
-                        <p class="
-                        font-yanice
-                        "
-                        >{{.Like}}</p>
-
-                        <img id="likeImage" class="
-                        h-4
-                        w-4
-                        rounded-lg  
-                        "
-                        src="/frontend/src/pics/like.png" alt="CategoryLogo" />
-
+                    <div id ="myLastcommentContainer" class="flex flex-row space-x-4">
+                        <div id="datecommentContainer" class=" rounded-2xl w-auto
+                        p-2 bg-customgray flex flex-col space-y-1 justify-center items-center">
+                            <p id ="monthcomment" class="text-sm 
+                            font-bold
+                            text-white"> FEB</p>
+                            <p id="daycomment" class="text-xl font-bold text-customlightblue w-max">3</p>
                         </div>
-
-                        <div name="dislikeBtnDisplay" id="dislikeBtnDisplay" class="
-                        flex flex-row 
-                        bg-opacity-80
-                        items-center
-                        space-x-1
-                        w-max h-max
-                        mt-0.5 p-1
-                        ">
-                            <p class="
-                            font-yanice"
-                            >{{.Dislike}}</p>
-                            <img id="dislikeImage" class="
-                            h-4
-                            w-4
-                            rounded-lg 
-                            scaleLike
-                            "
-                            src="/frontend/src/pics/dislike.png" alt="CategoryLogo" />
-
+                        <div id="mainContentComment" class="flex flex-col
+                        space-y-1">
+                            <button type="submit" name="commentTitleReactionsContainer" class="
+                            hover:cursor-pointer
+                            flex items-center justify-between
+                            h-auto w-full
+                            ">
+                                <div id="titlecomment" class="
+                                shrink-0
+                                text-sm 
+                                font-bold
+                                text-white
+                                ">Content of the comment
+                                </div>
+<!-- 
+                                <div id="reactionsContainer" class="flex flex-row space-x-8
+                                items-center justify-between ">
+                                    <p class="
+                                    text-xs
+                                    font-bold
+                                    text-gun"
+                                    >180 likes</p>
+                                    <p class="
+                                    text-xs
+                                    font-bold
+                                    text-gun"
+                                    >184 comments</p>
+                                </div> -->
+                            </button>
+                            <div id="commentContentContainer" class="h-full w-full">
+                                <p id ="contentcomment" class="
+                                text-xxs
+                                text-gun
+                                font-bold">
+                                POST TITLE                                </p>
+                            </div>
                         </div>
                     </div>
-                </button>
-            
-            </form>
-        {{end}}
-        {{end}}
+                </form>
 
-
-
-        </div>
+            </div>
         
     </div>
 
@@ -313,225 +337,19 @@ bg-gray-900
 
         </div>
 
-        <div id="userSettingsContainer" class="  
-        justify-start items-start
-        overflow-auto pt-2 h-auto w-full flex flex-col space-y-2 ">
+        <div id="othersSideContainer" class="pl-4 p-6 pt-4  rounded-2xl bg-custom overflow-auto pt-2 h-auto w-full flex flex-col space-y-4">
 
-            <h2 id="userSettingsTitle"
-            class="
-            
-            h-max w-max
-            titlegrayStart
-            ">My Informations</h2>
 
-            <div id="userSettingsList" class="
-            pt-2 rounded-b
+            <div id="othersList" class="
+            rounded-b
             h-auto w-full
             flex flex-col
-            space-y-3
-            justify-start items-start
-            overflow-y-auto">
-
-                <div id="editUserSettingsContainer"
-                class="  overflow-auto pt-2 h-auto w-full  flex flex-col justify-start items-start space-y-4"
-                >
-                    <button  id="editUserButton" class="
-                    flex flex-row
-                    rounded-lg
-                    border-2 border-orange-200
-                    hover:bg-orange-400
-                    w-max
-                    h-max
-                    group
-                    px-3 py-1
-                    hover:cursor-pointer
-                    space-x-2
-                    items-center">
-
-                        <h2 id="editUserSettingsTitle"
-                        class="
-                        px-2
-                        h-max w-max
-                        titlegrayStart
-                        ">Edit</h2>
-
-                        <img class="
-                        shrink-0 
-                        orangefilter
-                        h-6 w-6
-                        " src="/frontend/src/pics/edit.png" alt=" edit icon">
-
-                        
-                    </button>
-
-                    <div id="editUserSettingsInputContainer" class="
-                    pt-2 
-                    h-auto w-auto
-                    hidden
-                    flex flex-col
-                    space-y-4
-                    overflow-y-auto">
-
-                        <label for="editEmail" class="text-lg font-yanice text-gray-900 block mb-2 dark:text-gray-300">New email</label>
-
-                        <div id="editEmailContainer" class="flex flex-row space-x-2 w-max justify-center items-center">
-                            
-                            
-                            <input type="email" name="email" id="editEmail" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg  block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="name@company.com" required="">
-                        
-                            <button id="editEmailButton" class="
-                            shrink-0 rounded
-                             hover:scale-y-90">
-                                <img class="
-                                
-                                h-8 w-8
-                                " src="/frontend/src/pics/sendNew.png" alt=" editemail icon">
-                            </button>
-                            
-                            
-                        </div>
-            
-                        <label for="editName" class="text-lg font-yanice text-gray-900 block mb-2 dark:text-gray-300">New Username</label>
-
-                        <div id="editName" class="flex flex-row space-x-2 w-max justify-center items-center">
-                            
-                            <input 
-                            type="text"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg  block w-auto p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                            id="editName" name="name"
-                            placeholder="Username" />
-
-                            <button id="editNameButton" class="
-                            shrink-0 rounded
-                             hover:scale-y-90">
-                                <img class="
-                                
-                                h-8 w-8
-                                " src="/frontend/src/pics/sendNew.png" alt=" editemail icon">
-                            </button>
-                            
-                        </div>
-                        
-                        <label for="editPassword" class="text-lg font-yanice text-gray-900 block mb-2 dark:text-gray-300">New password</label>
-
-
-                        <input type="password" id="editPassword" name="password" placeholder="••••••••" class="bg-gray-50 border border-red text-gray-900 sm:text-sm rounded-lg block w-auto p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required="">
-
-                        <label for="password" class="text-lg font-yanice text-gray-900 block mb-2 dark:text-gray-300">Confirm your password</label>
-
-
-                        <div id="editPasswordConfirm" class="flex flex-row space-x-2 w-max justify-center items-center">
-                            <input type="password" id="confirm_password" placeholder="••••••••" class="bg-gray-50 border border-red text-gray-900 sm:text-sm rounded-lg block w-auto p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required="">
-                            <button id="editPasswordButton" class="
-                            shrink-0 rounded
-                             hover:scale-y-90">
-                                <img class="
-                                h-8 w-8
-                                " src="/frontend/src/pics/sendNew.png" alt=" editemail icon">
-                            </button>
-
-                        </div>
-
-                        <div id="password_match" class="textareablack"></div>
-                        
-
-                    
-                    </div>
-
-                </div>
-
-                <div id="displayUserSettingsContainer"
-                class="  overflow-auto pt-2 h-auto w-full flex flex-col justify-start items-start space-y-4"
-                >
-                    <button id="displayUserButton" class="
-                    flex flex-row
-                    rounded-lg
-                    border 
-                     border-2 border-orange-200
-                     hover:bg-orange-400
-                    w-max
-                    h-max
-                    group
-                    px-3 py-1
-                    hover:cursor-pointer
-                    space-x-2
-                    items-center">
-
-                        <h2 id="displayUserSettingsTitle"
-                        class="
-                        px-2
-                        h-max w-max
-                        titlegrayStart
-                        ">Display</h2>
-
-                        <img class="
-                        shrink-0 
-                        orangefilter
-                        h-6 w-6
-                        " src="/frontend/src/pics/information.png" alt=" picture icon">
-
-                        
-                    </button>
-
-                    <div id="displayUserSettingsListContainer" class="
-                    hidden
-                    pt-2 
-                    h-auto w-auto
-                    flex flex-col
-                    space-y-4
-                    overflow-y-auto">
-
-                        <div id="displayEmail" class="flex flex-row w-full space-x-1 justify-center items-center">
-
-                            <label for="email" class="text-lg font-yanice text-gray-900 block  dark:text-gray-300">Your email : </label>
-                            <p type="email" name="email" id="email" class=" text-gray-900 sm:text-sm rounded-lg  block w-auto ">email</p>
-                        
-                        </div>
-            
-                        <div id="displayName" class="flex flex-row w-full space-x-1 justify-center items-center">
-
-                            <label for="name" class="text-lg font-yanice text-gray-900 block  dark:text-gray-300">Your Username : </label>
-                            <p 
-                            type="text"
-                            class=" text-gray-900 sm:text-sm rounded-lg  block w-auto "
-                            id="name" name="name"
-                            >name</p>
-
-                        </div>
-        
-                        <div id="displayPassword" class="flex flex-row w-full space-x-1 justify-center items-center">
-
-                            <label for="password" class="text-lg font-yanice text-gray-900 block  dark:text-gray-300">Your password : </label>
-                            <p type="password" id="password" name="password" value="••••••••" class=" text-gray-900 sm:text-sm rounded-lg block w-auto " > test</p>
-                        
-                        </div>
-
-                    
-                    </div>
-
-                </div>
-
+            overflow-y-auto
+             ">
+                <form action="/CreationPostPage" method="post" id="CreatePostButtonContainerSide" class="group mb-0 ">
+                </form>
             </div>
-
-          
-
         </div>
-
-        <form action="/Logout" method="post" id="logoutButton"class="
-        text-lg text-center text-black
-        hover:text-orange-400
-        font-yanice
-        h-max w-max
-        titlegrayStart
-        ">
-        <button type="submit" value="Logout" >
-        Logout
-        </button>
-        </form>
-
-        
-
-        <button id="close-popup" class="titlegrayStart">Close</button>
 
     </div>
 
@@ -697,7 +515,7 @@ bg-gray-900
                 </div>
                 
                 <!-- <input id="add" aria-describedby="add" type="checkbox" class="bg-gray-50 border border-gray-300 focus:ring-3  h-4 w-4 rounded dark:bg-gray-700 dark:border-gray-600  dark:ring-offset-gray-800" required=""> -->
-                <button type="submit" value="Update" id="editPostSubmitButton" class=" self-center w-full h-auto text-white bg-orange-300 hover:opacity-100 opacity-80 focus:ring-4 focus:ring-blue-300 font-yanice rounded-lg text-lg px-5 py-2.5 text-center ">Edit</button>
+                <button type="submit" value="Update" id="editPostsubmitButton" class=" self-center w-full h-auto text-white bg-orange-300 hover:opacity-100 opacity-80 focus:ring-4 focus:ring-blue-300 font-yanice rounded-lg text-lg px-5 py-2.5 text-center ">Edit</button>
 
             </div>
 
@@ -765,6 +583,7 @@ bg-gray-900
         ">
             <div id="writeWrapper"
             class="
+            
             p-5
             w-full
             flex
@@ -797,7 +616,7 @@ bg-gray-900
                     <form action="/CreationPostPage" method="post" class=" flex flex-row space-x-5 w-5/6 m-0 ml-0">
                         <input 
                             type="text" 
-                            class="textareaHome text-white"
+                            class=" hover:bg-white hover:bg-opacity-10 textareaHome text-white"
                             id="postButton" name="postButton"
                              placeholder="Let’s share what going on your mind..."
                         />
@@ -837,6 +656,7 @@ bg-gray-900
                     justify-center
                     bg-custom
                     p-5
+                    hover:bg-white hover:bg-opacity-10
                     ">
                         <div id="mainPostContainer" class="flex flex-col space-y-2 items-center
                         justify-center w-full">
@@ -955,56 +775,56 @@ bg-gray-900
             </ul>     
         </div>
 
-        <div id="footer" class="
-            flex 
-            rounded
-            items-center
-            justify-between 
-            w-full h-max
-            ">
-    
-                <div  id="logoYnovContainerBottom"class="
-                flex flex-row items-center
-                rounded p-2
+            <!-- <div id="footer" class="
+                flex 
+                rounded
+                items-center
+                justify-between 
+                w-full h-max
                 ">
-                    <img src="/frontend/src/pics/prj_ynov.jpg" class="h-8 mr-3" alt="Logo" />
-                    
-    
-                    <span class="
-                    text-black text-2xl
-                    py-1 font-landasans
-                    
-                    "
-                    >1ère année Informatique
-                    </span>
-                </div>
-    
-                <div id="About" class="flex flex-row space-x-1">
-    
-                    <a id="github" href="https://ytrack.learn.ynov.com/git/syohan/forum_ynov" class="
-                    focus:ring-4 focus:outline-none
-                    focus:ring-customyellow
-                    text-2xl font-yanice
-                    rounded-lg
-                    p-2
-                    text-center
+        
+                    <div  id="logoYnovContainerBottom"class="
+                    flex flex-row items-center
+                    rounded p-2
                     ">
-                        <img src="/frontend/src/pics/github.png" class="w-10 h-10">
-                    </a>
-    
-                    <a id="linkedin" href="https://www.linkedin.com/in/cl%C3%A9ment-penot-09326b143/" class="
-                    focus:ring-4 focus:outline-none
-                    focus:ring-blue-100 dark:focus:ring-blue-400 
-                    rounded-lg
-                    p-2 
-                    items-center
-                    flex flex-row 
-                    space-x-1">
-                        <img src="/frontend/src/pics/linkedin.png" class="w-10 h-10">
-                    </a>
-    
-                </div>
-        </div> 
+                        <img src="/frontend/src/pics/prj_ynov.jpg" class="h-8 mr-3" alt="Logo" />
+                        
+        
+                        <span class="
+                        text-black text-2xl
+                        py-1 font-landasans
+                        
+                        "
+                        >1ère année Informatique
+                        </span>
+                    </div>
+        
+                    <div id="About" class="flex flex-row space-x-1">
+        
+                        <a id="github" href="https://ytrack.learn.ynov.com/git/syohan/forum_ynov" class="
+                        focus:ring-4 focus:outline-none
+                        focus:ring-customyellow
+                        text-2xl font-yanice
+                        rounded-lg
+                        p-2
+                        text-center
+                        ">
+                            <img src="/frontend/src/pics/github.png" class="w-10 h-10">
+                        </a>
+        
+                        <a id="linkedin" href="https://www.linkedin.com/in/cl%C3%A9ment-penot-09326b143/" class="
+                        focus:ring-4 focus:outline-none
+                        focus:ring-blue-100 dark:focus:ring-blue-400 
+                        rounded-lg
+                        p-2 
+                        items-center
+                        flex flex-row 
+                        space-x-1">
+                            <img src="/frontend/src/pics/linkedin.png" class="w-10 h-10">
+                        </a>
+        
+                    </div>
+            </div>  -->
         
 
     </div>
@@ -1012,15 +832,15 @@ bg-gray-900
 
     <!-- <script type="module" src ="/frontend/src/js/preferencesDropdown2.js" defer></script> -->
     <!-- <script type="module" src ="/frontend/src/js/preferencesDropdown.js" defer></script> -->
-    <script type="module" src ="/frontend/src/js/preferencesDropdownPost.js" defer></script>
+    <!-- <script type="module" src ="/frontend/src/js/preferencesDropdownPost.js" defer></script> -->
     <script type="module" src ="/frontend/src/js/categoriesList.js" defer></script>
     <script type="module" src ="/frontend/src/js/preferencesList.js" defer></script>
     <script type="module" src ="/frontend/src/js/othersList.js" defer></script>
-    <script type="module" src ="/frontend/src/js/login.js" defer></script>
-    <script type="module" src ="/frontend/src/js/viewPost.js" defer></script>
+    <!-- <script type="module" src ="/frontend/src/js/login.js" defer></script> -->
+    <!-- <script type="module" src ="/frontend/src/js/viewPost.js" defer></script> -->
 
 
-    <script type="module" src ="/frontend/src/js/checkPassword.js" defer></script>
+    <!-- <script type="module" src ="/frontend/src/js/checkPassword.js" defer></script> -->
 
     <!-- <script type="module" src ="/frontend/src/js/readPost.js" defer></script> -->
     <script type="module" src ="/frontend/src/js/updatePost.js" defer></script>

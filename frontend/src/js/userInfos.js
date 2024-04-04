@@ -1,7 +1,6 @@
 const popup = document.getElementById('popup');
-const closePopupButton = document.getElementById('close-popup');
 
-const overlay = document.getElementById("overlay");
+// const overlay = document.getElementById("overlay");
 
 const openButtonRight = document.getElementById('userButton');
 
@@ -10,13 +9,13 @@ const openButtonLeft = document.getElementById('other-button-0');
 const openButtonMid = document.getElementById('profileButton');
 
 
-const editButton = document.getElementById('editUserButton');
+// const editButton = document.getElementById('editUserButton');
 
-const displayButton = document.getElementById('displayUserButton'); 
+// const displayButton = document.getElementById('displayUserButton'); 
 
-const displayContainer = document.getElementById('displayUserSettingsListContainer');  
+// const displayContainer = document.getElementById('displayUserSettingsListContainer');  
 
-const editContainer = document.getElementById('editUserSettingsInputContainer');  
+// const editContainer = document.getElementById('editUserSettingsInputContainer');  
 
 
 function closeEdit(){
@@ -44,29 +43,23 @@ function toggleDisplay() {
   displayContainer.style.display = displayContainer.style.display === "block" ? "none" : "block";
 }
 
-editButton.addEventListener('click', function() {
-  toggleEdit();
-});
+// editButton.addEventListener('click', function() {
+//   toggleEdit();
+// });
 
-displayButton.addEventListener('click', function() {
-  toggleDisplay();
-});
+// displayButton.addEventListener('click', function() {
+//   toggleDisplay();
+// });
 
 // Ouvre la popup
 function openPopup() {
   popup.classList.add('active');
-  overlay.classList.add('overlayactive');
 }
 
 // Ferme la popup
 function closePopup() {
   popup.classList.remove('active');
-  overlay.classList.remove('overlayactive');
 }
-
-// Ajoute un événement de clic pour fermer la popup
-closePopupButton.addEventListener('click', closePopup);
-
 openButtonLeft.onclick = function() {
     
     if (popup.classList.contains("active")) {
