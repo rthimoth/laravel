@@ -1,0 +1,310 @@
+<html lang="en-us" class="h-screen">
+<!-- head space -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="/frontend/src/css/output.css">
+</head>
+
+<body class="
+h-screen w-screen
+flex flex-col 
+justify-start items-center
+space-y-4 
+overflow-auto
+ ">
+
+	<div id="topper" class="
+	flex flex-row justify-center
+	w-full mx-8 bg-orange-300 rounded-lg
+	p-4">
+		<button id="logoBottom" class="
+		flex flex-row items-center
+		p-2 rounded-lg
+		bg-orange-500
+		shadow-sm shadow-gray-500
+		">
+			<img src="/frontend/src/pics/alsacegray.png" class="h-8 " alt="Logo" />
+			<span class="
+			text-black text-3xl
+			py-1 font-goldleaf
+			"
+			>Alsace Forum
+			</span>
+		</button>
+
+	</div>
+
+	<div id="loginRegistrationWrapper" class=
+	"bg-orange-100
+	flex flex-col 
+	h-auto w-11/12
+	justify-start items-center
+	space-y-4 ">
+		<div id="topForm" class=" flex flex-row justify-between items-center w-full h-max rounded-lg bg-orange-300 p-2 ">
+
+			<h2 id="titlePage" class=" text-2xl font-yanice text-gray-900  "> Login and register</h2>
+		
+			<form action="/" method="post" id="homeButton" class="
+			mb-0 group p-1
+			cursor-pointer 
+			">
+
+				<button type="submit" class="flex flex-row space-x-2" >
+
+					<img class="
+					shrink-0 
+					orangefilter
+					h-8 w-8
+					"src="/frontend/src/pics/home.png" alt=" home icon">
+
+					<span class="
+					self-start
+					text-gray-800 text-lg
+					py-1 font-yanice
+					"
+					>Back to Home
+					</span>
+				</button>
+
+			</form>
+
+		</div>
+		<div id="loginRegistrationContainer" class="
+		h-auto w-auto 
+		flex flex-row flex-wrap 
+		justify-center
+		items-start
+		">
+
+			<div id="loginAndTitleContainer" class="
+			h-max w-full
+			flex flex-col space-y-8
+			max-w-lg 
+			m-10
+			">
+				<h3 class=" text-center h-max bg-white bg-opacity-80 p-2 rounded-b-lg text-2xl font-yanice text-gray-900 ">Already have an account ?</h3>
+
+				<div id="modal" class="modalDisplay ">
+
+						<h3 class=" h-max bg-white bg-opacity-80 p-2 rounded-b-lg text-2xl font-yanice text-gray-900 ">Sign in to our platform</h3>
+						<form action="/Login" method="post" id="login" class="
+						bg-white bg-opacity-60 
+						rounded 
+						p-5 h-auto w-auto grow flex flex-row justify-between items-baseline" action="#">
+							<img src="/frontend/src/pics/checklist.png"  class="w-52 h-52 p-4" alt="formIcon">
+
+							<div id="loginSubContainer" class="self-start flex flex-col space-y-4 w-auto h-auto">
+							
+							<div>
+								<label for="email" class="text-lg font-yanice text-gray-900 block mb-2 dark:text-gray-300">Your email</label>
+								<input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg  block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="name@company.com" required="">
+							</div>
+
+							<div >
+								<label for="password" class="text-lg font-yanice text-gray-900 block mb-2 dark:text-gray-300">Your password</label>
+								<input type="password" name="password" id="password" placeholder="••••••••" class="bg-gray-50 border border-red text-gray-900 sm:text-sm rounded-lg block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required="">
+							</div>
+
+							<div class="flex items-start">
+									<div class="flex flex-row space-x-4 items-center hidden ">
+										<div class="flex items-center h-5 ">
+											<input id="remember" aria-describedby="remember" type="checkbox" class="bg-gray-50 border border-gray-300 focus:ring-3  h-4 w-4 rounded dark:bg-gray-700 dark:border-gray-600  dark:ring-offset-gray-800" required="">
+										
+											<div class="text-lg ml-3">
+												<label for="remember" class="font-yanice text-gray-900 dark:text-gray-300">Remember me</label>
+											</div>
+										</div>
+										<a href="#" class=" mt-0.5 text-lg font-yanice text-orange-400 hover:underline ml-auto dark:text-orange-500">Lost
+											Password</a>
+								</div>
+
+							</div>
+								
+							</div>
+							<button type="submit"  value="submit" id="loginSubmitButton" class="w-max text-black bg-white hover:text-orange-500 hover:border-orange-500 font-yanice rounded-lg text-xl px-5 py-2.5 text-center ">Login</button>
+
+						</form>
+				</div>
+			</div>
+
+
+			<div id="registrationAndTitleContainer" class="
+			h-max w-full
+			max-w-xl flex flex-col space-y-8
+			m-10
+			">
+				<div>
+				<h3 class=" text-center h-max bg-white bg-opacity-80 p-2 rounded-b-lg text-2xl font-yanice text-gray-900 dark:text-white">Are you a newcomer ?  Join us and share with community!</h3>
+				<h3 class=" text-center h-max bg-white bg-opacity-80 p-2 rounded-b-lg text-xl font-yanice text-gray-700 dark:text-white">Register below and unlock more features like creating posts, commenting posts,etc..</h3>
+				</div>
+		
+				<div id="RegistrationSubContainer" class="
+				h-max w-full
+				flex flex-col space-y-8
+				max-w-2xl
+				">
+					<div id="modal2" class="modalDisplay ">
+
+						<h3 class=" h-max bg-white bg-opacity-80 p-2 rounded-b-lg text-2xl font-yanice text-gray-900 dark:text-white">Sign up to our platform</h3>
+					
+						<form action="/Registration" method="post" class=" 
+						bg-white bg-opacity-60 rounded p-5 h-auto w-auto grow flex flex-row justify-between items-end ">
+							<img src="/frontend/src/pics/heart.png"  class="self-center w-52 h-52 p-4" alt="formIcon">
+							<div id="inputContainer" class="self-start flex flex-col space-y-4 w-auto h-auto pb-14">
+								
+								<div>
+									<label for="email" class=" text-lg font-yanice text-gray-900 block mb-2 dark:text-gray-300">Your email</label>
+									<input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg  block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="name@company.com" required="">
+								</div>
+
+								<div>
+									<label for="name" class="text-lg font-yanice text-gray-900 block mb-2 dark:text-gray-300">Your Username</label>
+									<input 
+									type="text"
+									class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg  block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+									id="name" name="name"
+									placeholder="Username" />
+								</div>
+
+								<div>
+									<label for="password" class="text-lg font-yanice text-gray-900 block mb-2 dark:text-gray-300">Your password</label>
+									<input type="password" id="password" name="password" placeholder="••••••••" class="bg-gray-50 border border-red text-gray-900 sm:text-sm rounded-lg block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required="">
+								</div>
+							</div>
+							
+							<button type="submit"  value="submit" id="registerSubmitButton" class="w-max text-black bg-white hover:text-orange-500 font-yanice rounded-lg text-xl px-5 py-2.5 text-center ">Register</button>
+						</form>
+						<div class="text-center font-yanice text-sm text-gray-300 opacity-80 mt-4">
+							By signing up, you agree to the 
+							<a class="no-underline font-yanice  border-b border-grey-dark opacity-80 text-gray-300" href="#">
+								Terms of Service
+							</a> and 
+							<a class="no-underline   font-yanice border-b border-grey-dark opacity-80 text-gray-300" href="#">
+								Privacy Policy
+							</a>
+						</div>
+						
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<h2 id="borderBottom" class="w-full h-6 rounded-lg bg-orange-300 p-2 "> </h2>
+	</div>
+
+	<div id="footer" class="
+            flex 
+            boxshadowTop
+            w-full
+            h-auto
+            items-center
+            justify-between 
+            p-2
+            bg-orange-300
+            
+            ">
+                <div id="logoBottom" class="
+                flex flex-row items-center
+                p-2 rounded-lg
+                bg-orange-400
+                shadow-sm shadow-gray-500
+                ">
+                    <img src="/frontend/src/pics/alsacegray.png" class="h-8 " alt="Logo" />
+                    <span class="
+                    text-black text-2xl
+                    py-1 font-goldleaf
+                    "
+                    >Alsace Forum
+                    </span>
+                </div>
+
+                <div  id="logoYnovContainerBottom"class="
+                flex flex-row items-center
+                bg-orange-300 rounded p-2
+                ">
+                    <img src="/frontend/src/pics/prj_ynov.jpg" class="h-8 mr-3" alt="Logo" />
+                    
+
+                    <span class="
+                    text-black text-2xl
+                    py-1 font-landasans
+                    
+                    "
+                    >1ère année Informatique
+                    </span>
+                </div>
+
+                <div id="About" class="flex flex-row space-x-1">
+
+                    <a id="github" href="https://ytrack.learn.ynov.com/git/syohan/forum_ynov" class="
+                    focus:ring-4 focus:outline-none
+                    focus:ring-customyellow
+                    text-2xl font-yanice
+                    rounded-lg
+                    p-2
+                    bg-orange-400
+                    text-center
+                    shadow-sm shadow-gray-500
+                    ">
+                        <img src="/frontend/src/pics/github.png" class="w-10 h-10">
+                    </a>
+
+                    <a id="linkedin" href="https://www.linkedin.com/in/cl%C3%A9ment-penot-09326b143/" class="
+                    focus:ring-4 focus:outline-none
+                    focus:ring-blue-100 dark:focus:ring-blue-400 
+                    rounded-lg
+                    p-2 
+                    bg-orange-400
+                    items-center
+                    flex flex-row 
+                    shadow-sm shadow-gray-500
+                    space-x-1">
+                        <img src="/frontend/src/pics/linkedin.png" class="w-10 h-10">
+                    </a>
+
+                </div>
+    </div>
+
+	<div id="modalMessage" class="modalMessage">
+
+        <span id="closeMessage" class="closeLogin">&times;</span>
+
+        <div id="messageWrapper" class=" flex flex-col items-center justify-center w-auto">
+
+            <div class="tenor-gif-embed w-full shadow-xl shadow-gray-400 pb-2 border-b-2 border-red-500" data-postid="14464277" data-share-method="host" data-aspect-ratio="1.87135" data-width="20%"></div> 
+            
+            <div id="warningMessageContainer" class="my-8 flex flex-col py-4 border-y-2  border-red-500">
+                <h2 class="font-yanice self-center text-gray-600 text-xl">YOU HAVE AN ERROR MESSAGE : </h2>
+                <h2 class="font-yanice text-red-500 text-xl" >You are not connected to an account</h2>
+				<h2 class="font-yanice self-center text-gray-500 text-lg" >Close this window to continue</h2>
+            </div>
+
+            <div id="gifMessageContainer" class=" h-auto w-full flex flex-row justify-center items-center px-5">
+
+                <div id="warningCat" class="tenor-gif-embed shadow-xl shadow-gray-400 border-4 border-red-400" data-postid="10786328" data-share-method="host" data-aspect-ratio="1.33333" data-width="40%"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+	<div id="overlay" class="
+    overlay overlayactive
+    "></div>
+
+
+<script type="module" src ="/frontend/src/js/loginButton.js"> </script>
+<script type="module" src ="/frontend/src/js/registerButton.js"> </script>
+<script type="module" src ="/frontend/src/js/error404.js"> </script>
+
+<script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+<script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+<script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+<script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+
+
+</body>
+</html>

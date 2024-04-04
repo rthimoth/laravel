@@ -1,0 +1,168 @@
+<body lang="en-us" class="h-screen ">
+<!-- head space -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="/frontend/src/css/output.css">
+</head>
+
+<body>
+<div id="modal3" class="CreationPost">
+
+
+    <form action="/" method="get" id="homeButton" class="
+    home group p-2
+    cursor-pointer
+    right-1 top-1 fixed">
+
+        <button type="submit" >
+            <img class="
+            shrink-0 
+            orangefilter
+            h-6 w-6
+            "src="/frontend/src/pics/home.png" alt=" home icon">
+        </button>
+
+    </form>
+
+    <form action="/CreationPost" method="post" id="postForm" class="  h-full w-full space-y-4 p-10 flex flex-col items-start" action="#">
+        
+        <div id="wrapperResetButton" class="
+        flex flex-row
+        w-full
+        h-auto
+        group
+        items-center
+        justify-between
+        pb-1 text-xl border-b-2 border-white mt-6">
+
+        <h3 class=" w-max bg-white rounded p-2 font-yanice text-gray-600 dark:text-white">Create a post : </h3>
+
+        <div id="messageStatut" class=" text-base w-max bg-white rounded p-2 font-yanice text-gray-600 dark:text-white">{{.ProcessMessage}}</div>
+
+        <button id="resetFilters" class="
+        font-uniser text-3xl
+        p-2 
+        
+        "></button>
+
+        <button  class="
+            flex flex-row
+            rounded-lg
+            border 
+            shadow-sm  shadow-gray-500
+            w-max
+            h-max
+            bg-white
+            self-center
+            group
+            px-3 py-1
+            hover:cursor-pointer
+            space-x-2
+            items-center">
+            <img class="
+            shrink-0 
+            orangefilter
+            h-6 w-6
+            " src="/frontend/src/pics/pictureGray.png" alt=" picture icon">
+
+            <h3
+            type="text" 
+            class="titlegrayLG grow self-end" placeholder="Image"
+            >Image</h3>
+            
+        </button>
+        </div>
+        
+                                
+        
+        <div id="wrapperPost"
+        class="
+        flex items-start flex-col
+        h-full w-full
+        space-y-4
+        border-spacing-2">
+            <div id="category" name="category" ></div>
+            <input id="preferenceResult2" name="preferenceResult2" class="hidden"></input>
+            <!-- xs -->
+
+            <div id="titleContainer" class=" w-full h-auto border shadow-md" >
+                <input
+                type="text" 
+                id="titlePost" name="titlePost"
+                class="pl-1 titlegray border-gray-300 border" placeholder="TITLE"
+                />
+            </div>
+                
+            <div class="mb-3 shadow-xl border flex justify-center items-center h-full w-full " id="bodyContainer" data-te-input-wrapper-init>
+                <textarea name="bodyPost" id="bodyPost" cols="30" rows="10"
+                    class="textareagray"
+                    >Tap your post here</textarea>
+            </div>
+            
+            <!-- <input id="add" aria-describedby="add" type="checkbox" class="bg-gray-50 border border-gray-300 focus:ring-3  h-4 w-4 rounded dark:bg-gray-700 dark:border-gray-600  dark:ring-offset-gray-800" required=""> -->
+            <button type="submit" value="Add" id="createSubmitButton" class=" self-center w-full h-auto text-white bg-orange-300 hover:opacity-100 opacity-80 focus:ring-4 focus:ring-blue-300 font-yanice rounded-lg text-lg px-5 py-2.5 text-center ">Create</button>
+
+        </div>
+
+    </form>
+</div>
+
+<!-- <div id="modalMessage" class="modalMessage hidden">
+
+    <span id="closeMessage" class="closeLogin">&times;</span>
+
+    <div id="confirmationMessageWrapper" class=" flex flex-col items-center justify-center w-auto">
+
+        <div id="confirmationImage" class="tenor-gif-embed w-full shadow-xl shadow-gray-400 pb-2 border-b-2 border-green-500" data-postid="25970986" data-share-method="host" data-aspect-ratio="1.00946" data-width="20%"><a href="https://tenor.com/view/dance-green-gif-25970986"></a></div>
+        
+        <div id="confirmationMessageContainer" class="my-8 flex flex-col py-4 border-y-2  border-green-500">
+            <h2 class="font-yanice self-center text-gray-600 text-lg">YOU HAVE A CONFIRMATION MESSAGE: </h2>
+            <h2 class="font-yanice text-green-500 text-2xl" >{{.ProcessMessage}}  {{.User.Name}}</h2>
+        </div>
+
+        <div id="gifMessageContainer" class=" h-auto w-full flex flex-row justify-center items-center px-5">
+            
+            <div id="confirmationSmile" class="tenor-gif-embed" data-postid="16705876" data-share-method="host" data-aspect-ratio="1.25984" data-width="40%">
+            <a href="https://tenor.com/view/cool-emoji-wink-thumbs-up-great-gif-16705876"></a></div>
+             
+        </div>
+
+    </div>
+
+    <div id="warningMessageWrapper" class=" flex flex-col items-center justify-center w-auto">
+
+        <div id="warningImage" class="hidden tenor-gif-embed w-full shadow-xl shadow-gray-400 pb-2 border-b-2 border-red-500" data-postid="14464277" data-share-method="host" data-aspect-ratio="1.87135" data-width="20%"></div> 
+        
+        <div id="warningMessageContainer" class="hidden my-8 flex flex-col py-4 border-y-2  border-red-500">
+            <h2 class="font-yanice self-center text-gray-600 text-xl">YOU HAVE AN ERROR MESSAGE : </h2>
+            <h2 class="font-yanice text-black text-xl" >{{.ProcessMessage}}  {{.User.Name}}</h2>
+        </div>
+
+        <div id="gifMessageContainer" class=" h-auto w-full flex flex-row justify-center items-center px-5">
+            
+            <div id="warningCat" class="hidden tenor-gif-embed shadow-xl shadow-gray-400 border-4 border-red-400" data-postid="10786328" data-share-method="host" data-aspect-ratio="1.33333" data-width="40%"></div>
+        
+        </div>
+
+    </div>
+
+</div> -->
+
+<div id="overlay" class="
+    overlayOrange
+"></div>
+
+<!-- <script type="module" src ="/frontend/src/js/messagePost.js"></script>
+<script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+<script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+<script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+<script type="text/javascript" async src="https://tenor.com/embed.js"></script> -->
+
+<script type="module" src ="/frontend/src/js/postPage.js" defer></script>
+<script type="module" src ="/frontend/src/js/preferencesDropdown.js" defer></script>
+
+
+</body>
+</html>

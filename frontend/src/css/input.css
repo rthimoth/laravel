@@ -1,0 +1,543 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .font-outline-2 {
+        -webkit-text-stroke: 2px black;
+    }
+}
+
+@font-face {
+    font-family: "Yanice";
+    src: url("../fonts/Yanice-PKY5g.otf");
+}
+@font-face {
+    font-family: "Goldleaf";
+    src: url("../fonts/GoldleafBoldPersonalUseBold-eZ4dO.ttf");
+}
+@font-face {
+    font-family: "UniserBold";
+    src: url("../fonts/UniserBold-vm27M.ttf");
+}
+@font-face {
+    font-family: "LandasansMedium";
+    src: url("../fonts/LandasansMedium-ALJ6m.otf");
+}
+
+
+.custom {
+    @apply h-auto w-full;
+    @apply rounded;
+    @apply items-start px-5;
+    @apply text-2xl text-white font-landasans;
+    @apply hover:bg-sky-500 hover:text-black;
+    @apply hover:shadow-sm hover:shadow-white ;
+}
+
+.customButtonOn{
+    @apply bg-green-500;
+}
+
+
+.customButtonReset{
+    @apply border-2 border-gray-500;
+    @apply rounded;
+}
+
+.dropdownArgument{
+    @apply focus:ring-blue-500 focus:border-blue-500;
+    @apply text-2xl text-gray-900 font-uniser;
+    @apply hover:bg-gradient-to-b;
+    @apply hover:from-sky-500 hover:to-sky-900 ;
+}
+.heart{
+    @apply bg-heart;
+}
+.input__placeholder{
+    @apply flex;
+    @apply flex-row;
+    @apply justify-between;
+    @apply items-center;
+    @apply w-auto h-auto;
+}
+.input__active{
+    @apply text-orange-700;
+}
+.input__selected{
+    @apply text-orange-700;
+}
+
+.input__placeholderPreferences{
+    @apply flex;
+    @apply flex-row;
+    @apply space-x-2;
+    @apply justify-between;
+    @apply items-center;
+}
+.input__activePreferences{
+    @apply text-orange-700;
+}
+.input__selectedPreferences{
+    @apply text-orange-700;
+}
+
+.input{
+    @apply hover:cursor-pointer;
+    @apply flex;
+    @apply flex-col;
+    @apply justify-center;
+    @apply border;
+    @apply h-10;
+    @apply w-32;
+    @apply items-center;
+    @apply bg-white;
+    @apply shadow-sm  shadow-gray-500;
+    @apply text-gray-600 text-lg font-yanice;
+
+}
+
+.roundedInput{
+    @apply rounded-t-lg;
+}
+
+.inputPreferences{
+    @apply hover:cursor-pointer;
+    @apply flex;
+    @apply flex-col;
+    @apply justify-center;
+    @apply border;
+    @apply h-10;
+    @apply w-32;
+    @apply items-center;
+    @apply bg-white;
+    @apply shadow-sm  shadow-gray-500;
+    @apply text-gray-900 text-lg font-yanice;
+
+}
+
+.inputPreferencesGray{
+    @apply hover:cursor-pointer;
+    @apply h-auto w-20;
+    @apply rounded-t-lg;
+    @apply bg-gray-200;
+    @apply p-2;
+    @apply shadow-sm  shadow-gray-400;
+    @apply border border-gray-300  border-l-gray-100 rounded;
+    @apply text-gray-500 text-lg font-yanice;
+}
+
+
+.inputPost{
+    @apply hover:cursor-pointer;
+    @apply flex;
+    @apply flex-col;
+    @apply justify-center;
+    @apply border;
+    @apply h-8;
+    @apply w-32;
+    @apply items-center;
+    @apply bg-white;
+    @apply shadow-sm  shadow-gray-500;
+    @apply text-gray-600 text-lg font-yanice;
+
+}
+
+.placeholder{
+    @apply hover:text-orange-700;
+    @apply flex;
+    @apply flex-row-reverse;
+    @apply justify-center items-center;
+    @apply w-full h-full;
+}
+
+.placeholderPreferences{
+    @apply hover:text-orange-700;
+    @apply flex;
+    @apply flex-row-reverse;
+    @apply justify-center items-center;
+    @apply w-full h-full;
+
+}
+
+.placeholderReset{
+    @apply hover:text-orange-700;
+}
+
+.logosize{
+    @apply w-6 h-6 mx-1;
+}
+.logosize2{
+    @apply w-4 h-4 mx-1;
+}
+.option{
+    @apply flex;
+    @apply flex-row;
+    @apply justify-start;
+    @apply p-1;
+    @apply w-max h-max;
+    @apply space-x-2;
+    @apply hover:cursor-pointer;
+    @apply hover:text-orange-700;
+    @apply text-gray-900 text-lg font-yanice;
+
+}
+
+.boxshadowRight{
+    box-shadow: 4px 0 5px -2px #dadada;
+}
+
+.boxshadowLeft{
+    box-shadow: -8px 0 10px -2px #dadada;
+}
+
+.boxshadowTop{
+    box-shadow: 0px -2px 4px 0px #dadada;
+}
+.boxshadowBottom{
+box-shadow: 0px 4px 4px #dadada;
+}
+
+.boxshadowBottomReduced {
+    box-shadow: 0px 2px 2px #dadada;
+}
+
+.optionSidebar{
+    @apply flex;
+    @apply flex-row-reverse;
+    @apply items-center;
+    @apply justify-end;
+    @apply p-2;
+    @apply w-full h-max;
+    @apply hover:cursor-pointer;
+    @apply hover:bg-white hover:bg-opacity-50 ;
+    @apply focus:text-white focus:bg-white ;
+    @apply text-white text-sm font-bold;
+
+}
+
+.optionPreferences{
+    @apply flex;
+    @apply flex-row;
+    @apply justify-start;
+    @apply p-1;
+    @apply w-max h-max;
+    @apply space-x-2;
+    @apply hover:cursor-pointer;
+    @apply hover:text-orange-700;
+    @apply text-gray-900 text-lg font-yanice;
+
+}
+
+.scaleLike{
+    @apply transition focus:scale-75 scale-100 ease-in-out duration-75;
+}
+
+.scaleAndBorder{
+    @apply transition scale-95 ease-in-out duration-75;
+    @apply border border-orange-500;
+}
+
+.Colonne{
+    @apply flex flex-col h-96
+    justify-center items-center
+     w-full;
+}
+
+.Row{
+    @apply
+        flex flex-row 
+        justify-between items-center
+        h-32 w-full;
+    }
+
+
+.structure{
+    @apply fixed;
+    @apply z-20;
+    @apply flex;
+    @apply flex-col;
+    @apply justify-start;
+    @apply overflow-y-scroll;
+    @apply h-52;
+    @apply w-32;
+    @apply rounded-b;
+    @apply bg-white;
+    @apply shadow-sm  shadow-gray-500;
+
+}
+
+.structurePreferences{
+    @apply absolute top-32;
+    @apply z-20;
+    @apply flex;
+    @apply flex-col;
+    @apply justify-start;
+    @apply overflow-y-scroll;
+    @apply h-52;
+    @apply w-32;
+    @apply rounded-b;
+    @apply bg-white;
+    @apply shadow-sm  shadow-gray-500;
+}
+
+.structurePreferencesGray{
+    @apply fixed;
+    @apply z-20;
+    @apply h-52;
+    @apply w-32;
+    @apply flex;
+    @apply flex-col;
+    @apply justify-start;
+    @apply overflow-y-scroll;
+    @apply h-auto;
+    @apply w-auto;
+    @apply rounded-b;
+    @apply bg-gray-200;
+    
+}
+
+
+.hide{
+    @apply hidden;
+}
+
+.active{
+@apply -translate-x-1/2;
+@apply -translate-y-1/2;
+@apply scale-100;
+}
+
+.modal{
+    @apply bg-white;
+    @apply fixed;
+    @apply hidden;
+    @apply top-1/2 left-1/2;
+    @apply max-w-2xl;
+    @apply mx-auto;
+    @apply w-96;
+    @apply -translate-y-1/2 -translate-x-1/2;
+    @apply transition ease-in-out delay-200;
+    @apply z-50;
+    @apply overflow-auto;
+    @apply border-y-8 rounded-t border-orange-300;
+}
+
+.modalMessage{
+    @apply bg-white;
+    @apply fixed;
+    @apply top-1/2 left-1/2;
+    @apply max-w-lg w-full;
+    @apply h-1/2;
+    @apply -translate-y-1/2 -translate-x-1/2;
+    @apply transition ease-in-out delay-200;
+    @apply z-50;
+    @apply overflow-auto;
+    @apply border-y-8 rounded-t border-orange-300;
+}
+
+.modalDisplay{
+    @apply shadow-md;
+    @apply w-auto h-auto;
+    @apply rounded;
+    @apply bg-orange-300;
+    @apply z-50;
+    @apply max-w-xl;
+    @apply border-4 border-orange-400;
+    @apply flex flex-col;
+    @apply p-1 space-y-2;
+}
+
+.modalPost{
+    @apply bg-gray-200;
+    @apply fixed;
+    @apply hidden;
+    @apply top-1/2 left-1/2;
+    @apply mx-auto;
+    @apply max-w-3xl max-h-max w-full;
+    @apply -translate-y-1/2 -translate-x-1/2;
+    @apply transition ease-in-out delay-200;
+    @apply z-50;
+    @apply overflow-auto;
+    @apply border-t-8 border-orange-300
+
+}
+
+.CreationPost{
+    @apply bg-gray-200;
+    @apply fixed;
+    @apply top-1/2 left-1/2;
+    @apply mx-auto;
+    @apply max-w-3xl max-h-max w-full;
+    @apply -translate-y-1/2 -translate-x-1/2;
+    @apply transition ease-in-out delay-200;
+    @apply z-50;
+    @apply overflow-auto;
+    @apply border-t-8 border-orange-300
+
+}
+
+.modalRead{
+    @apply mx-auto;
+    @apply w-full h-full;
+    @apply flex flex-col ;
+
+}
+
+.blur{
+    @apply blur-3xl;
+}
+.orangefilter{
+    @apply group-hover:sepia-[.84];
+    @apply group-hover:invert-[.64];
+    @apply group-hover:saturate-[.4565];
+    @apply group-hover:hue-rotate-[349deg];
+    @apply group-hover:brightness-[.97];
+    @apply group-hover:contrast-[.98];
+}
+
+.closeLogin{
+    @apply cursor-pointer;
+    @apply text-white;
+    @apply bg-orange-400;
+    @apply hover:bg-opacity-100;
+    @apply bg-opacity-80;
+    @apply font-yanice;
+    @apply rounded-lg;
+    @apply text-lg;
+    @apply px-4;
+    @apply font-bold;
+    @apply text-2xl;
+    @apply py-1.5;
+    @apply right-1 top-1 absolute ; 
+    @apply w-auto;
+}
+
+.closeRegistration{
+    @apply cursor-pointer;
+    @apply text-white;
+    @apply bg-orange-400;
+    @apply hover:bg-opacity-100;
+    @apply bg-opacity-80;
+    @apply font-yanice;
+    @apply rounded-lg;
+    @apply text-lg;
+    @apply px-4;
+    @apply font-bold;
+    @apply text-2xl;
+    @apply py-1.5;
+    @apply right-1 top-1 absolute ; 
+    @apply w-auto;
+}
+
+.closePost{
+    @apply cursor-pointer;
+    @apply text-gray-700;
+    @apply hover:text-orange-400;
+    @apply bg-opacity-80;
+    @apply font-yanice;
+    @apply rounded-lg;
+    @apply text-lg;
+    @apply text-center;
+    @apply font-bold;
+    @apply text-2xl;
+    @apply right-1 top-1 absolute ; 
+    @apply px-4 py-1.5;
+}
+
+.positionMain{
+    top: 28rem;
+}
+
+.popup {
+    position: fixed;
+    @apply -right-60 top-96;
+    @apply flex flex-col space-y-8;
+    @apply justify-center items-center;
+    @apply pt-12 pl-4 ;
+    @apply h-screen w-96;
+    display: none;
+    z-index: 50;
+    @apply bg-orange-300 rounded-l-xl;
+    
+}
+
+.popup.active {
+    display: block;
+  }
+
+
+.titlegray{
+    @apply font-bold text-sm text-white w-full text-center ;
+}
+
+.titlewhite{
+    @apply font-yanice text-xl text-white w-full text-center ;
+}
+
+
+.titlegrayStart{
+    @apply font-bold text-sm text-white ;
+}
+
+.titlegrayLG{
+    @apply font-bold text-sm text-white w-full text-center ;
+}
+
+.textareaHome{
+    @apply font-normal text-sm text-start w-full mb-0;
+    @apply rounded-lg bg-customgray;
+    @apply pl-1;
+}
+
+.textareablack{
+    @apply font-yanice text-black w-full h-full px-1;
+}
+.home{
+    @apply cursor-pointer;
+    @apply text-white;
+    @apply bg-orange-400;
+    @apply hover:bg-opacity-100;
+    @apply bg-opacity-80;
+    @apply font-yanice;
+    @apply rounded-lg;
+    @apply text-lg;
+    @apply font-bold;
+    @apply text-2xl;
+    @apply w-auto;
+}
+
+.overlay{
+   @apply fixed;
+   @apply hidden;
+   @apply transition ease-in-out delay-200;
+   @apply top-0 left-0 right-0 bottom-0;
+   @apply pointer-events-none;
+   @apply bg-black;
+   @apply bg-opacity-50;
+   @apply blur-3xl;
+   @apply z-30;
+}
+
+.overlayOrange{
+    @apply fixed;
+    @apply transition ease-in-out delay-200;
+    @apply top-0 left-0 right-0 bottom-0;
+    @apply pointer-events-none;
+    @apply bg-orange-500;
+    @apply bg-opacity-50;
+    @apply blur-3xl;
+ }
+
+.overlayactive{
+    @apply block;
+    @apply pointer-events-auto;
+
+}
