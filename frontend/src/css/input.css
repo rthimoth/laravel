@@ -341,18 +341,6 @@ box-shadow: 0px 4px 4px #dadada;
     @apply border-y-8 rounded-t border-orange-300;
 }
 
-.modalDisplay{
-    @apply shadow-md;
-    @apply w-auto h-auto;
-    @apply rounded;
-    @apply bg-orange-300;
-    @apply z-50;
-    @apply max-w-xl;
-    @apply border-4 border-orange-400;
-    @apply flex flex-col;
-    @apply p-1 space-y-2;
-}
-
 .modalPost{
     @apply bg-gray-200;
     @apply fixed;
