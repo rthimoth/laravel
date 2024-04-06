@@ -37,3 +37,6 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 Route::delete('/admin/categories/{category}', 'App\Http\Controllers\Admin\CategoryController@destroy')
     ->name('admin.categories.destroy');
+
+Route::delete('/admin/tags/{tag}', 'App\Http\Controllers\Admin\TagController@destroy')
+    ->name('admin.tags.destroy');

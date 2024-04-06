@@ -35,6 +35,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::post('/', [TagController::class,'store'])->name('store');
         Route::get('/edit/{tag:slug}', [TagController::class,'edit'])->name('edit');
         Route::put('/{tag:slug}', [TagController::class,'update'])->name('update');
-        Route::delete('/{tag:slug}', [TagController::class,'delete'])->name('delete');
+        Route::delete('/{tag}', [TagController::class, 'destroy'])->name('destroy');
+
     });
 });
