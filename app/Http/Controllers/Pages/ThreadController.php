@@ -12,15 +12,10 @@ class ThreadController extends Controller
     public function index()
     {
         return view('pages.threads.index', [
-            'threads'  => Thread::paginate(5),
+            'threads'  => Thread::paginate(10),
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         //
