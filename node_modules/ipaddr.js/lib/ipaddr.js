@@ -203,6 +203,7 @@
                 [new IPv4([192, 0, 0, 0]), 24],
                 [new IPv4([192, 0, 2, 0]), 24],
                 [new IPv4([192, 88, 99, 0]), 24],
+                [new IPv4([198, 18, 0, 0]), 15],
                 [new IPv4([198, 51, 100, 0]), 24],
                 [new IPv4([203, 0, 113, 0]), 24],
                 [new IPv4([240, 0, 0, 0]), 4]
@@ -545,7 +546,12 @@
             // RFC6052, RFC6146
             teredo: [new IPv6([0x2001, 0, 0, 0, 0, 0, 0, 0]), 32],
             // RFC4291
-            reserved: [[new IPv6([0x2001, 0xdb8, 0, 0, 0, 0, 0, 0]), 32]]
+            reserved: [[new IPv6([0x2001, 0xdb8, 0, 0, 0, 0, 0, 0]), 32]],
+            benchmarking: [new IPv6([0x2001, 0x2, 0, 0, 0, 0, 0, 0]), 48],
+            amt: [new IPv6([0x2001, 0x3, 0, 0, 0, 0, 0, 0]), 32],
+            as112v6: [new IPv6([0x2001, 0x4, 0x112, 0, 0, 0, 0, 0]), 48],
+            deprecated: [new IPv6([0x2001, 0x10, 0, 0, 0, 0, 0, 0]), 28],
+            orchid2: [new IPv6([0x2001, 0x20, 0, 0, 0, 0, 0, 0]), 28]
         };
 
         // Checks if this address is an IPv4-mapped IPv6 address.
@@ -730,16 +736,34 @@
 
         // Returns the address in compact, human-readable format like
         // 2001:db8:8:66::1
-        //
-        // Deprecated: use toRFC5952String() instead.
+        // Calls toRFC5952String under the hood.
         IPv6.prototype.toString = function () {
-            // Replace the first sequence of 1 or more '0' parts with '::'
-            return this.toNormalizedString().replace(/((^|:)(0(:|$))+)/, '::');
+            return this.toRFC5952String();
         };
 
         return IPv6;
 
     })();
+
+    // A utility function to return broadcast address given the IPv6 interface and prefix length in CIDR notation
+    ipaddr.IPv6.broadcastAddressFromCIDR = function (string) {
+        try {
+            const cidr = this.parseCIDR(string);
+            const ipInterfaceOctets = cidr[0].toByteArray();
+            const subnetMaskOctets = this.subnetMaskFromPrefixLength(cidr[1]).toByteArray();
+            const octets = [];
+            let i = 0;
+            while (i < 16) {
+                // Broadcast address is bitwise OR between ip interface and inverted mask
+                octets.push(parseInt(ipInterfaceOctets[i], 10) | parseInt(subnetMaskOctets[i], 10) ^ 255);
+                i++;
+            }
+
+            return new this(octets);
+        } catch (e) {
+            throw new Error(`ipaddr: the address does not have IPv6 CIDR format (${e})`);
+        }
+    };
 
     // Checks if a given string is formatted like IPv6 address.
     ipaddr.IPv6.isIPv6 = function (string) {
@@ -761,6 +785,28 @@
             return true;
         } catch (e) {
             return false;
+        }
+    };
+
+    // A utility function to return network address given the IPv6 interface and prefix length in CIDR notation
+    ipaddr.IPv6.networkAddressFromCIDR = function (string) {
+        let cidr, i, ipInterfaceOctets, octets, subnetMaskOctets;
+
+        try {
+            cidr = this.parseCIDR(string);
+            ipInterfaceOctets = cidr[0].toByteArray();
+            subnetMaskOctets = this.subnetMaskFromPrefixLength(cidr[1]).toByteArray();
+            octets = [];
+            i = 0;
+            while (i < 16) {
+                // Network address is bitwise AND between ip interface and mask
+                octets.push(parseInt(ipInterfaceOctets[i], 10) & parseInt(subnetMaskOctets[i], 10));
+                i++;
+            }
+
+            return new this(octets);
+        } catch (e) {
+            throw new Error(`ipaddr: the address does not have IPv6 CIDR format (${e})`);
         }
     };
 
@@ -834,6 +880,29 @@
         return null;
     };
 
+    // A utility function to return subnet mask in IPv6 format given the prefix length
+    ipaddr.IPv6.subnetMaskFromPrefixLength = function (prefix) {
+        prefix = parseInt(prefix);
+        if (prefix < 0 || prefix > 128) {
+            throw new Error('ipaddr: invalid IPv6 prefix length');
+        }
+
+        const octets = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+        let j = 0;
+        const filledOctetCount = Math.floor(prefix / 8);
+
+        while (j < filledOctetCount) {
+            octets[j] = 255;
+            j++;
+        }
+
+        if (filledOctetCount < 16) {
+            octets[filledOctetCount] = Math.pow(2, prefix % 8) - 1 << 8 - (prefix % 8);
+        }
+
+        return new this(octets);
+    };
+
     // Try to parse an array in network order (MSB first) for IPv4 and IPv6
     ipaddr.fromByteArray = function (bytes) {
         const length = bytes.length;
@@ -851,6 +920,7 @@
     ipaddr.isValid = function (string) {
         return ipaddr.IPv6.isValid(string) || ipaddr.IPv4.isValid(string);
     };
+
 
     // Attempts to parse an IP Address, first through IPv6 then IPv4.
     // Throws an error if it could not be parsed.
