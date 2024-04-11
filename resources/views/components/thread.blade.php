@@ -32,27 +32,12 @@
                         </a>
                         
 
-                        <form action="/Like" method="post" id="Like&DislikeContainer" class="
+                        <form action="/Like" method="post" id="LikeContainer" class="
                         flex 
                         mb-0
                         justify-center
                         items-center"> 
-                                <button  type="submit" name="likeBtn" id="likePostBtn" value="like" class=
-                                "
-                                flex
-                                justify-center
-                                items-center
-                                ">
-
-                                    <img id="likeImage" class="
-                                    h-6
-                                    w-6
-                                    rounded-lg  
-                                    scaleLike
-                                    "
-                                    src="/frontend/src/pics/like.png" alt="CategoryLogo" />
-
-                                </button>
+                            <x-like.like />
                         </form>
 
                     </div>

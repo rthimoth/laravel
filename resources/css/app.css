@@ -6,4 +6,8 @@
     .wrapper {
         @apply px-4 mx-auto sm:px-6 lg:px-8;
     }
+    .scaleLike{
+        @apply transition focus:scale-75 scale-100 ease-in-out duration-75;
+    }
+    
 }
