@@ -4,11 +4,15 @@ namespace App\Http\Controllers\Pages;
 
 use App\Http\Controllers\Controller;
 use App\Http\Middleware\Authenticate;
+use App\Http\Requests\ThreadStoreRequest;
 use App\Models\Tag;
 use App\Models\Thread;
 use Illuminate\Auth\Middleware\EnsureEmailIsVerified;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Category;
+use Illuminate\Support\Str;
+use Mews\Purifier\Facades\Purifier;
 
 class ThreadController extends Controller
 {
@@ -20,7 +24,7 @@ class ThreadController extends Controller
     public function index()
     {
         return view('pages.threads.index', [
-            'threads'  => Thread::paginate(10),
+            'threads'  => Thread::orderBy('id', 'desc')->paginate(10),
         ]);
     }
 
@@ -32,9 +36,10 @@ class ThreadController extends Controller
             ]);
     }
 
-    public function store(Request $request)
+    public function store(ThreadStoreRequest $request)
     {
-        //
+
+        return redirect()->route('threads.index')->with('success', 'Thread created!');
     }
 
     public function show(Category $category, Thread $thread)
