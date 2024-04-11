@@ -10,16 +10,16 @@
 <body class="
 h-screen w-screen
 flex flex-col 
-justify-start items-center
+justify-end items-center
 space-y-4 
 bg-gray-900
 overflow-auto
  ">
 
 	<div id="topper" class="
-	flex flex-row justify-center
+	flex flex-row justify-center items-center
 	w-full mx-8 bg-gray-900 rounded-lg
-	p-4">
+	p-4 pb-20">
 		<button id="logoBottom" class="
 		flex flex-row items-center space-x-2
 		p-2 rounded-lg
@@ -27,7 +27,7 @@ overflow-auto
 		">
 			<img src="/frontend/src/pics/logo.png" class="h-8 " alt="Logo" />
 			<span class="
-			text-white text-3xl
+			text-customorange text-xl
 			py-1 font-bold
 			"	
 			>Forum
@@ -37,14 +37,14 @@ overflow-auto
 	</div>
 
 	<div id="loginRegistrationWrapper" class=
-	"bg-custom
+	" pb-32
 	flex flex-col p-5 rounded-lg
-	h-auto w-11/12
+	h-auto w-11/12 space-y-2
 	justify-start items-center
 	 ">
 		<div id="topForm" class=" flex flex-row justify-between items-center w-full h-max rounded-lg bg-custom p-2 ">
 
-			<h2 id="titlePage" class=" text-2xl font-bold text-white "> Login </h2>
+			<h2 id="titlePage" class=" text-lg font-bold text-white "> Login </h2>
 		
 			<form action="/" method="post" id="homeButton" class="
 			mb-0 group p-1
@@ -61,7 +61,7 @@ overflow-auto
 
 					<span class="
 					self-start
-					 text-lg
+					text-lg
 					py-1 font-bold text-white
 					"
 					>Back
@@ -71,34 +71,43 @@ overflow-auto
 			</form>
 
 		</div>
-		<div id="loginRegistrationContainer" class="
-		h-auto w-auto 
+		<div id="RegistrationContainer" class="
+		h-full w-full rounded-lg 
+		bg-custom
 		flex flex-row 
 		space-x-96
 		justify-center
-		items-center p-5
+		items-center p-12
+		pb-24
 		">
 
-			<div id="loginAndTitleContainer" class="
+			<div id="formAndTitleContainer" class="
 			h-max w-full
 			flex flex-col 
 			justify-center items-center
 			">
 				<div id ="titleForm" class="flex justify-center items-center">
-					<img src="/frontend/src/pics/logo.png"  class="self-center w-1/2 h-1/2 p-4" alt="formIcon">
+					<img src="/frontend/src/pics/logo.png"  class="self-center w-1/4 h-1/4 p-4" alt="formIcon">
 					<!-- <h3 class=" h-max bg-white bg-opacity-10 p-2 rounded-b-lg text-2xl font-bold text-white ">Sign in to our platform</h3> -->
 				</div>
 
-				<div id="loginSubContainer" class="justify-center item-center space-y-2 flex flex-col w-full h-auto">
+				<div id="registerSubContainer" class="justify-center item-center space-y-3 flex flex-col w-1/2 h-auto">
 					<div>
-					<label for="email" class="text-sm font-bold text-white block mb-2 dark:text-gray-300">Your email</label>
-					<input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-white sm:text-sm rounded-lg  block m-0 w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="name@company.com" required="">
+						<label for="username" class="text-sm font-bold text-white block mb-4 dark:text-gray-300">Your Username</label>
+						<input type="text" name="username" id="username" class="bg-gray-50 border border-gray-300 text-white sm:text-sm rounded-lg  block mb-4 w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Username" required="">
 					</div>
+
 					<div>
-					<label for="password" class="text-sm font-bold text-white block mb-2 dark:text-gray-300">Your password</label>
-					<input type="password" name="password" id="password" placeholder="••••••••" class="	bg-gray-50 border border-red text-white sm:text-sm rounded-lg block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 m-0 mb-8 dark:placeholder-gray-400 dark:text-white" required="">
+						<label for="email" class="text-sm font-bold text-white block mb-4 dark:text-gray-300">Your email</label>
+						<input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-white sm:text-sm rounded-lg  block mb-4 w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="name@company.com" required="">
 					</div>
-					<button type="submit"  value="submit" id="loginSubmitButton" class=" text-black bg-white hover:text-orange-500 hover:border-orange-500 font-bold rounded-lg text-xl px-5 py-2.5 text-center ">Login</button>
+
+					<div>
+						<label for="password" class="text-sm font-bold text-white block mb-4 dark:text-gray-300">Your password</label>
+						<input type="password" name="password" id="password" placeholder="••••••••" class="	bg-gray-50 border border-red text-white sm:text-sm rounded-lg block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 m-0 mb-12 dark:placeholder-gray-400 dark:text-white" required="">
+					</div>
+
+					<button type="submit"  value="submit" id="loginSubmitButton" class=" text-black mb-4 bg-white hover:text-orange-500 hover:border-orange-500 font-bold rounded-lg text-xl px-5 py-2.5 text-center ">Login</button>
 				</div>
 				<div id="registrationContainer" class="flex flex-row space-x-2 mt-8 justify-center item-center">
 					<h3 class="text-white font-bold mt-2">No account ? </h3>
@@ -106,8 +115,8 @@ overflow-auto
 				</div>
 			</div>
 			
-			<div id="loginImageContainer" class="w-full">
-				<img src="/frontend/src/pics/login.png"  class="self-center w-full h-full" alt="formIcon">
+			<div id="authentificationImageContainer" class="w-full">
+				<img src="/frontend/src/pics/login.png"  class="self-center w-3/4 h-3/4" alt="formIcon">
 			</div>
 			<!-- <div id="registrationAndTitleContainer" class="
 			h-max w-full
@@ -175,6 +184,7 @@ overflow-auto
 
 	<div id="footer" class="
             flex 
+			self-end
             w-full
             h-auto
             items-center
@@ -183,19 +193,6 @@ overflow-auto
             bg-gray-900
             
             ">
-				<button id="logoBottom" class="
-				flex flex-row items-center space-x-2
-				p-2 rounded-lg
-				bg-custom
-				">
-					<img src="/frontend/src/pics/logo.png" class="h-8 " alt="Logo" />
-					<span class="
-					text-white text-3xl
-					py-1 font-bold
-					"	
-					>Forum
-					</span>
-				</button>
 
                 <div  id="logoYnovContainerBottom"class="
                 flex flex-row items-center
@@ -205,15 +202,15 @@ overflow-auto
                     
 
                     <span class="
-                    text-black text-2xl
-                    py-1 font-landasans
+                    text-white 
+                    py-1 font-bold
                     
                     "
                     >2ème	 année Informatique
                     </span>
                 </div>
 
-                <div id="About" class="flex flex-row space-x-1">
+                <div id="About" class="flex flex-row space-x-1 bg-custom rounded-lg">
 
                     <a id="github" href="https://ytrack.learn.ynov.com/git/syohan/forum_ynov" class="
                     text-2xl 

@@ -341,21 +341,6 @@ box-shadow: 0px 4px 4px #dadada;
     @apply border-y-8 rounded-t border-orange-300;
 }
 
-.modalPost{
-    @apply bg-gray-200;
-    @apply fixed;
-    @apply hidden;
-    @apply top-1/2 left-1/2;
-    @apply mx-auto;
-    @apply max-w-3xl max-h-max w-full;
-    @apply -translate-y-1/2 -translate-x-1/2;
-    @apply transition ease-in-out delay-200;
-    @apply z-50;
-    @apply overflow-auto;
-    @apply border-t-8 border-orange-300
-
-}
-
 .CreationPost{
     @apply bg-gray-200;
     @apply fixed;

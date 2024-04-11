@@ -10,16 +10,16 @@
 <body class="
 h-screen w-screen
 flex flex-col 
-justify-start items-center
+justify-end items-center
 space-y-4 
 bg-gray-900
 overflow-auto
  ">
 
 	<div id="topper" class="
-	flex flex-row justify-center
+	flex flex-row justify-center items-center
 	w-full mx-8 bg-gray-900 rounded-lg
-	p-4">
+	p-4 pb-20">
 		<button id="logoBottom" class="
 		flex flex-row items-center space-x-2
 		p-2 rounded-lg
@@ -27,7 +27,7 @@ overflow-auto
 		">
 			<img src="/frontend/src/pics/logo.png" class="h-8 " alt="Logo" />
 			<span class="
-			text-white text-3xl
+			text-customorange text-3xl
 			py-1 font-bold
 			"	
 			>Forum
@@ -72,12 +72,13 @@ overflow-auto
 
 		</div>
 		<div id="RegistrationContainer" class="
-		h-auto w-full rounded-lg 
+		h-full w-full rounded-lg 
 		bg-custom
 		flex flex-row 
 		space-x-96
 		justify-center
-		items-center p-5
+		items-center p-12
+		pb-24
 		">
 
 			<div id="formAndTitleContainer" class="
@@ -90,19 +91,28 @@ overflow-auto
 					<!-- <h3 class=" h-max bg-white bg-opacity-10 p-2 rounded-b-lg text-2xl font-bold text-white ">Sign in to our platform</h3> -->
 				</div>
 
-				<div id="registerSubContainer" class="justify-center item-center space-y-3 flex flex-col w-full h-auto">
+				<div id="registerSubContainer" class="justify-center item-center space-y-3 flex flex-col w-1/2 h-auto">
 					<div>
-					<label for="username" class="text-sm font-bold text-white block mb-2 dark:text-gray-300">Your Username</label>
-					<input type="text" name="username" id="username" class="bg-gray-50 border border-gray-300 text-white sm:text-sm rounded-lg  block mb-2 w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Username" required="">
+						<label for="username" class="text-sm font-bold text-white block mb-4 dark:text-gray-300">Your Username</label>
+						<input type="text" name="username" id="username" class="bg-gray-50 border border-gray-300 text-white sm:text-sm rounded-lg  block mb-4 w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Username" required="">
+					</div>
 
-					<label for="email" class="text-sm font-bold text-white block mb-2 dark:text-gray-300">Your email</label>
-					<input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-white sm:text-sm rounded-lg  block mb-2 w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="name@company.com" required="">
-					</div>
 					<div>
-					<label for="password" class="text-sm font-bold text-white block mb-2 dark:text-gray-300">Your password</label>
-					<input type="password" name="password" id="password" placeholder="••••••••" class="	bg-gray-50 border border-red text-white sm:text-sm rounded-lg block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 m-0 mb-8 dark:placeholder-gray-400 dark:text-white" required="">
+						<label for="email" class="text-sm font-bold text-white block mb-4 dark:text-gray-300">Your email</label>
+						<input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-white sm:text-sm rounded-lg  block mb-4 w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="name@company.com" required="">
 					</div>
-					<button type="submit"  value="submit" id="loginSubmitButton" class=" text-black mb-2 bg-white hover:text-orange-500 hover:border-orange-500 font-bold rounded-lg text-xl px-5 py-2.5 text-center ">Register</button>
+
+					<div>
+						<label for="password" class="text-sm font-bold text-white block mb-4 dark:text-gray-300">Your password</label>
+						<input type="password" name="password" id="password" placeholder="••••••••" class="	bg-gray-50 border border-red text-white sm:text-sm rounded-lg block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 m-0 mb-4 dark:placeholder-gray-400 dark:text-white" required="">
+					</div>
+
+					<div>
+						<label for="password" class="text-sm font-bold text-white block mb-4 dark:text-gray-300">Confirm your password</label>
+						<input type="password" name="password" id="password" placeholder="••••••••" class="	bg-gray-50 border border-red text-white sm:text-sm rounded-lg block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 m-0 mb-12 dark:placeholder-gray-400 dark:text-white" required="">
+					</div>
+
+						<button type="submit"  value="submit" id="loginSubmitButton" class=" text-black mb-4 bg-white hover:text-orange-500 hover:border-orange-500 font-bold rounded-lg text-xl px-5 py-2.5 text-center ">Register</button>
 				</div>
 				<div id="loginContainer" class="flex flex-row space-x-2 mt-8 justify-center item-center">
 					<h3 class="text-white text-normal font-bold mt-2">Have you an account ? </h3>
@@ -111,7 +121,7 @@ overflow-auto
 			</div>
 			
 			<div id="authentificationImageContainer" class="w-full">
-				<img src="/frontend/src/pics/login.png"  class="self-center w-full h-full" alt="formIcon">
+				<img src="/frontend/src/pics/login.png"  class="self-center w-3/4 h-3/4" alt="formIcon">
 			</div>
 			<!-- <div id="registrationAndTitleContainer" class="
 			h-max w-full
@@ -179,6 +189,7 @@ overflow-auto
 
 	<div id="footer" class="
             flex 
+			self-end
             w-full
             h-auto
             items-center

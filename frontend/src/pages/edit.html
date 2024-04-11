@@ -469,7 +469,7 @@ bg-gray-900
     "></div>
         
     <div id="Post&FiltersContainer" class = "
-    absolute top-24
+    absolute top-16
     lg:left-48
     lg:w-7/12
     lg:ml-8
@@ -485,205 +485,77 @@ bg-gray-900
     h-full
     w-full
     ">
-        <div id="main" class="
-        flex flex-col
-        w-full h-auto
-        items-center
-        justify-center
-        space-y-2
-        ">
-            <div id="writeWrapper"
-            class="
-            
-            p-5
-            w-full
-            flex
-            items-center
-            justify-center
-            bg-custom
-            rounded-2xl
-            ">
-                <div id="writeContainer" class="
-                w-full h-auto 
-                flex flex-row space-x-5
-                justify-center items-center" >
-                    
-                    <button id="profileButton" class="
-                    bg-white
-                    rounded-3xl
-                    w-auto
-                    h-auto
-                    p-2 
-                    m-0
-                    ">
+        <div id="modal5" class="w-full">
+
+            <span class="closeModalUpdatePost">&times;</span>
+
+
+            <form action="/UpdatePost" method="post"
+            class="  h-full w-full space-y-4 p-2 flex flex-col items-start">
+        
+                <div id="wrapperResetButtonEditPost" class="
+                flex flex-row
+                w-full
+                h-auto
+                group
+                items-center
+                justify-between
+                text-xl">
+
+                    <h3 class=" w-max bg-white rounded p-2 font-bold text-gray-600 dark:text-white">Edit a post : </h3>
+
+                    <button  class="
+                        flex flex-row
+                        rounded-lg
+                        bg-white
+                        self-center
+                        group
+                        px-3 py-2
+                        hover:cursor-pointer
+                        space-x-2
+                        items-center">
                         <img class="
                         shrink-0 
+                        orangefilter
                         h-6 w-6
-                        " src="/frontend/src/pics/user.png" alt=" profile icon">
+                        " src="/frontend/src/pics/pictureGray.png" alt=" picture icon">
 
+                        <h3
+                        type="text" 
+                        class="font-custom grow self-end" placeholder="Image"
+                        >Image</h3>
+                        
                     </button>
-                    
+                </div>
+                
+                                        
+                
+                <div id="wrapperEditPost"
+                class="
+                flex items-start justify-start flex-col
+                h-full w-full
+                space-y-4
+                ">
 
-                    <form action="/CreationPostPage" method="post" class=" flex flex-row space-x-5 w-5/6 m-0 ml-0">
-                        <input 
-                            type="text" 
-                            class=" hover:bg-white hover:bg-opacity-10 textareaHome text-white"
-                            id="postButton" name="postButton"
-                             placeholder="Let’s share what going on your mind..."
+                    <div id="titleContainer" class=" w-full h-auto rounded-lg" >
+                        <input
+                        type="text" 
+                        id="titlePost" name="titlePost"
+                        class="pl-1 py-2 font-custom w-full " placeholder="TITLE"
                         />
+                    </div>
                         
-                        <div id="createPostButton" class="
-                        bg-customorange
-                        text-white
-                        font-bold
-                        rounded-2xl 
-                        flex justify-center items-center
-                        w-40 p-2 py-1
-                        h-auto
-                        
-                        ">
-                            <button type="submit" class="w-auto h-10  ">
-                                Create Post
-                            </button>
-                        </div>
-                    </form>
+                    <div class="mb-3 flex flex-col space-y-4 justify-center items-center h-auto w-full " id="bodyContainer" >
+                        <textarea name="bodyPost" id="bodyPost" cols="30" rows="10" placeholder="Your content here..."
+                        class="font-custom w-full rounded-sm h-auto"
+                        ></textarea>
                     
+                        <button type="submit" value="Update" id="editPostsubmitButton" class=" self-center w-full h-auto text-white bg-customorange hover:opacity-100 opacity-80  font-bold rounded-lg text-lg px-5 py-2.5 text-center ">Edit</button>
+
+                    </div>
                 </div>
 
-            </div>
-            
-            <ul id="postWrapper" class="
-            flex flex-col items-center flex-1
-            space-y-4
-            w-full h-full
-            
-            ">
-                    <li class="
-                    rounded-lg
-                    w-full h-max
-                    flex flex-col
-                    space-y-8
-                    items-center
-                    justify-center
-                    bg-custom
-                    p-5
-                    hover:bg-white hover:bg-opacity-10
-                    ">
-                        <div id="mainPostContainer" class="flex flex-col space-y-2 items-center
-                        justify-center w-full">
-                            <div id="infosPostContainer" class="
-                            h-auto
-                            justify-between
-                            w-full
-                            flex-row flex
-                            items-center
-                            rounded-lg
-                            m-0
-                            ">
-
-                                <p class="
-                                text-lg 
-                                text-white
-                                font-bold
-                                "
-                                > Title</p>
-
-                                <form action="/Like" method="post" id="Like&DislikeContainer" class="
-                                flex 
-                                mb-0
-                                justify-center
-                                items-center"> 
-                                        <button  type="submit" name="likeBtn" id="likePostBtn" value="like" class=
-                                        "
-                                        flex
-                                        justify-center
-                                        items-center
-                                        ">
-
-                                            <img id="likeImage" class="
-                                            h-6
-                                            w-6
-                                            rounded-lg  
-                                            scaleLike
-                                            "
-                                            src="/frontend/src/pics/like.png" alt="CategoryLogo" />
-
-                                        </button>
-                                </form>
-
-                            </div>
-                            <ul id="categoriesList" class=" flex flex-row item-center justify-start w-full -ml-2">
-                                <li class="
-                                rounded-2xl
-                                p-2 bg-customgray
-                                text-xs/[2px]
-                                text-gun
-                                font-bold
-                                "
-                                > Category</li>
-                            </ul>
-                        </div>
-                        <div id="footerPostContainer" class="flex flex-row 
-                        items-center
-                        space-x-96
-                        w-full
-                        m-0">
-                            <div id="authorinfosContainer" class="flex flex-row 
-                            items-center
-                            space-x-2
-                            m-0
-                            ">
-                                <button id="profileButton" class="
-                                bg-white
-                                rounded-3xl
-                                p-2
-                                ">
-                                    <img class="
-                                    shrink-0 
-                                    h-6 w-6
-                                    " src="/frontend/src/pics/user.png" alt=" profile icon">
-            
-                                </button>
-                                
-                                <div id="authordateContainer"
-                                class="flex flex-col 
-                                items-start
-                                justify-between
-                                ">
-                                
-                                    <p class="
-                                    text-sm 
-                                    font-bold
-                                    text-white
-                                    hover:cursor-pointer
-                                    hover:underline"
-                                    > AR. Jakir</p>
-
-                                    <p class="
-                                    text-xs
-                                    font-bold
-                                    text-gun"
-                                    >3 days ago</p>
-                                </div>
-                            </div>
-                            <div id="reactionsContainer" class="flex flex-row space-x-8
-                            items-center justify-between ">
-                                <p class="
-                                text-xs
-                                font-bold
-                                text-gun"
-                                >180 likes</p>
-                                <p class="
-                                text-xs
-                                font-bold
-                                text-gun"
-                                >184 comments</p>
-                            </div>
-                        </div>
-                        
-                    </li>
-                    
-            </ul>     
+            </form>
         </div>
 
             <!-- <div id="footer" class="
@@ -765,3 +637,4 @@ bg-gray-900
 
 </body>
 </html>
+
