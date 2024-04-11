@@ -10,312 +10,310 @@
 <body class="
 h-screen 
 w-screen
-mx-0 px-0   
+mx-0 px-0
 overflow-auto
-bg-gray-200
+bg-gray-900
  ">
-    <div id="topper" class="
-    fixed top-0
-    mx-0
-    pr-6
-    pl-2
-    py-2
-    z-10
-    rounded-y
-    flex flex-row 
-    w-full
-    h-auto
-    max-w-screen
-    items-start
-    justify-between 
-    bg-orange-300
-    shadow-md 
-    ">
-        <div id="logoTop" class="
-        flex flex-row items-center
-        p-2 rounded-lg
-        bg-orange-400
-        shadow-sm  shadow-gray-500
+    <div id="header-wrap" class="
+    fixed top-0 px-2 w-full pb-2
+    bg-transparent
+    z-10">
+        <div id="topper" class="
+        py-2
+        px-4
+        w-full
+        flex flex-row
+        items-center
+        justify-between 
+        bg-custom
         ">
-            <img src="/frontend/src/pics/alsacegray.png" class="h-8 " alt="Logo" />
-            <span class="
-            text-black text-2xl
-            py-1 font-goldleaf
-            
-            "
-            >Alsace Forum
-            </span>
-        </div>
 
-        <div id="userContainer" class="flex flex-row w-auto pl-0 space-x-8">
-
-            <div id="CreatePostTopContainer" class="flex flex-row space-x-3
-            rounded-lg
-            focus:ring-4 focus:ring-blue-300
-            px-3 hover:shadow-gray-900 hover:shadow-sm
-            hover:bg-orange-400
-            opacity-80 hover:opacity-100
-            items-center justify-center py-1
+            <div id="logoTop" class="
+            flex flex-row items-center
+            p-2
             ">
-
-            {{if $.User.Name }}
-            <form action="/CreationPostPage" method="post" class=" flex flex-row 
-            justify-center items-center space-x-1 py-0 mb-0
-            h-auto w-auto ">
-                <h2 id="titleAddPosts"
-                    class="
-                    titlewhite
-                    ">Add Post</h2>
-                <div id="createContainer" class=" hover:cursor-pointer px-3 hover:bg-orange-500  bg-orange-200  rounded-full">
-                    <button type="submit" value="Add" id="addPostsButton" class="   focus:text-gray-600 mb-3 w-auto h-auto text-4xl text-white   font-bold  text-center ">+</button>
-                </div>
-            </form>
-            {{end}}
-
+                <img src="/frontend/src/pics/logo.png" class="h-12 w-12 " alt="Logo" />
+                <span class="
+                text-xl
+                text-customorange
+                font-bold
+                
+                "
+                >FORUM
+                </span>
             </div>
 
-            <div id="userButtons"class="flex flex-row space-x-3">
-                <button id="registrationButton"class="
-                h-max self-end
-                px-2 mb-2
-                text-lg text-center text-black
-                hover:text-orange-400
-                focus:ring-2 focus:outline-none
-                focus:ring-gray-500
-                font-yanice
-                border-orange-400 border-l bg-transparent bg-opacity-80 hover:bg-opacity-100
-                ">
-                Register
-                </button>
+            <div id="userContainer" class="flex flex-row w-auto space-x-4">
 
-                <button id="loginButton"class="
-                h-max self-end
-                px-2 mb-2
-                text-lg text-center text-black
-                hover:text-orange-400
-                focus:ring-2 focus:outline-none
-                focus:ring-gray-500
-                font-yanice
-                border-orange-400 border-l bg-transparent bg-opacity-80 hover:bg-opacity-100
-                ">
-                Login
-                </button>
-                
-                {{if $.User.Name }}
+                <div id="userButtons"class=" flex flex-row space-x-5">
+
+                    <button id="profileButton" class="
+                    bg-white
+                    rounded-3xl
+                    w-auto
+                    h-auto
+                    p-2 
+                    ">
+                        <img class="
+                        shrink-0 
+                        h-6 w-6
+                        " src="/frontend/src/pics/user.png" alt=" profile icon">
+
+                    </button>
+
+                    <button id="registrationButton"class="
+                    text-lg text-center text-white
+                    font-bold
+                    ">
+                    AR. Jakir
+                    </button>                    
+
+                </div>
 
                 <button id="userButton"  name="userButton" class="
-                 mr-0
-                hover:cursor-pointer
-                hover:bg-orange-400
-                rounded-lg hover:shadow-sm hover:shadow-gray-900
-                bg-transparent bg-opacity-80 hover:bg-opacity-100
-                px-4
-                items-center
-                flex flex-row 
-                ">
-                    
-                    <img src="/frontend/src/pics/user.png" class=" w-10 h-10">
+                    hover:cursor-pointer
+                    items-center
+                    flex
+                    ">
+                        <img src="/frontend/src/pics/arrow-down.png"class="
+                        h-4 w-4
+                        ">
                 </button>
-
-                {{end}}
-
             </div>
+            
         </div>
-        
     </div>
 
     <div id="sidebarLeftContainer" class="
         overflow-auto
-      bg-white
+        text-white
         ml-0
-        fixed left-0 top-16
-        rounded-r-xl
-        h-screen
+        flex flex-col space-y-4
+        fixed left-0 top-24
+        h-full 
         w-48
         px-2
-        py-8
         pb-20
         xs:hidden
         sm:hidden
         md:hidden
         xl:block
         2xl:block
-        flex flex-col
+        
         items-start
         justify-center
-        boxshadowRight
         ">
 
+        <div id="categoriesSideContainer" class=" h-1/2 w-full pl-4 p-6 pt-4 rounded-2xl bg-custom flex flex-col space-y-4">
 
-        {{if $.User.Name }}
-        <div id="othersSideContainer" class="  overflow-auto pt-2 h-auto w-full flex flex-col">
+            <h2 id="titleMyposts"
+            class="
+            titlegrayStart
+            ">Categories</h2>
 
-            <h2 id="othersTitle"
+
+            <div id="categoriesList" class="
+            w-full 
+            flex flex-col
+            overflow-y-hidden
+             "></div>
+        </div>
+        <div id="preferencesSideContainer" class="pl-4 p-6 pt-4 h-auto rounded-2xl bg-custom w-full flex flex-col space-y-4">
+
+            <h2 id="preferencesTitle"
                 class="
-                px-2
                 h-max w-max
                 titlegrayStart
-                ">Others</h2>
+                ">Preferences</h2>
 
 
-            <div id="othersList" class="
-            pt-2 rounded-b
+            <div id="preferencesList" class="
+            rounded-b 
             h-auto w-full
             flex flex-col
-            bg-white
             overflow-y-auto
              ">
-            <form action="/CreationPostPage" method="post" id="CreatePostButtonContainerSide" class="group mb-0 ">
+
+            <form action="/" method="get" id="newToOldButtonContainerSide" class="
+            group mb-0
+            ">
             </form>
+            
             </div>
         </div>
-        {{end}}
 
     </div>
 
     <div id="sidebarRightContainer" class="
         overflow-auto
-        boxshadowLeft
-        mr-0
-        bg-white
-        fixed right-0 top-16
-        h-full
+        fixed right-0 top-20
+        h-auto
         xs:hidden
         sm:hidden
         md:hidden
         xl:block
         2xl:block
         w-1/4
-        px-10
-        py-8
-        mt-0
+        p-4
+        rounded-2xl
+        text-white
         flex flex-col
         items-start
         justify-center
         space-y-2
         ">
             
-        <div id="myPostsWrapper" class="
-        flex flex-col
-        justify-start items-start
-        w-full h-44
-        rounded-lg
-        overflow-y-auto
-        space-y-2
-        
-        ">
-            
-            <div id="createContainer" class=" border border-orange-100 flex flex-row  pl-3  space-x-2 rounded-full">
+            <div id="myPostsWrapper" class="
+            flex flex-col
+            hover:bg-white hover:bg-opacity-10
+            justify-start items-start
+            w-full h-auto
+            rounded-lg
+            overflow-y-auto
+            space-y-4
+            bg-custom
+            p-6
+            ">
+                
+                <div id="createContainer" class=" flex flex-row rounded-full">
 
                     <button  type="submit" id="myPostsButton" 
-                class="
-                hover:cursor-pointer
-                hover:underline 
-                p-2
-                h-max
-                titlegrayStart
-                ">My Posts</button>
-                <button id="ReadMypost" class=" hover:cursor-pointer hover:bg-orange-100 rounded-xl focus:border  w-auto h-auto px-2 border-white "><img src="/frontend/src/pics/information-button.png" class="logosize"></button>
+                    class="
+                    
+                    hover:cursor-pointer
+                    hover:underline 
+                    h-max
+                    titlegrayStart
+                    ">My Lasts Posts</button>
+                    <button id="ReadMypost" class=" rounded-xl focus:border  w-auto h-auto px-2 border-white "><img src="/frontend/src/pics/right-arrow.png" class="h-3 w-3 mt-1"></button>
+
+                </div>
+
+                <form action="/ReadMore/{{.Title}}" method="get" name="MyLastsPostsWrapper" class="
+                rounded-xl
+                flex flex-col
+                space-y-1
+                ">
+                    <div id ="myLastPostContainer" class="flex flex-row space-x-4">
+                        <div id="datePostContainer" class=" rounded-2xl w-auto
+                        p-2 bg-customgray flex flex-col space-y-1 justify-center items-center">
+                            <p id ="monthPost" class="text-sm 
+                            font-bold
+                            text-white"> FEB</p>
+                            <p id="dayPost" class="text-xl font-bold text-customlightblue w-max">3</p>
+                        </div>
+                        <div id="mainContentPost" class="flex flex-col
+                        space-y-1">
+                            <button type="submit" name="postTitleReactionsContainer" class="
+                            hover:cursor-pointer
+                            flex flex-row items-center justify-between
+                            h-auto w-full
+                            ">
+                                <div id="titlePost" class="
+                                shrink-0
+                                text-sm 
+                                font-bold
+                                text-white
+                                ">Title
+                                </div>
+
+                                <div id="reactionsContainer" class="flex flex-row space-x-8
+                                items-center justify-between ">
+                                    <p class="
+                                    text-xs
+                                    font-bold
+                                    text-gun"
+                                    >180 likes</p>
+                                    <p class="
+                                    text-xs
+                                    font-bold
+                                    text-gun"
+                                    >184 comments</p>
+                                </div>
+                            </button>
+                            <div id="postContentContainer" class="h-full w-full">
+                                <p id ="contentPost" class="
+                                text-xxs
+                                text-gun
+                                font-bold">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nunc. Nulla facilisi
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </form>
 
             </div>
-
-        {{range .Posts}}
-
-        {{if eq $.User.Name .CreatedBy}}
-
-            <form action="/ReadMore/{{.Title}}" method="get" name="myPostsContainer" class="
-            rounded-xl
+            <div id="myCommentsWrapper" class="
             flex flex-col
-            space-y-1
-            h-auto w-full
+            hover:bg-white hover:bg-opacity-10
+            justify-start items-start
+            w-full h-auto
+            rounded-lg
+            overflow-y-auto
+            space-y-4
+            bg-custom
+            p-6
+
             ">
-            
-                <button type="submit" name="myPostsSubContainer" class="
-                p-0.5
-                bg-orange-200 bg-opacity-20 hover:bg-opacity-50
-                hover:cursor-pointer
-                flex flex-row items-center justify-center
-                space-x-1
-                h-auto w-full pl-1.5
+                
+                <div id="createContainer" class=" flex flex-row rounded-full">
+
+                    <button  type="submit" id="myCommentsButton" 
+                    class="
+                    hover:cursor-pointer
+                    hover:underline 
+                    h-max
+                    titlegrayStart
+                    ">My Lasts Comments</button>
+                    <button id="ReadMypost" class=" rounded-xl focus:border  w-auto h-auto px-2 border-white "><img src="/frontend/src/pics/right-arrow.png" class="h-3 w-3 mt-1"></button>
+
+                </div>
+
+                <form action="/ReadMore/{{.Title}}" method="get" name="MyLastsCommentsWrapper" class="
+                rounded-xl
+                flex flex-col
+                space-y-1
                 ">
-                    <div id="titlePost" class="
-                    shrink-0
-                    w-max h-max
-                    tracking-wide
-
-                    text-md
-                    font-yanice font-bold
-                    text-gray-800 
-                    ">{{.Title}}
-                    </div>
-
-                    <div id="Like&DislikeContainer" class="
-                    flex flex-row 
-                    my-0
-                    justify-center
-                    items-center"> 
-                        <div name="likeBtnDisplay" id="likeBtnDisplay" class=
-                        "
-                        bg-opacity-80
-                        flex flex-row 
-                        items-center
-                        space-x-1
-                        w-max h-max
-                        p-1
-                        ">
-                        <p class="
-                        text-sm
-                        text-gray-900  
-                        font-yanice
-                        "
-                        >{{.Like}}</p>
-
-                        <img id="likeImage" class="
-                        h-4
-                        w-4
-                        rounded-lg  
-                        "
-                        src="/frontend/src/pics/like.png" alt="CategoryLogo" />
-
+                    <div id ="myLastcommentContainer" class="flex flex-row space-x-4">
+                        <div id="datecommentContainer" class=" rounded-2xl w-auto
+                        p-2 bg-customgray flex flex-col space-y-1 justify-center items-center">
+                            <p id ="monthcomment" class="text-sm 
+                            font-bold
+                            text-white"> FEB</p>
+                            <p id="daycomment" class="text-xl font-bold text-customlightblue w-max">3</p>
                         </div>
-
-                        <div name="dislikeBtnDisplay" id="dislikeBtnDisplay" class="
-                        flex flex-row 
-                        bg-opacity-80
-                        items-center
-                        space-x-1
-                        w-max h-max
-                        mt-0.5 p-1
-                        ">
-                            <p class="
-                            text-sm
-                            text-gray-900  
-                            font-yanice"
-                            >{{.Dislike}}</p>
-                            <img id="dislikeImage" class="
-                            h-4
-                            w-4
-                            rounded-lg 
-                            scaleLike
-                            "
-                            src="/frontend/src/pics/dislike.png" alt="CategoryLogo" />
-
+                        <div id="mainContentComment" class="flex flex-col
+                        space-y-1">
+                            <button type="submit" name="commentTitleReactionsContainer" class="
+                            hover:cursor-pointer
+                            flex items-center justify-between
+                            h-auto w-full
+                            ">
+                                <div id="titlecomment" class="
+                                shrink-0
+                                text-sm 
+                                font-bold
+                                text-white
+                                ">Content of the comment
+                                </div>
+                            </button>
+                            <div id="commentContentContainer" class="h-full w-full">
+                                <p id ="contentcomment" class="
+                                text-xxs
+                                text-gun
+                                font-bold">
+                                POST TITLE                                </p>
+                            </div>
                         </div>
                     </div>
-                </button>
-            
-            </form>
-        {{end}}
-        {{end}}
+                </form>
 
-
-
-        </div>
+            </div>
         
     </div>
 
     <div id="popup" class="popup">
-
 
         <div id="userPic" class="
         pr-16 w-full flex flex-row justify-center items-center
@@ -324,453 +322,20 @@ bg-gray-200
 
         </div>
 
-        <div id="userSettingsContainer" class="  
-        justify-start items-start
-        overflow-auto pt-2 h-auto w-full flex flex-col space-y-2 ">
+        <div id="othersSideContainer" class="pl-4 p-6 pt-4  rounded-2xl bg-custom overflow-auto pt-2 h-auto w-full flex flex-col space-y-4">
 
-            <h2 id="userSettingsTitle"
-            class="
-            
-            h-max w-max
-            titlegrayStart
-            ">My Informations</h2>
 
-            <div id="userSettingsList" class="
-            pt-2 rounded-b
+            <div id="othersList" class="
+            rounded-b
             h-auto w-full
             flex flex-col
-            space-y-3
-            justify-start items-start
-            overflow-y-auto">
-
-                <div id="editUserSettingsContainer"
-                class="  overflow-auto pt-2 h-auto w-full  flex flex-col justify-start items-start space-y-4"
-                >
-                    <button  id="editUserButton" class="
-                    flex flex-row
-                    rounded-lg
-                    
-                     border-2 border-orange-200
-                     hover:bg-orange-400
-                    w-max
-                    h-max
-                    group
-                    px-3 py-1
-                    hover:cursor-pointer
-                    space-x-2
-                    items-center">
-
-                        <h2 id="editUserSettingsTitle"
-                        class="
-                        px-2
-                        h-max w-max
-                        titlegrayStart
-                        ">Edit</h2>
-
-                        <img class="
-                        shrink-0 
-                        orangefilter
-                        h-6 w-6
-                        " src="/frontend/src/pics/edit.png" alt=" edit icon">
-
-                        
-                    </button>
-
-                    <div id="editUserSettingsInputContainer" class="
-                    pt-2 
-                    h-auto w-auto
-                    hidden
-                    flex flex-col
-                    space-y-4
-                    overflow-y-auto">
-
-                        <label for="editEmail" class="text-lg font-yanice text-gray-900 block mb-2 dark:text-gray-300">New email</label>
-
-                        <div id="editEmailContainer" class="flex flex-row space-x-2 w-max justify-center items-center">
-                            
-                            
-                            <input type="email" name="email" id="editEmail" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg  block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="name@company.com" required="">
-                        
-                            <button id="editEmailButton" class="
-                            shrink-0 rounded
-                             hover:scale-y-90">
-                                <img class="
-                                
-                                h-8 w-8
-                                " src="/frontend/src/pics/sendNew.png" alt=" editemail icon">
-                            </button>
-                            
-                            
-                        </div>
-            
-                        <label for="editName" class="text-lg font-yanice text-gray-900 block mb-2 dark:text-gray-300">New Username</label>
-
-                        <div id="editName" class="flex flex-row space-x-2 w-max justify-center items-center">
-                            
-                            <input 
-                            type="text"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg  block w-auto p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                            id="editName" name="name"
-                            placeholder="Username" />
-
-                            <button id="editNameButton" class="
-                            shrink-0 rounded
-                             hover:scale-y-90">
-                                <img class="
-                                
-                                h-8 w-8
-                                " src="/frontend/src/pics/sendNew.png" alt=" editemail icon">
-                            </button>
-                            
-                        </div>
-                        
-                        <label for="editPassword" class="text-lg font-yanice text-gray-900 block mb-2 dark:text-gray-300">New password</label>
-
-
-                        <input type="password" id="editPassword" name="password" placeholder="••••••••" class="bg-gray-50 border border-red text-gray-900 sm:text-sm rounded-lg block w-auto p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required="">
-
-                        <label for="password" class="text-lg font-yanice text-gray-900 block mb-2 dark:text-gray-300">Confirm your password</label>
-
-
-                        <div id="editPasswordConfirm" class="flex flex-row space-x-2 w-max justify-center items-center">
-                            <input type="password" id="confirm_password" placeholder="••••••••" class="bg-gray-50 border border-red text-gray-900 sm:text-sm rounded-lg block w-auto p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required="">
-                            <button id="editPasswordButton" class="
-                            shrink-0 rounded
-                             hover:scale-y-90">
-                                <img class="
-                                h-8 w-8
-                                " src="/frontend/src/pics/sendNew.png" alt=" editemail icon">
-                            </button>
-
-                        </div>
-
-                        <div id="password_match" class="textareablack"></div>
-                        
-
-                    
-                    </div>
-
-                </div>
-
-                <div id="displayUserSettingsContainer"
-                class="  overflow-auto pt-2 h-auto w-full flex flex-col justify-start items-start space-y-4"
-                >
-                    <button id="displayUserButton" class="
-                    flex flex-row
-                    rounded-lg
-                    border 
-                     border-2 border-orange-200
-                     hover:bg-orange-400
-                    w-max
-                    h-max
-                    group
-                    px-3 py-1
-                    hover:cursor-pointer
-                    space-x-2
-                    items-center">
-
-                        <h2 id="displayUserSettingsTitle"
-                        class="
-                        px-2
-                        h-max w-max
-                        titlegrayStart
-                        ">Display</h2>
-
-                        <img class="
-                        shrink-0 
-                        orangefilter
-                        h-6 w-6
-                        " src="/frontend/src/pics/information.png" alt=" picture icon">
-
-                        
-                    </button>
-
-                    <div id="displayUserSettingsListContainer" class="
-                    hidden
-                    pt-2 
-                    h-auto w-auto
-                    flex flex-col
-                    space-y-4
-                    overflow-y-auto">
-
-                        <div id="displayEmail" class="flex flex-row w-full space-x-1 justify-center items-center">
-
-                            <label for="email" class="text-lg font-yanice text-gray-900 block  dark:text-gray-300">Your email : </label>
-                            <p type="email" name="email" id="email" class=" text-gray-900 sm:text-sm rounded-lg  block w-auto ">email</p>
-                        
-                        </div>
-            
-                        <div id="displayName" class="flex flex-row w-full space-x-1 justify-center items-center">
-
-                            <label for="name" class="text-lg font-yanice text-gray-900 block  dark:text-gray-300">Your Username : </label>
-                            <p 
-                            type="text"
-                            class=" text-gray-900 sm:text-sm rounded-lg  block w-auto "
-                            id="name" name="name"
-                            >name</p>
-
-                        </div>
-        
-                        <div id="displayPassword" class="flex flex-row w-full space-x-1 justify-center items-center">
-
-                            <label for="password" class="text-lg font-yanice text-gray-900 block  dark:text-gray-300">Your password : </label>
-                            <p type="password" id="password" name="password" value="••••••••" class=" text-gray-900 sm:text-sm rounded-lg block w-auto " > test</p>
-                        
-                        </div>
-
-                    
-                    </div>
-
-                </div>
-
+            overflow-y-auto
+             ">
+                <form action="/CreationPostPage" method="post" id="CreatePostButtonContainerSide" class="group mb-0 ">
+                </form>
             </div>
-
-          
-
         </div>
 
-        <form action="/Logout" method="post" id="logoutButton"class="
-        text-lg text-center text-black
-        hover:text-orange-400
-        font-yanice
-        h-max w-max
-        titlegrayStart
-        ">
-        <button type="submit" value="Logout" >
-        Logout
-        </button>
-        </form>
-
-        
-
-        <button id="close-popup" class="titlegrayStart">Close</button>
-
-    </div>
-
-
-    <div id="modal" class="modal">
-        <span class="closeLogin">&times;</span>
-        <div class="  shadow-md
-                rounded-lg sm:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700">
-            
-            <form action="/Login" method="post" class="space-y-4 p-10 ">
-                <h3 class="text-2xl font-yanice text-gray-900 dark:text-white">Sign in to our platform</h3>
-                <div>
-                    <label for="emailLogin" class="text-lg font-yanice text-gray-900 block mb-2 dark:text-gray-300">Your email</label>
-                    <input type="text" id="emailLogin" name="emailLogin" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg  block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="name@company.com" required="">
-                </div>
-                    <div>
-                        <label for="passwordLogin" class="text-lg font-yanice text-gray-900 block mb-2 dark:text-gray-300">Your password</label>
-                        <input type="text" id="passwordLogin" name="passwordLogin" placeholder="••••••••" class="bg-gray-50 border border-red text-gray-900 sm:text-sm rounded-lg block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required="">
-                    </div>
-                        
-                    <div id="infoLogin" class="p-5 flex flex-col space-y-2">
-                        <button type="submit" value="submit" id="loginSubmitButton" class="w-full text-white bg-orange-400 hover:opacity-100 opacity-80 focus:ring-4 focus:ring-blue-300 font-yanice rounded-lg text-lg px-5 py-2.5 text-center ">Login</button>
-                        <div class="text-md font-yanice text-gray-500 dark:text-gray-300">
-                                Not registered? <a href="#" class="text-orange-600 hover:underline ">Create
-                                    account</a>
-                        </div>
-    
-                    </div>
-            </form>
-        </div>
-    </div>
-
-    <div id="modal2" class="modal">
-        <span class="closeRegistration">&times;</span>
-        <div class="  shadow-md
-        rounded-lg sm:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700">
-        <form action="/Registration" method="post" class="space-y-4 p-10 ">
-            <h3 class="text-2xl font-yanice text-gray-900 dark:text-white">Sign in to our platform</h3>
-            
-            <div>
-                <label for="email" class="text-lg font-yanice text-gray-900 block mb-2 dark:text-gray-300">Your email</label>
-                <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg  block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="name@company.com" required="">
-            </div>
-
-            <div>
-                <label for="name" class="text-lg font-yanice text-gray-900 block mb-2 dark:text-gray-300">Your Username</label>
-                <input 
-                type="text"
-                class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg  block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                id="name" name="name"
-                placeholder="Username" />
-            </div>
-
-                <div>
-                    <label for="password" class="text-lg font-yanice text-gray-900 block mb-2 dark:text-gray-300">Your password</label>
-                    <input type="password" id="password" name="password" placeholder="••••••••" class="bg-gray-50 border border-red text-gray-900 sm:text-sm rounded-lg block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required="">
-                </div>
-                
-                    
-                <button type="submit"  value="submit" id="RegisterSubmitButton" class="w-full text-white bg-orange-400 hover:opacity-100 opacity-80 focus:ring-4 focus:ring-blue-300 font-yanice rounded-lg text-lg px-5 py-2.5 text-center ">Register</button>
-
-                <div id="infoLogin" class="p-5 flex flex-col space-y-2">
-                    <div class="text-md font-yanice text-gray-500 dark:text-gray-300">
-                            Already registered? <a href="#" class="text-orange-600 hover:underline ">Connect
-                                account</a>
-                    </div>
-
-                </div>
-                <div class="text-center font-yanice text-sm text-gray-600 opacity-80 mt-4">
-                    By signing up, you agree to the 
-                    <a class="no-underline font-yanice  border-b border-grey-dark opacity-80 text-gray-600" href="#">
-                        Terms of Service
-                    </a> and 
-                    <a class="no-underline   font-yanice border-b border-grey-dark opacity-80 text-gray-600" href="#">
-                        Privacy Policy
-                    </a>
-                </div>
-        </form>
-        </div>
-    </div>
-
-    <div id="modal5" class="modalPost">
-
-        <span class="closeModalUpdatePost">&times;</span>
-    
-    
-        <form action="/UpdatePost" method="post"
-        class="  h-full w-full space-y-4 p-10 flex flex-col items-start">
-    
-            <input type="hidden" name="postId" value="{{.SpecificPost.Id}}">
-    
-            <span id="closeModalUpdatePost" class="closePost">&times;</span>
-    
-            
-            <div id="wrapperResetButtonEditPost" class="
-            flex flex-row
-            w-full
-            h-auto
-            group
-            items-center
-            justify-between
-            pb-1 text-xl border-b-2 border-white mt-6">
-    
-            <h3 class=" w-max bg-white rounded p-2 font-yanice text-gray-600 dark:text-white">Edit a post : </h3>
-    
-            <button id="resetFiltersEditPost" class="
-            font-uniser text-3xl
-            p-2 
-            
-            "></button>
-    
-            <button  class="
-                flex flex-row
-                rounded-lg
-                border 
-                shadow-sm  shadow-gray-500
-                w-max
-                h-max
-                bg-white
-                self-center
-                group
-                px-3 py-1
-                hover:cursor-pointer
-                space-x-2
-                items-center">
-                <img class="
-                shrink-0 
-                orangefilter
-                h-6 w-6
-                " src="/frontend/src/pics/pictureGray.png" alt=" picture icon">
-    
-                <h3
-                type="text" 
-                class="titlegrayLG grow self-end" placeholder="Image"
-                >Image</h3>
-                
-            </button>
-            </div>
-            
-                                    
-            
-            <div id="wrapperEditPost"
-            class="
-            flex items-start flex-col
-            h-full w-full
-            space-y-4
-            border-spacing-2">
-                <!-- xs -->
-                <input type="hidden" name="postId" value="{{.SpecificPost.Id}}">
-    
-                <div id="titleContainer" class=" w-full h-auto border shadow-md" >
-                    <input
-                    type="text" 
-                    id="titlePost" name="titlePost" value="{{.SpecificPost.Title}}"
-                    class="pl-1 titlegray border-gray-300 border" placeholder="TITLE"
-                    />
-                </div>
-                    
-                <div class="mb-3 shadow-xl border flex justify-center items-center h-full w-full " id="bodyContainer" data-te-input-wrapper-init>
-                    <textarea name="bodyPost" id="bodyPost" cols="30" rows="10"
-                        class="textareagray"
-                        
-                        >{{.SpecificPost.Body}}</textarea>
-                </div>
-                
-                <!-- <input id="add" aria-describedby="add" type="checkbox" class="bg-gray-50 border border-gray-300 focus:ring-3  h-4 w-4 rounded dark:bg-gray-700 dark:border-gray-600  dark:ring-offset-gray-800" required=""> -->
-                <button type="submit" value="Update" id="editPostSubmitButton" class=" self-center w-full h-auto text-white bg-orange-300 hover:opacity-100 opacity-80 focus:ring-4 focus:ring-blue-300 font-yanice rounded-lg text-lg px-5 py-2.5 text-center ">Edit</button>
-    
-            </div>
-    
-        </form>
-    </div>
-    
-    <div id="modal6" class="modalPost">
-    
-        <span class="closeModalUpdatePost">&times;</span>
-    
-    
-        <form action="/EditComment" method="post"
-        class="  h-full w-full space-y-4 p-10 flex flex-col items-start">
-    
-            <input type="hidden" name="postId" value="{{.SpecificPost.Id}}">
-    
-            <span id="closeModalUpdateComment" class="closePost">&times;</span>
-    
-            
-            <div id="wrapperResetButtonEditComment" class="
-            flex flex-row
-            w-full
-            h-auto
-            group
-            items-center
-            justify-between
-            pb-1 text-xl border-b-2 border-white mt-6">
-    
-            <h3 class=" w-max bg-white rounded p-2 font-yanice text-gray-600 dark:text-white">Edit a post : </h3>
-    
-            <button id="resetFiltersEditComment" class="
-            font-uniser text-3xl
-            p-2 
-            
-            "></button>
-    
-            </div>
-            
-            <div id="wrapperEditComment"
-            class="
-            flex items-start flex-col
-            h-full w-full
-            space-y-4
-            border-spacing-2">
-                <!-- xs -->
-                <input type="hidden" name="commentId" value="test">
-                    
-                <div class="mb-3 shadow-xl border flex justify-center items-center h-full w-full " id="bodyEditCommentContainer" data-te-input-wrapper-init>
-                    <textarea name="bodyEditComment" id="bodyEditComment" cols="30" rows="10"
-                        class="textareagray"
-                        
-                        >test</textarea>
-                </div>
-                
-                <!-- <input id="add" aria-describedby="add" type="checkbox" class="bg-gray-50 border border-gray-300 focus:ring-3  h-4 w-4 rounded dark:bg-gray-700 dark:border-gray-600  dark:ring-offset-gray-800" required=""> -->
-                <button type="submit" value="Update" id="editCommentSubmitButton" class=" self-center w-full h-auto text-white bg-orange-300 hover:opacity-100 opacity-80 focus:ring-4 focus:ring-blue-300 font-yanice rounded-lg text-lg px-5 py-2.5 text-center ">Edit</button>
-    
-            </div>
-    
-        </form>
     </div>
 
     <div id="overlay" class="
@@ -778,7 +343,7 @@ bg-gray-200
     "></div>
         
     <div id="Post&FiltersContainer" class = "
-    absolute top-20
+    absolute top-24
     lg:left-48
     lg:w-7/12
     lg:ml-8
@@ -798,64 +363,34 @@ bg-gray-200
 
             <div id="infosPostContainer" class="
                 shrink mb-2
-                                h-auto
+                h-auto
+                bg-custom
                 justify-between
                 w-full
-                bg-white
-                flex-row flex
-                items-center
+                flex
+                items-start
                 rounded-lg
-                boxshadowBottom
                 
                 ">
                     <div 
                     class="flex flex-row 
-                    space-x-5 
+                    space-x-2
                     items-center
                     rounded-lg p-2
                     ">
-                        <div id="categoryContainer" class="
-                        flex flex-row 
-                        items-center
-                        space-x-1 ">
-                            <img class="
-                            h-6
-                            w-6
-                            rounded-lg 
-                            "
-                            src="/frontend/src/pics/song.png" alt="CategoryLogo" />
-                            <p class="
-                            text-lg 
-                            text-gray-600
-                            font-yanice
-                            hover:cursor-pointer
-                            hover:text-orange-600"
-                            > {{.SpecificPost.Category}}</p>
-                        </div>
-                        <div id="authorContainer" class="
-                        flex flex-row
-                        space-x-2
-                        ">
-                            <p class="
-                            text-lg 
-                            text-gray-600
-                            font-yanice"
-                            >by </p>
-                            <p class="
-                            text-lg 
-                            opacity-80
-                            hover:opacity-100
-                            text-orange-900
-                            font-yanice
-                            hover:cursor-pointer
-                            hover:underline"
-                            > {{.SpecificPost.CreatedBy}}</p>
-                        </div>
+                        
                         <p class="
                         text-lg 
-                        text-gray-600
-                        font-yanice"
-                        >at  {{.SpecificPost.CreatedAt}}</p>
+                        text-customorange
+                        font-bold
+                        hover:cursor-pointer
+                        hover:underline"
+                        > AR. AKIR</p>
+                        <p class="
+                        text-white
+                        font-bold"
+                        >at  01/01/2000</p>
+
                     </div>
                     
                     <form action="/" method="post" id="homeButton" class="
@@ -877,230 +412,199 @@ bg-gray-200
                             text-gray-800 text-lg
                             py-1 font-yanice
                             "
-                            >Back to Home
+                            >Back to Posts
                             </span>
                         </button>
         
-                    </form>
-        
+                    </form> 
             </div>
 
-            <h3 class=" shadow-md shadow-gray-400 w-full bg-white rounded-t-xl text-center  text-5xl p-2 font-yanice text-gray-600 dark:text-white">{{.SpecificPost.Title}} </h3>
+            <h3 class="w-fullrounded-t-xl text-center bg-custom  text-xl p-2 font-bold text-white ">Title </h3>
 
 
-            <div id="readPostWrapper" class="
-            bg-gray-200 shadow-2xl shadow-gray-400 rounded-b-lg
-            h-max w-full space-y-4 p-4 flex flex-col items-center
-            border-x-8 border-white border-b-8
-            " action="#">
+
         
-                <div id="readPostContainer" class="
-                rounded-lg
-                w-full h-max
-                flex flex-col
-                space-y-4 
-                items-center 
-                justify-center
-                ">
-        
-                    <div id="ContentReadPostContainer"
-                        class="
-                        flex flex-col
-                        justify-center items-center
-                        space-y-2
-                        py-2 border-y-2 border-white
-                        h-auto w-full">
-        
-                        <a id="imagePost" href="#" class="shrink-0 p-2
-                        ">
-                        <img class="
-                        w-full h-full                        rounded-lg 
-                        "
-                        src="/frontend/src/pics/tarte.jpg" alt="image Post" />
-                        </a>
-        
-                        <div id="textPostContainer"
-                        class="flex w-full h-auto grow justify-center items-center "
-                        >
-        
-                            <div id="bodyPost" class="
-                            grow
-                            w-full h-max
-                            mb-2 text-lg
-                            font-goldleaf
-                            p-2
-                            text-gray-600 
-                            bg-white
-                            shadow-md shadow-gray-400
-                            group-hover:text-gray-800
-                            ">{{.SpecificPost.Body}}
-                            </div>
-                            
-                        </div>
-        
-                        
-                
+            <div id="readPostContainer" class="
+            rounded-lg
+            w-full
+            flex flex-col
+            space-y-8
+            items-center 
+            justify-center
+            ">
+    
+                <div id="textPostContainer"
+                class=" bg-custom flex w-full h-auto justify-center items-center "
+                >
+
+                    <div id="bodyPost" class="
+                    w-full h-auto
+                    text-lg text-white
+                    font-bold
+                    p-2
+                    ">Body
                     </div>
-        
-                    <form action="/CreationComment" method="post" class="
-                        items-center justify-between 
-                        shadow-sm
-                        flex flex-row
-                        shadow-gray-500
-                        rounded-l-lg p-1
-                        rounded-r-xl
-                        w-full h-20">
-        
-                        <input type="hidden" id="postId" name="postId" value="{{.SpecificPost.Id}}">
-        
-                        <textarea name="bodyComment" id="bodyComment" class=" w-auto grow h-full m-0 p-0" cols="30" rows="10">insert Comment here</textarea>
-        
-                        
-                        <button type="submit" name="buttonCommentReadPost" value="Add" class="
-                        h-full w-max px-2
-                        shrink-0
-                        hover:cursor-pointer
-                        bg-orange-500 hover:bg-orange-400
-                        font-yanice
-                        rounded-r-xl
-                        ">
-                        
+                    
+                </div>
+    
+                <form action="/CreationComment" method="post" class="
+                    justify-between 
+                    flex flex-col 
+                    m-0
+                    items-start space-y-2
+                    rounded-lg
+                    w-full ">
+    
+                    <textarea name="bodyComment" id="bodyComment" class=" w-full grow h-10 rounded-lg bg-custom text-white font-bold m-0 pl-1" placeholder="insert Comment here" cols="30" rows="10"></textarea>
+    
+                    
+                    <button type="submit" name="buttonCommentReadPost" value="Add" class="
+                    h-full w-20 p-2
+                    self-end flex justify-center items-center
+                    hover:cursor-pointer
+                    bg-orange-500 hover:bg-orange-400
+                    font-yanice
+                    rounded-lg
+                    ">
+                    
                         <img class="
                             h-5
                             w-5
                             rounded-lg 
                             "
                             src="/frontend/src/pics/paper-plane.png" alt="CommentariesSend" />
-                        
-                        </button>
-        
-                    </form>
-        
-                    <div id="commentsWrapper" class="
-                        p-2 ml-0 w-full
-                        bg-gray-200 flex flex-col space-y-1
-                        text-gray-700 font-yanice
-                        
-                        ">
-                            {{range .SpecificPost.Comments}}
-                            <div id="commentsContainer" class="
-                            w-max h-auto bg-white rounded-xl p-2
-                            flex flex-col justify-center items-center
-                            ">
-                                <div id="infosPostContainer" class="
-                                shrink-0
-                                h-max
-                                justify-between
-                                w-full
-                                flex-row flex
-                                items-center
-                                rounded-lg
-                                boxshadowBottomReduced
-                                
-                                ">
-                                    <div id="authorDateCommentContainer"
-                                    class="flex flex-row 
-                                    space-x-2
-                                    items-center
-                                    rounded-lg p-0.5
-                                    ">
-                                        
-                                        <div id="authorCommentContainer" class="
-                                        flex flex-row
-                                        space-x-1
-                                        ">
-                                            <p class="
-                                            text-sm
-                                            text-gray-600
-                                            font-yanice"
-                                            >by </p>
-                                            <p id="authorComment" class="
-                                            text-sm
-                                            opacity-80
-                                            hover:opacity-100
-                                            text-orange-900
-                                            font-yanice
-                                            hover:cursor-pointer
-                                            hover:underline"
-                                            > {{.CreatedBy}}</p>
-                                        </div>
-        
-                                        <p id="dateComment" class="
-                                        text-sm 
-                                        text-gray-600
-                                        font-yanice"
-                                        >at  {{.CreatedAt}}</p>
-        
-                                    </div>
-                                    
-                                    {{if eq $.User.Name .CreatedBy}}
-                                    <form action="/DeleteComment" method="post" class="
-                                    flex flex-row 
-                                    justify-center items-center
-                                    mb-0 group hover:cursor-pointer
-                                    hover:scale-90
-                                    p-1 border border-gray-400 hover:border-black
-                                    ">
-                                        <input type="hidden" name="commentId" value="{{.Id}}">
-                                        <button type="submit" id="deleteCommentButton" >
-                                            <img class="
-                                                h-3
-                                                w-3
-                                                rounded-lg 
-                                                orangefilter
-                                                "
-                                                src="/frontend/src/pics/trash.png" alt="trash icon" />
-                                        </button>
-                                    </form>
-        
-                                    <form action="/EditComment" method="post" class="
-                                    flex flex-row 
-                                    justify-center items-center
-                                    mb-0 group hover:cursor-pointer
-                                    hover:scale-90
-                                    p-1 border border-gray-400 hover:border-black
-                                    ">
-                                        <button type="submit" name="editCommentButton" id="editCommentButton" value="" >
-                                            <img class="
-                                                h-3
-                                                w-3
-                                                orangefilter
-                                                "
-                                                src="/frontend/src/pics/edit.png" alt="edit icon" />
-                                        </button>
-                                    </form>
-                                    {{end}}
-                                    
-                        
-                                </div>
-        
-                                <div id="bodyComment">
-                                    {{.Body}}
-                                </div>
-                                
-                            </div>
-                            {{end}}
-        
-                    </div>
-        
-                    <div id="footerReadPostContainer"
-                    class="flex flex-row 
-                    items-center space-x-2
-                    justify-center
-                    w-max  p-2 rounded-t-xl
+                    
+                    </button>
+    
+                </form>
+    
+                <div id="commentsWrapper" class="
+                    p-2 ml-0 w-full
+                   flex flex-col space-y-1
+                    text-white font-bold
+                    
                     ">
                         
-        
-                        {{if eq $.User.Name .SpecificPost.CreatedBy}}
-        
+                        <div id="commentsContainer" class="
+                        w-max h-auto bg-custom rounded-lg p-2
+                        flex flex-col justify-center items-center
+                        ">
+                            <div id="infosPostContainer" class="
+                            shrink-0
+                            h-max
+                            justify-between
+                            w-full
+                            flex-row flex
+                            items-center
+                            rounded-lg
+                            
+                            ">
+                                <div id="authorDateCommentContainer"
+                                class="flex flex-row 
+                                space-x-2
+                                items-center
+                                rounded-lg p-0.5
+                                ">
+                                    
+                                    <p id="authorComment" class="
+                                    text-sm
+                                    text-customorange
+                                    font-bold
+                                    hover:cursor-pointer
+                                    hover:underline"
+                                    > AR. Akir</p>
+    
+                                    <p id="dateComment" class="
+                                    text-xs
+                                    text-gun
+                                    font-bold"
+                                    >01/01/2000</p>
+    
+                                </div>
+                                
+                                <form action="/DeleteComment" method="post" class="
+                                flex flex-row 
+                                justify-center items-center
+                                mb-0 group hover:cursor-pointer
+                                hover:scale-90
+                                p-1 
+                                ">
+                                    <button type="submit" id="deleteCommentButton" >
+                                        <img class="
+                                            h-3
+                                            w-3
+                                            rounded-lg 
+                                            orangefilter
+                                            "
+                                            src="/frontend/src/pics/trash.png" alt="trash icon" />
+                                    </button>
+                                </form>
+    
+                                <form action="/EditComment" method="post" class="
+                                flex flex-row 
+                                justify-center items-center
+                                mb-0 group hover:cursor-pointer
+                                hover:scale-90
+                                p-1 
+                                ">
+                                    <button type="submit" name="editCommentButton" id="editCommentButton" value="" >
+                                        <img class="
+                                            h-3
+                                            w-3
+                                            orangefilter
+                                            "
+                                            src="/frontend/src/pics/edit.png" alt="edit icon" />
+                                    </button>
+                                </form>
+                                
+                    
+                            </div>
+    
+                            <div id="bodyComment">
+                               Body
+                            </div>
+                            
+                        </div>
                         
-                        <button type="submit" id="editPostButton" name="editPostButton" value="" class="
-                        px-3 py-2 
-                        text-xl text-center text-gray-700
-                        focus:ring-1 focus:outline-none focus:ring-gray-700
-                        hover:text-orange-600
-                        font-yanice
-                        group
+    
+                </div>
+    
+                <div id="footerReadPostContainer"
+                class="flex flex-row 
+                items-center space-x-2
+                justify-center
+                w-max  p-2 rounded-t-xl
+                ">
+                    
+    
+                    {{if eq $.User.Name .SpecificPost.CreatedBy}}
+    
+                    
+                    <button type="submit" id="editPostButton" name="editPostButton" value="" class="
+                    px-3 py-2 
+                    text-xl text-center text-gray-700
+                    focus:ring-1 focus:outline-none focus:ring-gray-700
+                    hover:text-orange-600
+                    font-yanice
+                    group
+                    ">
+                    <img class="
+                        h-6
+                        w-6
+                        rounded-lg 
+                        orangefilter
+                        "
+                        src="/frontend/src/pics/edit.png" alt="edit icon" />
+                    </button>
+                    
+    
+                    <form action="/DeletePost" method="post" class="
+                        w-max h-max flex flex-row justify-center items-center
+                        group mb-0
+                        hover:cursor-pointer
+                    ">
+                        <input type="hidden" name="postId" value="{{.SpecificPost.Id}}">
+                        <button type="submit" name="deleteButton" class="
                         ">
                         <img class="
                             h-6
@@ -1108,166 +612,96 @@ bg-gray-200
                             rounded-lg 
                             orangefilter
                             "
-                            src="/frontend/src/pics/edit.png" alt="edit icon" />
+                            src="/frontend/src/pics/trash.png" alt="trash icon" />
                         </button>
-                        
-        
-                        <form action="/DeletePost" method="post" class="
-                            w-max h-max flex flex-row justify-center items-center
-                            group mb-0
-                            hover:cursor-pointer
-                        ">
-                            <input type="hidden" name="postId" value="{{.SpecificPost.Id}}">
-                            <button type="submit" name="deleteButton" class="
+                    </form>
+    
+                    {{end}}
+    
+                    <form action="/Like" method="post" id="Like&DislikeReadPostContainer" class="
+                    flex flex-row 
+                    space-x-5 mb-0
+                    justify-center
+                    items-center"> 
+                        <input type="hidden" name="postId" value="{{.SpecificPost.Id}}">
+                        <input type="hidden" name="like" value="{{.SpecificPost.Like}}">
+                        <input type="hidden" name="dislike" value="{{.SpecificPost.Dislike}}">
+            
+                            
+                            
+                            <button  type="submit" name="likeBtn" id="likeBtnRead" value="like" class=
+                            "
+                            hover:bg-opacity-80
+                            flex flex-row 
+                            items-center
+                            space-x-1
+                            bg-opacity-60
+                            w-max h-max
+                            bg-orange-500 p-1 rounded-lg
                             ">
-                            <img class="
+                            <p class="
+                            text-md
+                            text-gray-100
+                            font-yanice
+                            "
+                            >{{.SpecificPost.Like}}</p>
+    
+                            <img id="likeImage" class="
+                            h-6
+                            w-6
+                            rounded-lg  
+                            scaleLike
+                            "
+                            src="/frontend/src/pics/like.png" alt="CategoryLogo" />
+    
+                            </button>
+    
+                            <button type="submit" name="likeBtn" id="dislikeBtnRead" value="dislike"class="
+                            flex flex-row 
+                            hover:bg-opacity-80
+                            bg-opacity-80
+                            items-center
+                            space-x-1
+                            w-max h-max
+                            w-auto h-auto
+                            bg-orange-800 bg-opacity-60 rounded-lg p-1
+                            mt-0.5 
+                            ">
+                                <p class="
+                                text-md
+                                text-gray-100  
+                                font-yanice"
+                                >{{.SpecificPost.Dislike}}</p>
+                                <img id="dislikeImage" class="
                                 h-6
                                 w-6
                                 rounded-lg 
-                                orangefilter
-                                "
-                                src="/frontend/src/pics/trash.png" alt="trash icon" />
-                            </button>
-                        </form>
-        
-                        {{end}}
-        
-                        <form action="/Like" method="post" id="Like&DislikeReadPostContainer" class="
-                        flex flex-row 
-                        space-x-5 mb-0
-                        justify-center
-                        items-center"> 
-                            <input type="hidden" name="postId" value="{{.SpecificPost.Id}}">
-                            <input type="hidden" name="like" value="{{.SpecificPost.Like}}">
-                            <input type="hidden" name="dislike" value="{{.SpecificPost.Dislike}}">
-                
-                                
-                                
-                                <button  type="submit" name="likeBtn" id="likeBtnRead" value="like" class=
-                                "
-                                hover:bg-opacity-80
-                                flex flex-row 
-                                items-center
-                                space-x-1
-                                bg-opacity-60
-                                w-max h-max
-                                bg-orange-500 p-1 rounded-lg
-                                ">
-                                <p class="
-                                text-md
-                                text-gray-100
-                                font-yanice
-                                "
-                                >{{.SpecificPost.Like}}</p>
-        
-                                <img id="likeImage" class="
-                                h-6
-                                w-6
-                                rounded-lg  
                                 scaleLike
                                 "
-                                src="/frontend/src/pics/like.png" alt="CategoryLogo" />
-        
-                                </button>
-        
-                                <button type="submit" name="likeBtn" id="dislikeBtnRead" value="dislike"class="
-                                flex flex-row 
-                                hover:bg-opacity-80
-                                bg-opacity-80
-                                items-center
-                                space-x-1
-                                w-max h-max
-                                w-auto h-auto
-                                bg-orange-800 bg-opacity-60 rounded-lg p-1
-                                mt-0.5 
-                                ">
-                                    <p class="
-                                    text-md
-                                    text-gray-100  
-                                    font-yanice"
-                                    >{{.SpecificPost.Dislike}}</p>
-                                    <img id="dislikeImage" class="
-                                    h-6
-                                    w-6
-                                    rounded-lg 
-                                    scaleLike
-                                    "
-                                    src="/frontend/src/pics/dislike.png" alt="CategoryLogo" />
-        
-                                </button>
-        
-                        </form>
-                            
-                    </div>
-                            
+                                src="/frontend/src/pics/dislike.png" alt="CategoryLogo" />
+    
+                            </button>
+    
+                    </form>
+                        
                 </div>
-        
+                        
             </div>
-            
-            <div id="footer" class="
-            flex 
-            boxshadowBottom
-            rounded
-            items-center
-            justify-between 
-            w-full h-auto
-            ">
-    
-                <div  id="logoYnovContainerBottom"class="
-                flex flex-row items-center
-                rounded p-2
-                ">
-                    <img src="/frontend/src/pics/prj_ynov.jpg" class="h-8 mr-3" alt="Logo" />
-                    
-    
-                    <span class="
-                    text-black text-2xl
-                    py-1 font-landasans
-                    
-                    "
-                    >1ère année Informatique
-                    </span>
-                </div>
-    
-                <div id="About" class="flex flex-row space-x-1">
-    
-                    <a id="github" href="https://ytrack.learn.ynov.com/git/syohan/forum_ynov" class="
-                    focus:ring-4 focus:outline-none
-                    focus:ring-customyellow
-                    text-2xl font-yanice
-                    rounded-lg
-                    p-2
-                    text-center
-                        hover:shadow-sm hover:shadow-gray-900 
-                    ">
-                        <img src="/frontend/src/pics/github.png" class="w-10 h-10">
-                    </a>
-    
-                    <a id="linkedin" href="https://www.linkedin.com/in/cl%C3%A9ment-penot-09326b143/" class="
-                    focus:ring-4 focus:outline-none
-                    focus:ring-blue-100 dark:focus:ring-blue-400 
-                    rounded-lg
-                    p-2 
-                    items-center
-                    flex flex-row 
-                    hover:shadow-sm hover:shadow-gray-900                    space-x-1">
-                        <img src="/frontend/src/pics/linkedin.png" class="w-10 h-10">
-                    </a>
-    
-                </div>
-        </div> 
-        </div> 
+
+        </div>
         
     </div>
 
 
 
+    <script type="module" src ="/frontend/src/js/categoriesList.js" defer></script>
+    <script type="module" src ="/frontend/src/js/preferencesList.js" defer></script>
     <script type="module" src ="/frontend/src/js/othersList.js" defer></script>
+
+    <script type="module" src ="/frontend/src/js/userInfos.js" defer></script>
+
     <script type="module" src ="/frontend/src/js/registration.js" defer></script>
-    <script type="module" src ="/frontend/src/js/login.js" defer></script>
-    <script type="module" src ="/frontend/src/js/userInfosReadPost.js" defer></script>
-    <script type="module" src ="/frontend/src/js/updatePost.js"></script>
-    <script type="module" src ="/frontend/src/js/updateComment.js" defer></script>
+
 
 </body>
 </html>
