@@ -16,10 +16,6 @@
 }
 
 @font-face {
-    font-family: "Yanice";
-    src: url("../fonts/Yanice-PKY5g.otf");
-}
-@font-face {
     font-family: "Goldleaf";
     src: url("../fonts/GoldleafBoldPersonalUseBold-eZ4dO.ttf");
 }
@@ -100,7 +96,7 @@
     @apply items-center;
     @apply bg-white;
     @apply shadow-sm  shadow-gray-500;
-    @apply text-gray-600 text-lg font-yanice;
+    @apply text-gray-600 text-lg font-bold;
 
 }
 
@@ -119,7 +115,7 @@
     @apply items-center;
     @apply bg-white;
     @apply shadow-sm  shadow-gray-500;
-    @apply text-gray-900 text-lg font-yanice;
+    @apply text-gray-900 text-lg font-bold;
 
 }
 
@@ -131,7 +127,7 @@
     @apply p-2;
     @apply shadow-sm  shadow-gray-400;
     @apply border border-gray-300  border-l-gray-100 rounded;
-    @apply text-gray-500 text-lg font-yanice;
+    @apply text-gray-500 text-lg font-bold;
 }
 
 
@@ -146,7 +142,7 @@
     @apply items-center;
     @apply bg-white;
     @apply shadow-sm  shadow-gray-500;
-    @apply text-gray-600 text-lg font-yanice;
+    @apply text-gray-600 text-lg font-bold;
 
 }
 
@@ -184,7 +180,7 @@
     @apply space-x-2;
     @apply hover:cursor-pointer;
     @apply hover:text-orange-700;
-    @apply text-gray-900 text-lg font-yanice;
+    @apply text-gray-900 text-lg font-bold;
 
 }
 
@@ -230,7 +226,7 @@ box-shadow: 0px 4px 4px #dadada;
     @apply space-x-2;
     @apply hover:cursor-pointer;
     @apply hover:text-orange-700;
-    @apply text-gray-900 text-lg font-yanice;
+    @apply text-gray-900 text-lg font-bold;
 
 }
 
@@ -380,7 +376,7 @@ box-shadow: 0px 4px 4px #dadada;
     @apply bg-orange-400;
     @apply hover:bg-opacity-100;
     @apply bg-opacity-80;
-    @apply font-yanice;
+    @apply font-bold;
     @apply rounded-lg;
     @apply text-lg;
     @apply px-4;
@@ -397,7 +393,7 @@ box-shadow: 0px 4px 4px #dadada;
     @apply bg-orange-400;
     @apply hover:bg-opacity-100;
     @apply bg-opacity-80;
-    @apply font-yanice;
+    @apply font-bold;
     @apply rounded-lg;
     @apply text-lg;
     @apply px-4;
@@ -413,7 +409,7 @@ box-shadow: 0px 4px 4px #dadada;
     @apply text-gray-700;
     @apply hover:text-orange-400;
     @apply bg-opacity-80;
-    @apply font-yanice;
+    @apply font-bold;
     @apply rounded-lg;
     @apply text-lg;
     @apply text-center;
@@ -450,7 +446,7 @@ box-shadow: 0px 4px 4px #dadada;
 }
 
 .titlewhite{
-    @apply font-yanice text-xl text-white w-full text-center ;
+    @apply font-bold text-xl text-white w-full text-center ;
 }
 
 
@@ -469,7 +465,7 @@ box-shadow: 0px 4px 4px #dadada;
 }
 
 .textareablack{
-    @apply font-yanice text-black w-full h-full px-1;
+    @apply font-bold text-black w-full h-full px-1;
 }
 .home{
     @apply cursor-pointer;
@@ -477,7 +473,7 @@ box-shadow: 0px 4px 4px #dadada;
     @apply bg-orange-400;
     @apply hover:bg-opacity-100;
     @apply bg-opacity-80;
-    @apply font-yanice;
+    @apply font-bold;
     @apply rounded-lg;
     @apply text-lg;
     @apply font-bold;

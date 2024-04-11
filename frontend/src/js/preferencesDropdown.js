@@ -74,13 +74,13 @@ const showDropdownPreferences = () => {
     optionPreferences.classList.add('option');
     optionPreferences.addEventListener("click", () => selectOptionPreferences(category));
 
-    const imagePreferences = document.createElement("img");
+    // const imagePreferences = document.createElement("img");
     const PreferencesContent = document.createElement("p");
     PreferencesContent.textContent = category.text;
-    imagePreferences.src= category.imageUrl;
-    imagePreferences.alt= category.text;
-    imagePreferences.classList.add("logosize");
-    optionPreferences.appendChild(imagePreferences);
+    // imagePreferences.src= category.imageUrl;
+    // imagePreferences.alt= category.text;
+    // imagePreferences.classList.add("logosize");
+    // optionPreferences.appendChild(imagePreferences);
     optionPreferences.appendChild(PreferencesContent);
    
 

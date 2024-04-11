@@ -315,7 +315,6 @@ bg-gray-900
 
     <div id="popup" class="popup">
 
-
         <div id="userPic" class="
         pr-16 w-full flex flex-row justify-center items-center
         ">
@@ -338,86 +337,6 @@ bg-gray-900
         </div>
 
     </div>
-
-    <div id="modal" class="modal">
-        <span class="closeLogin">&times;</span>
-        <div class="
-                rounded-lg sm:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700">
-            
-            <form action="/Login" method="post" class="space-y-4 p-10 ">
-                <h3 class="text-2xl font-yanice text-gray-900 dark:text-white">Sign in to our platform</h3>
-                <div>
-                    <label for="emailLogin" class="text-lg font-yanice text-gray-900 block mb-2 dark:text-gray-300">Your email</label>
-                    <input type="text" id="emailLogin" name="emailLogin" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg  block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="name@company.com" required="">
-                </div>
-                    <div>
-                        <label for="passwordLogin" class="text-lg font-yanice text-gray-900 block mb-2 dark:text-gray-300">Your password</label>
-                        <input type="text" id="passwordLogin" name="passwordLogin" placeholder="••••••••" class="bg-gray-50 border border-red text-gray-900 sm:text-sm rounded-lg block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required="">
-                    </div>
-                        
-                    <div id="infoLogin" class="p-5 flex flex-col space-y-2">
-                        <button type="submit" value="submit" id="loginSubmitButton" class="w-full text-white bg-orange-400 hover:opacity-100 opacity-80 focus:ring-4 focus:ring-blue-300 font-yanice rounded-lg text-lg px-5 py-2.5 text-center ">Login</button>
-                        <div class="text-md font-yanice text-gray-500 dark:text-gray-300">
-                                Not registered? <a href="#" class="text-orange-600 hover:underline ">Create
-                                    account</a>
-                        </div>
-    
-                    </div>
-            </form>
-        </div>
-    </div>
-
-    <div id="modal2" class="modal">
-        <span class="closeRegistration">&times;</span>
-        <div class="  
-        rounded-lg sm:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700">
-        <form action="/Registration" method="post" class="space-y-4 p-10 ">
-            <h3 class="text-2xl font-yanice text-gray-900 dark:text-white">Sign in to our platform</h3>
-            
-            <div>
-                <label for="email" class="text-lg font-yanice text-gray-900 block mb-2 dark:text-gray-300">Your email</label>
-                <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg  block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="name@company.com" required="">
-            </div>
-
-            <div>
-                <label for="name" class="text-lg font-yanice text-gray-900 block mb-2 dark:text-gray-300">Your Username</label>
-                <input 
-                type="text"
-                class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg  block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                id="name" name="name"
-                placeholder="Username" />
-            </div>
-
-                <div>
-                    <label for="password" class="text-lg font-yanice text-gray-900 block mb-2 dark:text-gray-300">Your password</label>
-                    <input type="password" id="password" name="password" placeholder="••••••••" class="bg-gray-50 border border-red text-gray-900 sm:text-sm rounded-lg block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required="">
-                </div>
-                
-                    
-                <button type="submit"  value="submit" id="registerSubmitButton" class="w-full text-white bg-orange-400 hover:opacity-100 opacity-80 focus:ring-4 focus:ring-blue-300 font-yanice rounded-lg text-lg px-5 py-2.5 text-center ">Register</button>
-
-                <div id="infoLogin" class="p-5 flex flex-col space-y-2">
-                    <div class="text-md font-yanice text-gray-500 dark:text-gray-300">
-                            Already registered? <a href="#" class="text-orange-600 hover:underline ">Connect
-                                account</a>
-                    </div>
-
-                </div>
-                <div class="text-center font-yanice text-sm text-gray-600 opacity-80 mt-4">
-                    By signing up, you agree to the 
-                    <a class="no-underline font-yanice  border-b border-grey-dark opacity-80 text-gray-600" href="#">
-                        Terms of Service
-                    </a> and 
-                    <a class="no-underline   font-yanice border-b border-grey-dark opacity-80 text-gray-600" href="#">
-                        Privacy Policy
-                    </a>
-                </div>
-        </form>
-        </div>
-    </div>
-
-
-
 
     <div id="modalMessage" class="modalMessage hidden">
 
@@ -727,26 +646,14 @@ bg-gray-900
     </div>
 
 
-    <!-- <script type="module" src ="/frontend/src/js/preferencesDropdown2.js" defer></script> -->
-    <!-- <script type="module" src ="/frontend/src/js/preferencesDropdown.js" defer></script> -->
-    <!-- <script type="module" src ="/frontend/src/js/preferencesDropdownPost.js" defer></script> -->
+
     <script type="module" src ="/frontend/src/js/categoriesList.js" defer></script>
     <script type="module" src ="/frontend/src/js/preferencesList.js" defer></script>
     <script type="module" src ="/frontend/src/js/othersList.js" defer></script>
-    <!-- <script type="module" src ="/frontend/src/js/login.js" defer></script> -->
-    <!-- <script type="module" src ="/frontend/src/js/viewPost.js" defer></script> -->
-
-
-    <!-- <script type="module" src ="/frontend/src/js/checkPassword.js" defer></script> -->
-
-    <!-- <script type="module" src ="/frontend/src/js/readPost.js" defer></script> -->
-    <script type="module" src ="/frontend/src/js/updatePost.js" defer></script>
-    <!-- <script type="module" src ="/frontend/src/js/comment.js" defer></script> -->
 
     <script type="module" src ="/frontend/src/js/userInfos.js" defer></script>
 
     <script type="module" src ="/frontend/src/js/registration.js" defer></script>
-    <!-- <script type="module" src ="/frontend/src/js/filterReset.js" defer></script> -->
 
 
 </body>
