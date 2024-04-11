@@ -4,6 +4,7 @@ use App\Http\Controllers\Pages\ThreadController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\Pages\HomeController;
+use App\Http\Controllers\Pages\TagController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,9 @@ Route::group(['prefix' => 'threads', 'as' => 'threads.'], function () {
     Route::get('create', [ThreadController::class, 'create'])->name('create');
     Route::post('/', [ThreadController::class, 'store'])->name('store');
     Route::get('/{category:slug}/{thread:slug}', [ThreadController::class, 'show'])->name('show');
+    Route::group(['as' => 'tags.'], function () {
+        Route::get('/{tag:slug}', [TagController::class, 'index'])->name('index');
+    });
 });
 
 //Route::get('/category/discussion/topic', [PageController::class, 'single'])->name('single');
