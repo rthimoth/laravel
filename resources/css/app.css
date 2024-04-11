@@ -9,5 +9,10 @@
     .scaleLike{
         @apply transition focus:scale-75 scale-100 ease-in-out duration-75;
     }
+    .textareaHome{
+        @apply font-normal text-sm text-start w-full mb-0;
+        @apply rounded-lg bg-customgray;
+        @apply pl-1;
+    }
     
 }
