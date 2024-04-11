@@ -1,23 +1,137 @@
-<article class="p-5 bg-white shadow">
 
-    <div class="grid grid-cols-8 gap-2">
+            <li class="
+                rounded-lg
+                w-full h-max
+                flex flex-col
+                space-y-8
+                items-center
+                justify-center
+                bg-custom
+                p-5
+                hover:bg-white hover:bg-opacity-10
+                ">
+                <div id="mainPostContainer" class="flex flex-col space-y-2 items-center
+                justify-center w-full">
+                {{-- Content --}}
+                    <div id="infosPostContainer" class="
+                    h-auto
+                    justify-between
+                    w-full
+                    flex-row flex
+                    items-center
+                    rounded-lg
+                    m-0
+                    ">
+                        <a href="{{ route('single') }}" class="space-y-2">
+                            <p class="
+                            text-lg tracking-wide
+                            text-white
+                            font-bold
+                            "
+                            > Title</p>
+                        </a>
+                        
 
-        {{-- Avatar --}}
-        <div class="col-span-1">
-            <x-user.avatar />
-        </div>
+                        <form action="/Like" method="post" id="Like&DislikeContainer" class="
+                        flex 
+                        mb-0
+                        justify-center
+                        items-center"> 
+                                <button  type="submit" name="likeBtn" id="likePostBtn" value="like" class=
+                                "
+                                flex
+                                justify-center
+                                items-center
+                                ">
 
-        {{-- Content --}}
+                                    <img id="likeImage" class="
+                                    h-6
+                                    w-6
+                                    rounded-lg  
+                                    scaleLike
+                                    "
+                                    src="/frontend/src/pics/like.png" alt="CategoryLogo" />
+
+                                </button>
+                        </form>
+
+                    </div>
+                    {{-- Category --}}
+                    <ul id="categoriesList" class=" flex flex-row item-center justify-start w-full -ml-2">
+                        <a class="
+                        rounded-2xl
+                        p-2 bg-customgray
+                        text-xs/[2px]
+                        text-gun
+                        font-bold
+                        "
+                        > Category</a>
+                    </ul>
+                </div>
+                <div id="footerPostContainer" class="flex flex-row 
+                items-center
+                space-x-96
+                w-full
+                m-0">
+                    <div id="authorinfosContainer" class="flex flex-row 
+                    items-center
+                    space-x-2
+                    m-0
+                    ">
+                        {{-- Avatar --}}
+                        <x-user.avatar />
+
+                        <div id="authordateContainer"
+                        class="flex flex-col 
+                        items-start
+                        justify-between
+                        ">
+                        
+                            <p class="
+                            text-sm 
+                            font-bold
+                            text-white
+                            hover:cursor-pointer
+                            hover:underline"
+                            > AR. Jakir</p>
+
+                            
+                            {{-- Post Date --}}
+                            <p class="
+                            text-xs
+                            font-bold
+                            text-gun"
+                            >3 days ago</p>
+                        </div>
+                    </div>
+                    {{-- Indicators --}}
+                    <div id="reactionsContainer" class="flex flex-row space-x-8
+                    items-center justify-between ">
+                    {{-- Likes Count --}}
+                        <p class="
+                        text-xs
+                        font-bold
+                        text-gun"
+                        >180 likes</p>
+                    {{-- Comments Count --}}
+                        <p class="
+                        text-xs
+                        font-bold
+                        text-gun"
+                        >184 comments</p>
+                    </div>
+                </div>
+                
+            </li>
+
+        <!-- {{-- Content --}}
         <div class="col-span-6 space-y-4">
 
             <a href="{{ route('single') }}" class="space-y-2">
                 <h2 class="text-xl tracking-wide hover:text-blue-400">This is the heading for the forum post</h2>
-                <p class="text-gray-500">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime laboriosam quo recusandae tempora voluptatum dignissimos quidem nemo animi, repellendus saepe?
-                </p>
-            </a>
+            </a> -->
 
-            {{-- Indicators --}}
+            <!-- {{-- Indicators --}}
             <div class="flex space-x-6">
                 {{-- Comments Count --}}
                 <div class="flex items-center space-x-2">
@@ -44,16 +158,14 @@
                     <span class="text-xs text-gray-500">4 hours ago</span>
                 </div>
             </div>
-        </div>
+        </div> -->
 
-        {{-- Category --}}
+        <!-- {{-- Category --}}
         <div class="col-span-1 space-y-3">
             <div>
                 <a href="" class="p-1 text-sm text-white bg-indigo-400 rounded">
                     Category One
                 </a>
             </div>
-        </div>
+        </div> -->
 
-    </div>
-</article>

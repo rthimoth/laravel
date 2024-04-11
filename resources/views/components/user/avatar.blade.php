@@ -1,7 +1,9 @@
 @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
-<button class="flex items-center text-sm transition border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300">
-    {{-- <img class="object-cover w-8 h-8 rounded-full" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" /> --}}
-    <img class="object-cover w-16 h-16 rounded" src="{{ asset('img/avatars/person1.jpg') }}" alt="Person One" />
+<button class="flex bg-white p-2 items-center transition border-2 border-transparent rounded-3xl focus:outline-none focus:border-gray-300">
+    {{-- <img class="object-cover shrink-0 
+    h-6 w-6 " src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" /> --}}
+    <img class="object-cover shrink-0 
+    h-6 w-6 " src="{{ asset('img/avatars/person1.png') }}" alt="Person One" />
 </button>
 @else
 <span class="inline-flex rounded-md">

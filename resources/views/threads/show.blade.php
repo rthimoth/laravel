@@ -3,8 +3,13 @@
 
         <x-partials.sidenav />
 
-        <section class="flex flex-col col-span-3 gap-y-4">
-            <small class="text-sm text-gray-400">category>discussion>topic</small>
+        <section class="flex flex-col
+        w-full h-auto
+        items-center
+        justify-center
+        col-span-2 gap-y-4">
+
+           
 
             <article class="p-5 bg-white shadow">
                 <div class="grid grid-cols-8">
