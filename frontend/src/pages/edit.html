@@ -30,14 +30,13 @@ bg-gray-900
 
             <div id="logoTop" class="
             flex flex-row items-center
-            p-2
+            p-2 space-x-2
             ">
-                <img src="/frontend/src/pics/logo.png" class="h-12 w-12 " alt="Logo" />
+                <img src="/frontend/src/pics/logo.png" class="h-6 w-6 " alt="Logo" />
                 <span class="
                 text-xl
                 text-customorange
                 font-bold
-                
                 "
                 >FORUM
                 </span>
@@ -85,10 +84,9 @@ bg-gray-900
     </div>
 
     <div id="sidebarLeftContainer" class="
-        overflow-auto
         text-white
         ml-0
-        flex flex-col space-y-4
+        space-y-4
         fixed left-0 top-24
         h-full 
         w-48
@@ -104,7 +102,7 @@ bg-gray-900
         justify-center
         ">
 
-        <div id="categoriesSideContainer" class=" h-3/4 w-full pl-4 p-6 pt-4 rounded-2xl bg-custom flex flex-col space-y-4">
+        <div id="categoriesSideContainer" class="h-1/2 w-full pl-4 p-6 pt-4 rounded-2xl bg-custom flex flex-col space-y-4">
 
             <h2 id="titleMyposts"
             class="
@@ -115,7 +113,7 @@ bg-gray-900
             <div id="categoriesList" class="
             w-full 
             flex flex-col
-            overflow-y-auto
+            overflow-y-hidden
              "></div>
         </div>
         <div id="preferencesSideContainer" class="pl-4 p-6 pt-4 h-auto rounded-2xl bg-custom w-full flex flex-col space-y-4">
@@ -430,38 +428,6 @@ bg-gray-900
         </div>
     </div>
 
-
-
-
-    <div id="modalMessage" class="modalMessage hidden">
-
-        <span id="closeMessage" class="closeLogin">&times;</span>
-
-        <div id="messageWrapper" class=" flex flex-col items-center justify-center w-auto">
-
-            <div class="tenor-gif-embed w-full pb-2 border-b-2 border-green-500" data-postid="25970986" data-share-method="host" data-aspect-ratio="1.00946" data-width="20%"><a href="https://tenor.com/view/dance-green-gif-25970986"></a></div>
-            
-            <div class="hidden tenor-gif-embed w-full pb-2 border-b-2 border-red-500" data-postid="14464277" data-share-method="host" data-aspect-ratio="1.87135" data-width="20%"></div> 
-            
-            <div id="warningMessageContainer" class="hidden my-8 flex flex-col py-4 border-y-2  border-red-500">
-                <h2 class="font-yanice self-center text-gray-600 text-xl">YOU HAVE AN ERROR MESSAGE : </h2>
-                <h2 class="font-yanice text-black text-xl" >{{.ProcessMessage}}  {{.User.Name}}</h2>
-            </div>
-
-            <div id="confirmationMessageContainer" class="my-8 flex flex-col py-4 border-y-2  border-green-500">
-                <h2 class="font-yanice self-center text-gray-600 text-lg">YOU HAVE A CONFIRMATION MESSAGE: </h2>
-                <h2 class="font-yanice text-green-500 text-2xl" >{{.ProcessMessage}}  {{.User.Name}}</h2>
-            </div>
-
-            <div id="gifMessageContainer" class=" h-auto w-full flex flex-row justify-center items-center px-5">
-                <div class="tenor-gif-embed" data-postid="16705876" data-share-method="host" data-aspect-ratio="1.25984" data-width="40%">
-                <a href="https://tenor.com/view/cool-emoji-wink-thumbs-up-great-gif-16705876"></a></div>
-                 
-                <div id="warningCat" class="hidden tenor-gif-embed border-4 border-red-400" data-postid="10786328" data-share-method="host" data-aspect-ratio="1.33333" data-width="40%"></div>
-            </div>
-
-        </div>
-
     </div>
 
     <div id="overlay" class="
@@ -502,12 +468,12 @@ bg-gray-900
                 justify-between
                 text-xl">
 
-                    <h3 class=" w-max bg-white rounded p-2 font-bold text-gray-600 dark:text-white">Edit a post : </h3>
+                    <h3 class=" w-max bg-custom rounded p-2 font-bold text-white">Edit a post : </h3>
 
                     <button  class="
                         flex flex-row
                         rounded-lg
-                        bg-white
+                        bg-custom
                         self-center
                         group
                         px-3 py-2
@@ -522,7 +488,7 @@ bg-gray-900
 
                         <h3
                         type="text" 
-                        class="font-custom grow self-end" placeholder="Image"
+                        class="font-bold text-white grow self-end" placeholder="Image"
                         >Image</h3>
                         
                     </button>
