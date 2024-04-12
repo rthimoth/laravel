@@ -209,7 +209,7 @@ box-shadow: 0px 4px 4px #dadada;
     @apply items-center;
     @apply justify-end;
     @apply py-2 px-1;
-    @apply w-full h-max;
+    @apply w-auto h-max;
     @apply hover:cursor-pointer;
     @apply hover:bg-white hover:bg-opacity-5 ;
     @apply focus:text-white focus:bg-white ;
@@ -424,22 +424,10 @@ box-shadow: 0px 4px 4px #dadada;
 }
 
 .popup {
-    position: fixed;
-    @apply -right-60 top-72;
-    @apply flex flex-col space-y-8;
+    @apply flex flex-col space-y-6 py-4;
     @apply justify-center items-center;
-    @apply pt-12 pl-4 ;
-    @apply h-auto w-96;
-    display: none;
-    z-index: 50;
-    @apply bg-custom rounded-b-xl;
-    
+    @apply rounded-b-xl;
 }
-
-.popup.active {
-    display: block;
-  }
-
 
 .titlegray{
     @apply font-bold text-sm text-white w-full text-center ;
