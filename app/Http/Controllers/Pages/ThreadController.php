@@ -90,8 +90,8 @@ class ThreadController extends Controller
 
 
 
-    public function destroy(Thread $thread)
-    {
-        //
-    }
+//    public function destroy(Thread $thread)
+//    {
+//        //
+//    }
 }
