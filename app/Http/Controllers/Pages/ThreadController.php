@@ -8,12 +8,15 @@ use App\Http\Requests\ThreadStoreRequest;
 use App\Jobs\CreateThread;
 use App\Models\Tag;
 use App\Models\Thread;
+use App\Policies\ThreadPolicy;
 use Illuminate\Auth\Middleware\EnsureEmailIsVerified;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Category;
 use Illuminate\Support\Str;
 use Mews\Purifier\Facades\Purifier;
+use App\Jobs\UpdateThread;
+
 
 class ThreadController extends Controller
 {
@@ -52,14 +55,39 @@ class ThreadController extends Controller
 
     public function edit(Thread $thread)
     {
-        //
+//        return $thread;
+
+        $this->authorize(ThreadPolicy::UPDATE, $thread);
+
+        $oldTags = $thread->tags()->pluck('id')->toArray();
+        $selectedCategory = $thread->category;
+
+//        return $oldTags;
+
+        return view('pages.threads.edit', [
+            'thread'            => $thread,
+            'tags'              => Tag::all(),
+            'oldTags'           => $oldTags,
+            'categories'        => Category::all(),
+            'selectedCategory'  => $selectedCategory,
+        ]);
     }
 
 
-    public function update(Request $request, Thread $thread)
+    public function update(ThreadStoreRequest $request, Thread $thread)
     {
-        //
+        $this->authorize(ThreadPolicy::UPDATE, $thread);
+
+        // Make sure to pass the $thread and $request in the correct order
+        // Also, ensure that $request is an instance of ThreadStoreRequest
+        $updateThreadJob = UpdateThread::fromRequest($thread, $request);
+
+        // Dispatch the job synchronously or push it to the queue
+        dispatch($updateThreadJob);
+
+        return redirect()->route('threads.index')->with('success', 'Thread Updated!');
     }
+
 
 
     public function destroy(Thread $thread)
