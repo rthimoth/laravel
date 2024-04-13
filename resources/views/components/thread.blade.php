@@ -53,7 +53,7 @@
         <div class="absolute right-2">
             <div class="flex space-x-2">
                 @foreach($thread->tags() as $tag)
-                    <a href="" class="p-1 text-xs text-white bg-green-400 rounded">
+                    <a href="{{ route('threads.tags.index', $tag->slug()) }}" class="p-1 text-xs text-white bg-green-400 rounded">
                         {{ $tag->name() }}
                     </a>
                 @endforeach
