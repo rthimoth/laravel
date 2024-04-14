@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Pages\ReplyController;
 use App\Http\Controllers\Pages\ThreadController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
@@ -34,6 +35,12 @@ Route::group(['prefix' => 'threads', 'as' => 'threads.'], function () {
     });
 });
 
+Route::group(['prefix' => 'replies', 'as' => 'replies.'], function () {
+    Route::post('/', [ReplyController::class, 'store'])->name('store');
+    Route::get('/{reply}/edit', [ReplyController::class, 'edit'])->name('edit');
+    Route::put('/{reply}', [ReplyController::class, 'update'])->name('update');
+    Route::delete('/{reply}', [ReplyController::class, 'destroy'])->name('destroy');
+});
 //Route::get('/category/discussion/topic', [PageController::class, 'single'])->name('single');
 
 //Route::get('discussion/create', [PageController::class, 'create'])->name('create');
