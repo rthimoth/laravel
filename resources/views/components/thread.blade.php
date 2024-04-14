@@ -4,8 +4,8 @@
 
         {{-- Avatar --}}
         <div class="col-span-1">
-            <x-user.avatar />
-            <span class="text-xs text-gray-500">{{ $thread->author()->name }}</span>
+            <x-user.avatar :user="$thread->author()"/>
+{{--            <span class="text-xs text-gray-500">{{ $thread->author()->name }}</span>--}}
         </div>
 
         {{-- Content --}}
@@ -70,7 +70,7 @@
                     @endcan
 
                     @can(App\Policies\ThreadPolicy::DELETE, $thread)
-                        <livewire:thread.delete />
+                        <livewire:thread.delete :thread="$thread" :key="$thread->id()" />
                     @endcan
             </div>
         </div>
