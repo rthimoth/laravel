@@ -12,8 +12,7 @@
 
                     {{-- Avatar --}}
                     <div class="col-span-1">
-                        <x-user.avatar/>
-                        <span>{{ $thread->author()->name }}</span>
+                        <x-user.avatar :user="$thread->author()" />
                     </div>
 
                     {{-- Thread --}}
@@ -57,13 +56,16 @@
 
             {{-- Replies --}}
 {{--            <div class="mt-6 space-y-5">--}}
+            <h2 class="mb-0 text-sm font-bold uppercase">Replies</h2>
             @foreach($thread->replies() as $reply)
+
+            <livewire:reply.update :reply="$reply" :key="$reply->id()"/>
+
             <div class="p-5 space-y-4 text-gray-500 bg-white border-l border-blue-300 shadow">
                 <div class="grid grid-cols-8">
-                    <button class="flex items-center text-sm transition border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300">
-                         <img class="object-cover w-8 h-8 rounded-full" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
-{{--                        <img class="object-cover w-16 h-16 rounded" src="{{ asset('img/avatars/person4.jpg') }}" alt="Person One" />--}}
-                    </button>
+                    <div class="col-span-1">
+                        <x-user.avatar :user="$reply->author()" />
+                    </div>
                     <div class="col-span-7 space-y-4">
                         <p>
                             {!! $reply->body() !!}
@@ -100,10 +102,9 @@
             <div class="p-5 space-y-4 bg-white shadow">
                 <h2 class="text-gray-500">Post a reply</h2>
                 <x-form action="{{ route('replies.store') }}">
-{{--                    @csrf--}}
-{{--                    <!-- ... -->--}}
+
                     <div>
-                        <x-trix name="body" styling="bg-gray-100 shadow-inner h-40" />
+                        <input type="text" name="body" class="w-full bg-gray-100 shadow-inner h-40" />
                         <x-form.error for="body"/>
                         <input type="hidden" name="replyAble_id" value="{{ $thread->id() }}">
                         <input type="hidden" name="replyAble_type" value="threads">
