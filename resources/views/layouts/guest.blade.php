@@ -4,13 +4,15 @@
     <x-partials.head />
 </head>
 
-<body class="bg-gray-900">
+<body class="h-screen w-screen
+    flex flex-col justify-between 
+    bg-gray-900">
 
     {{-- Navbar --}}
     <x-partials.nav />
 
     {{-- Slot --}}
-    <div class="mb-8 font-sans antialiased text-gray-900">
+    <div class="self-start grow font-sans antialiased text-gray-900">
         {{ $slot }}
     </div>
 
