@@ -632,7 +632,7 @@ select {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 
 .optionSidebar > :not([hidden]) ~ :not([hidden]) {
@@ -642,26 +642,16 @@ select {
 }
 
 .optionSidebar {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
+  padding: 0.5rem;
   height: -moz-max-content;
   height: max-content;
-  width: auto;
+  width: 100%;
 }
 
 .optionSidebar:hover {
   cursor: pointer;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   --tw-bg-opacity: 0.05;
-}
-
-.optionSidebar:focus {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .optionSidebar {
@@ -2253,8 +2243,8 @@ select {
   padding-top: 2rem;
 }
 
-.pl-4 {
-  padding-left: 1rem;
+.pl-1 {
+  padding-left: 0.25rem;
 }
 
 .pb-24 {
