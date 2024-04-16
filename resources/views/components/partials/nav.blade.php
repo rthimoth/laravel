@@ -10,7 +10,7 @@
         justify-between 
         bg-custom">
             <!-- Logo -->
-            <a class="flex items-center flex-row p-2 space-x-2"  href="{{ route('home') }}">
+            <a class="flex items-center flex-row p-2 space-x-2"  href="{{ route('threads.index') }}">
     
                 <x-logos.main class="h-12 w-12 " alt="Logo" />
                 <span class="

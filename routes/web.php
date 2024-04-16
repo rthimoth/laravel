@@ -1,8 +1,11 @@
 <?php
 
+use App\Http\Controllers\Pages\ReplyController;
+use App\Http\Controllers\Pages\ThreadController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\Pages\HomeController;
+use App\Http\Controllers\Pages\TagController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,21 +22,45 @@ require 'admin.php';
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/category/discussion/topic', [PageController::class, 'single'])->name('single');
+Route::group(['prefix' => 'threads', 'as' => 'threads.'], function () {
+    Route::get('/', [ThreadController::class, 'index'])->name('index');
+    Route::get('create', [ThreadController::class, 'create'])->name('create');
+    Route::post('/', [ThreadController::class, 'store'])->name('store');
+    Route::get('/threads/{thread:slug}/edit', [ThreadController::class, 'edit'])->name('edit');
+    Route::post('/{thread:slug}', [ThreadController::class, 'update'])->name('update');
+    Route::get('/{category:slug}/{thread:slug}', [ThreadController::class, 'show'])->name('show');
 
-Route::get('discussion/create', [PageController::class, 'create'])->name('create');
+    Route::group(['as' => 'tags.'], function () {
+        Route::get('/{tag:slug}', [TagController::class, 'index'])->name('index');
+    });
+});
+
+Route::group(['prefix' => 'replies', 'as' => 'replies.'], function () {
+    Route::post('/', [ReplyController::class, 'store'])->name('store');
+    Route::get('/{reply}/edit', [ReplyController::class, 'edit'])->name('edit');
+    Route::put('/{reply}', [ReplyController::class, 'update'])->name('update');
+    Route::delete('/{reply}', [ReplyController::class, 'destroy'])->name('destroy');
+});
+//Route::get('/category/discussion/topic', [PageController::class, 'single'])->name('single');
+
+//Route::get('discussion/create', [PageController::class, 'create'])->name('create');
 
 Route::get('dashboard/users', [PageController::class, 'users'])->name('users');
 
-Route::get('/dashboard/categories/index', [PageController::class, 'categoriesIndex'])->name('categories.index');
-Route::get('/dashboard/categories/create', [PageController::class, 'categoriesCreate'])->name('categories.create');
-
-Route::get('/dashboard/threads/index', [PageController::class, 'threadsIndex'])->name('threads.index');
-Route::get('/dashboard/threads/create', [PageController::class, 'threadsCreate'])->name('threads.create');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
+Route::get('/dashboard/categories/index', [PageController::class, 'categoriesIndex'])->name('categories.index');
+Route::get('/dashboard/categories/create', [PageController::class, 'categoriesCreate'])->name('categories.create');
+
+//Route::get('/dashboard/threads/index', [PageController::class, 'threadsIndex'])->name('threads.index');
+//Route::get('/dashboard/threads/create', [PageController::class, 'threadsCreate'])->name('threads.create');
+
 Route::delete('/admin/categories/{category}', 'App\Http\Controllers\Admin\CategoryController@destroy')
     ->name('admin.categories.destroy');
+
+Route::delete('/admin/tags/{tag}', 'App\Http\Controllers\Admin\TagController@destroy')
+    ->name('admin.tags.destroy');
+

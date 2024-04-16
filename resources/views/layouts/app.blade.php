@@ -41,6 +41,11 @@
                 </header>
                 @endif
 
+                {{-- Alerts --}}
+                <div class="mx-6 mt-6">
+                    <x-alerts.main />
+                </div>
+
                 <!-- Page Content -->
                 <main class="m-6 ">
                     <div class="py-10">

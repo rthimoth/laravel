@@ -5,15 +5,14 @@
             <x-partials.sidenav />
 
             <div class="flex flex-col col-span-2 gap-y-4">
-                <x-threadbar />
-                <x-thread />
-                <x-thread />
-                <x-thread />
-                <x-thread />
-                <x-thread />
-                <x-thread />
-                <x-thread />
-                <x-thread />
+{{--                <x-thread />--}}
+{{--                <x-thread />--}}
+{{--                <x-thread />--}}
+{{--                <x-thread />--}}
+{{--                <x-thread />--}}
+{{--                <x-thread />--}}
+{{--                <x-thread />--}}
+{{--                <x-thread />--}}
             </div>
 
         </section>
