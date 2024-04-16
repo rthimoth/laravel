@@ -6,13 +6,13 @@
 
 <body class="h-screen w-screen
     flex flex-col justify-between 
-    bg-gray-900">
+    bg-gray-900 overflow-x-hidden">
 
     {{-- Navbar --}}
     <x-partials.nav />
 
     {{-- Slot --}}
-    <div class="self-start grow font-sans antialiased text-gray-900">
+    <div class="self-start grow w-full font-sans antialiased text-gray-900">
         {{ $slot }}
     </div>
 

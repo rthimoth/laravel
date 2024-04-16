@@ -1,11 +1,11 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="text-xl font-semibold leading-tight text-gray-800">
-            {{ __('Profile') }}
+        <h2 class="text-xl font-bold leading-tight text-white">
+            {{ __('My Account') }}
         </h2>
     </x-slot>
 
-    <div class="wrapper">
+    <div class="wrapper bg-custom p-6 rounded-lg">
         @if (Laravel\Fortify\Features::canUpdateProfileInformation())
         @livewire('profile.update-profile-information-form')
 

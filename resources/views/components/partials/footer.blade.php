@@ -26,7 +26,7 @@
                     </span>
                 </div>
 
-                <div id="About" class="flex flex-row space-x-1 bg-custom rounded-lg">
+                <div id="About" class="flex flex-row space-x-1 mr-4 bg-custom rounded-lg">
 
                     <a id="github" href="https://github.com/rthimoth/laravel" class="
                     text-2xl 

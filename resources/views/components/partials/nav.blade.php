@@ -9,23 +9,19 @@
         items-center
         justify-between 
         bg-custom">
-            <div class="flex">
-
-                <!-- Logo -->
-                <a class="flex items-center flex-row p-2 space-x-2"  href="{{ route('home') }}">
-      
-                    <x-logos.main class="h-12 w-12 " alt="Logo" />
-                    <span class="
-                    text-xl
-                    text-customorange
-                    font-bold
-                    "
-                    >FORUM
-                    </span>
+            <!-- Logo -->
+            <a class="flex items-center flex-row p-2 space-x-2"  href="{{ route('home') }}">
     
-                </a>
+                <x-logos.main class="h-12 w-12 " alt="Logo" />
+                <span class="
+                text-xl
+                text-customorange
+                font-bold
+                "
+                >FORUM
+                </span>
 
-            </div>
+            </a>
 
             <!-- {{-- Search Topic --}} -->
             <!-- <div class="flex items-center flex-grow">
@@ -60,9 +56,9 @@
                             @endif
                         </x-slot>
 
-                        <x-slot name="content">
+                        <x-slot name="content" class="bg-custom" >
                             <!-- Account Management -->
-                            <div class="block px-4 py-2 text-xs text-gray-400">
+                            <div class="block px-4 py-2 text-xs bg-custom text-white">
                                 {{ __('Manage Account') }}
                             </div>
 
