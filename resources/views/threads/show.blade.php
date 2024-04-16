@@ -14,10 +14,9 @@
                 shrink mb-2
                 h-auto
                 bg-custom
-                justify-between
+                justify-between items-center
                 w-full
                 flex
-                items-start
                 rounded-lg
                 
                 ">
@@ -45,20 +44,10 @@
 
                     </div>
                         
-                    <a  href="{{ route('home') }}" id="homeButton" class="
-                    group 
-                    cursor-pointer 
-                    rounded-lg border-gray-400 border-4 m-2 p-2 
-                    hover:opacity-90 hover:border-gray-500
+                    <a  href="{{ route('home') }}" id="homeButton" class=" text-white hover:text-orange-500  font-bold rounded-lg  px-5 py-2.5 text-center
                     ">
         
-                        <span class="
-                        self-start
-                        text-white text-lg
-                        py-1 font-yanice
-                        "
-                        >Back to Posts
-                        </span>
+                    Back to threads ->
         
                     </a> 
                 </div>
@@ -224,7 +213,7 @@
                                     w-5
                                     rounded-lg 
                                     "
-                                    src="/frontend/src/pics/paper-plane.png" alt="CommentariesSend" />
+                                    src="/img/comments/paper-plane.png" alt="CommentariesSend" />
                             
                             </button>
             
@@ -260,7 +249,7 @@
                                         {{-- <img class="object-cover w-8 h-8 rounded-full" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" /> --}}
                                         <img class="object-cover w-16 h-16 rounded" src="{{ asset('img/avatars/person4.jpg') }}" alt="Person One" />
                                     </button>
-                                                        
+                                        {{-- Author --}}         
                                         <p id="authorComment" class="
                                         text-sm
                                         text-customorange
