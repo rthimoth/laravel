@@ -47,7 +47,7 @@
                     <a  href="{{ route('home') }}" id="homeButton" class=" text-white hover:text-orange-500  font-bold rounded-lg  px-5 py-2.5 text-center
                     ">
         
-                    Back to threads ->
+                    Back to threads
         
                     </a> 
                 </div>
@@ -104,14 +104,14 @@
                                 rounded-lg  
                                 scaleLike
                                 "
-                                src="/img/like/like.png" alt="replylogo" />
+                                src="/img/comments/commentWhite.png" alt="replylogo" />
                                 {{-- Reply --}}
                                 <p class="
                                 text-sm
                                 text-white
                                 font-bold
                                 "
-                                >Reply </p>
+                                >Replies </p>
     
                             </a>
 
