@@ -14,5 +14,18 @@
         @apply rounded-lg bg-customgray;
         @apply pl-1;
     }
+    .optionSidebar{
+        @apply flex;
+        @apply flex-row;
+        @apply items-center;
+        @apply justify-end ;
+        @apply py-2 px-1 space-x-2;
+        @apply w-auto h-max;
+        @apply hover:cursor-pointer;
+        @apply hover:bg-white hover:bg-opacity-5 ;
+        @apply focus:text-white focus:bg-white ;
+        @apply text-white text-sm font-bold;
+    
+    }
     
 }
