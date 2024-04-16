@@ -52,9 +52,9 @@
                     </x-links.secondary>
                 @endcan
 
-{{--                @can(App\Policies\ReplyPolicy::DELETE, App\Models\Reply::find($replyId))--}}
-{{--                    <livewire:reply.delete :replyId="$replyId" :wire:key="$replyId" :page="request()->fullUrl()" />--}}
-{{--                @endcan--}}
+                @can(App\Policies\ReplyPolicy::DELETE, App\Models\Reply::find($replyId))
+                    <livewire:reply.delete :replyId="$replyId" :wire:key="$replyId" :page="request()->fullUrl()" />
+                @endcan
             </div>
 
         </div>
