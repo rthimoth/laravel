@@ -4,95 +4,355 @@
         <x-partials.sidenav />
 
         <section class="flex flex-col
-        w-full h-auto
-        items-center
+        w-full h-auto rounded-lg
+        items-center space-y-4
         justify-center
-        col-span-2 gap-y-4">
+        col-span-2 ">
 
-           
 
-            <article class="p-5 bg-white shadow">
-                <div class="grid grid-cols-8">
-
-                    {{-- Avatar --}}
-                    <div class="col-span-1">
+                <div id="infosPostContainer" class="
+                shrink mb-2
+                h-auto
+                bg-custom
+                justify-between
+                w-full
+                flex
+                items-start
+                rounded-lg
+                
+                ">
+                    <div 
+                    class="flex flex-row 
+                    space-x-2
+                    items-center
+                    rounded-lg p-2
+                    ">
+                        {{-- Avatar --}}
                         <x-user.avatar />
+                        {{-- Author --}}
+                        <p class="
+                        text-lg 
+                        text-customorange
+                        font-bold
+                        hover:cursor-pointer
+                        hover:underline"
+                        > AR. AKIR</p>
+                        {{-- Date Posted --}}
+                        <p class="
+                        text-white
+                        font-bold"
+                        >at  01/01/2000</p>
+
                     </div>
+                        
+                    <a  href="{{ route('home') }}" id="homeButton" class="
+                    group 
+                    cursor-pointer 
+                    rounded-lg border-gray-400 border-4 m-2 p-2 
+                    hover:opacity-90 hover:border-gray-500
+                    ">
+        
+                        <span class="
+                        self-start
+                        text-white text-lg
+                        py-1 font-yanice
+                        "
+                        >Back to Posts
+                        </span>
+        
+                    </a> 
+                </div>
 
                     {{-- Thread --}}
-                    <div class="col-span-7 space-y-6">
-                        <div class="space-y-3">
-                            <h2 class="text-xl tracking-wide hover:text-blue-400">This is the heading for the forum post</h2>
-                            <p class="text-gray-500">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum beatae quod eligendi consequatur omnis sequi veritatis quidem reiciendis asperiores sint illum debitis quam voluptates, nemo rem consectetur dolor error neque fuga nobis est magnam! Pariatur illum enim nobis laboriosam suscipit dolore aperiam aut. Id maiores debitis voluptatem esse expedita ullam!
-                            </p>
-                            <p class="text-gray-500">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum beatae quod eligendi consequatur omnis sequi veritatis quidem reiciendis asperiores sint illum debitis quam voluptates, nemo rem consectetur dolor error neque fuga nobis est magnam! Pariatur illum enim nobis laboriosam suscipit dolore aperiam aut. Id maiores debitis voluptatem esse expedita ullam!
-                            </p>
-                        </div>
+                    
 
-                        <div class="flex justify-between">
+                    <div id="Like&ReplyReadPostContainer" class="
+                            flex flex-row 
+                            space-x-5 mb-0
+                            justify-center
+                            items-center"> 
 
-                            {{-- Likes --}}
-                            <div class="flex space-x-5 text-gray-500">
-                                <a href="" class="flex items-center space-x-2">
-                                    <x-heroicon-o-heart class="w-5 h-5 text-red-300" />
-                                    <span class="text-xs font-bold">148</span>
-                                </a>
-                            </div>
-
-                            {{-- Date Posted --}}
-                            <div class="flex items-center text-xs text-gray-500">
-                                <x-heroicon-o-clock class="w-4 h-4 mr-1" />
-                                Posted: 4hours Ago
-                            </div>
-
-
-                            {{-- Reply --}}
-                            <a href="" class="flex items-center space-x-2 text-gray-500">
-                                <x-heroicon-o-reply class="w-5 h-5" />
-                                <span class="text-sm">Reply</span>
+                            <h3 class="w-fullrounded-t-xl text-center               bg-custom  text-xl p-2 font-bold text-white ">Title </h3>
+                    
+                            <a  href="" id="likeBtnRead" class=
+                            "
+                            bg-custom
+                            flex flex-row 
+                            items-center
+                            space-x-1
+                            w-max h-max
+                            hover:bg-orange-500 p-1 rounded-lg
+                            ">
+                                <img id="likeImage" class="
+                                h-6
+                                w-6
+                                rounded-lg  
+                                scaleLike
+                                "
+                                src="/img/like/like.png" alt="likelogo" />
+                                {{-- Likes --}}
+                                <p class="
+                                text-sm
+                                text-white
+                                font-bold
+                                "
+                                >Likes </p>
+    
                             </a>
+
+                            <a href="" id="replyBtnRead" class=
+                            "
+                            bg-custom
+                            flex flex-row 
+                            items-center
+                            space-x-1
+                            w-max h-max
+                            hover:bg-orange-500 p-1 rounded-lg
+                            ">
+                                <img id="replyImage" class="
+                                h-6
+                                w-6
+                                rounded-lg  
+                                scaleLike
+                                "
+                                src="/img/like/like.png" alt="replylogo" />
+                                {{-- Reply --}}
+                                <p class="
+                                text-sm
+                                text-white
+                                font-bold
+                                "
+                                >Reply </p>
+    
+                            </a>
+
+            
                         </div>
-                    </div>
-                </div>
-            </article>
 
-            {{-- Replies --}}
+                    <div id="readPostContainer" class="
+                    rounded-lg
+                    w-full
+                    flex flex-col
+                    space-y-8
+                    items-center 
+                    justify-center
+                    ">
+            
+                        <div id="textPostContainer"
+                        class=" bg-custom flex w-full h-auto justify-center items-center "
+                        >
 
-            <div class="p-5 space-y-4 text-gray-500 bg-white border-l border-blue-300 shadow">
-                <div class="grid grid-cols-8">
-                    <button class="flex items-center text-sm transition border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300">
-                        {{-- <img class="object-cover w-8 h-8 rounded-full" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" /> --}}
-                        <img class="object-cover w-16 h-16 rounded" src="{{ asset('img/avatars/person4.jpg') }}" alt="Person One" />
-                    </button>
-                    <div class="col-span-7 space-y-4">
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil tenetur alias maiores, sequi magni nam incidunt a beatae veritatis animi suscipit omnis ipsam, accusantium vitae impedit vero molestiae nostrum illo perspiciatis rerum? Recusandae dicta cumque nulla officiis explicabo aliquid nobis? Consectetur dicta fugiat quas amet corporis facere possimus asperiores harum?
-                        </p>
-                        <div class="flex justify-between">
-                            {{-- Likes --}}
-                            <div class="flex space-x-5 text-gray-500">
-                                <a href="" class="flex items-center space-x-2">
-                                    <x-heroicon-o-heart class="w-5 h-5 text-red-300" />
-                                    <span class="text-xs font-bold">30</span>
-                                </a>
+                            <div id="bodyPost" class="
+                            w-full h-auto
+                            text-lg text-white
+                            font-bold
+                            p-2
+                            ">Body
                             </div>
-
-                            {{-- Date Posted --}}
-                            <div class="flex items-center text-xs text-gray-500">
-                                <x-heroicon-o-clock class="w-4 h-4 mr-1" />
-                                Replied: 2 mintues ago
-                            </div>
+                            
                         </div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="p-5 space-y-4 bg-white shadow">
-                <h2 class="text-gray-500">Post a reply</h2>
-                <x-trix name="about" styling="bg-gray-100 shadow-inner h-40" />
-            </div>
+                                    
+                        <!-- <div id="footerReadPostContainer"
+                        class="flex flex-row 
+                        items-center space-x-2
+                        justify-center
+                        w-max  p-2 rounded-t-xl
+                        ">
+                            
+                            <button type="submit" id="editPostButton" name="editPostButton" value="" class="
+                            px-3 py-2 
+                            text-xl text-center text-gray-700
+                            focus:ring-1 focus:outline-none focus:ring-gray-700
+                            hover:text-orange-600
+                            font-yanice
+                            group
+                            ">
+                            <img class="
+                                h-6
+                                w-6
+                                rounded-lg 
+                                orangefilter
+                                "
+                                src="/frontend/src/pics/edit.png" alt="edit icon" />
+                            </button>
+                            
+            
+                            <form action="/DeletePost" method="post" class="
+                                w-max h-max flex flex-row justify-center items-center
+                                group mb-0
+                                hover:cursor-pointer
+                            ">
+                                <input type="hidden" name="postId">
+                                <button type="submit" name="deleteButton" class="
+                                ">
+                                <img class="
+                                    h-6
+                                    w-6
+                                    rounded-lg 
+                                    orangefilter
+                                    "
+                                    src="/frontend/src/pics/trash.png" alt="trash icon" />
+                                </button>
+                            </form>
+            
+                            
+                                
+                        </div> -->
+            
+                        <form action="/CreationComment" method="post" class="
+                            justify-between items-center
+                            flex flex-col p-2
+                            m-0 rounded-lg bg-gray-500
+                            space-y-2
+                            w-full ">
+            
+                            <!-- <textarea name="bodyComment" id="bodyComment" class=" w-full grow h-10 rounded-lg bg-custom text-white font-bold m-0 pl-1" placeholder="insert Comment here" cols="30" rows="10"></textarea> -->
+                            <x-trix name="about" styling=" m-0 pl-1 w-full  font-bold h-40 bg-gray-100" />
+                            
+                            <button type="submit" name="buttonCommentReadPost" value="Add" class="
+                            h-full w-20 p-2
+                            self-end flex justify-center items-center
+                            hover:cursor-pointer
+                            bg-orange-500 hover:bg-orange-400
+                            font-yanice
+                            rounded-lg
+                            ">
+                            
+                                <img class="
+                                    h-5
+                                    w-5
+                                    rounded-lg 
+                                    "
+                                    src="/frontend/src/pics/paper-plane.png" alt="CommentariesSend" />
+                            
+                            </button>
+            
+                        </form>
+                        {{-- Replies --}}
+                        <div id="commentsWrapper" class="
+                        p-2 ml-0 w-full
+                        flex flex-col space-y-1
+                        text-white font-bold
+                        ">
+                                
+                            <div id="commentsContainer" class="
+                            w-max h-auto bg-custom rounded-lg p-2
+                            flex flex-col justify-center items-center
+                            ">
+                                <div id="infosPostContainer" class="
+                                shrink-0
+                                h-max
+                                justify-between
+                                w-full
+                                flex-row flex
+                                items-center
+                                rounded-lg
+                                
+                                ">
+                                    <div id="authorDateCommentContainer"
+                                    class="flex flex-row 
+                                    space-x-2
+                                    items-center
+                                    rounded-lg p-0.5
+                                    ">
+                                    <button class="flex items-center text-sm transition border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300">
+                                        {{-- <img class="object-cover w-8 h-8 rounded-full" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" /> --}}
+                                        <img class="object-cover w-16 h-16 rounded" src="{{ asset('img/avatars/person4.jpg') }}" alt="Person One" />
+                                    </button>
+                                                        
+                                        <p id="authorComment" class="
+                                        text-sm
+                                        text-customorange
+                                        font-bold
+                                        hover:cursor-pointer
+                                        hover:underline"
+                                        > AR. Akir</p>
+                                        
+                                        {{-- Date Posted --}}
+                                        <p id="dateComment" class="
+                                        text-xs
+                                        text-gun
+                                        font-bold"
+                                        >01/01/2000</p>
+
+                                        {{-- Likes --}}
+                                        <a  href="" id="likeBtnRead" class=
+                                        "
+                                        bg-custom
+                                        flex flex-row 
+                                        items-center
+                                        space-x-1
+                                        w-max h-max
+                                        hover:bg-orange-500 p-1 rounded-lg
+                                        ">
+                                            <img id="likeImage" class="
+                                            h-6
+                                            w-6
+                                            rounded-lg  
+                                            scaleLike
+                                            "
+                                            src="/img/like/like.png" alt="likelogo" />
+                                            {{-- Likes --}}
+                                            <p class="
+                                            text-sm
+                                            text-white
+                                            font-bold
+                                            "
+                                            >Likes </p>
+                
+                                        </a>
+        
+                                    </div>
+                                    
+                                    <!-- <form action="/DeleteComment" method="post" class="
+                                    flex flex-row 
+                                    justify-center items-center
+                                    mb-0 group hover:cursor-pointer
+                                    hover:scale-90
+                                    p-1 
+                                    ">
+                                        <button type="submit" id="deleteCommentButton" >
+                                            <img class="
+                                                h-3
+                                                w-3
+                                                rounded-lg 
+                                                orangefilter
+                                                "
+                                                src="/frontend/src/pics/trash.png" alt="trash icon" />
+                                        </button>
+                                    </form> -->
+        
+                                    <!-- <form action="/EditComment" method="post" class="
+                                    flex flex-row 
+                                    justify-center items-center
+                                    mb-0 group hover:cursor-pointer
+                                    hover:scale-90
+                                    p-1 
+                                    ">
+                                        <button type="submit" name="editCommentButton" id="editCommentButton" value="" >
+                                            <img class="
+                                                h-3
+                                                w-3
+                                                orangefilter
+                                                "
+                                                src="/frontend/src/pics/edit.png" alt="edit icon" />
+                                        </button>
+                                    </form> -->
+                                    
+                        
+                                </div>
+        
+                                <div id="bodyComment">
+                                Body
+                                </div>
+                                
+                            </div>
+            
+                        </div>
+
+                                
+                    </div>
         </section>
     </main>
 </x-guest-layout>

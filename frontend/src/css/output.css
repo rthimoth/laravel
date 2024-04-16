@@ -609,10 +609,6 @@ video {
   margin: 2.5rem;
 }
 
-.m-2{
-  margin: 0.5rem;
-}
-
 .mx-0{
   margin-left: 0px;
   margin-right: 0px;
@@ -883,10 +879,6 @@ video {
   flex-shrink: 0;
 }
 
-.shrink{
-  flex-shrink: 1;
-}
-
 .grow{
   flex-grow: 1;
 }
@@ -1129,11 +1121,6 @@ video {
 .border-red-400{
   --tw-border-opacity: 1;
   border-color: rgb(248 113 113 / var(--tw-border-opacity));
-}
-
-.border-gray-400{
-  --tw-border-opacity: 1;
-  border-color: rgb(212 215 220 / var(--tw-border-opacity));
 }
 
 .border-orange-100{
@@ -1490,14 +1477,14 @@ video {
   color: rgb(239 68 68 / var(--tw-text-opacity));
 }
 
-.text-gray-800{
-  --tw-text-opacity: 1;
-  color: rgb(47 49 54 / var(--tw-text-opacity));
-}
-
 .text-gray-100{
   --tw-text-opacity: 1;
   color: rgb(242 243 245 / var(--tw-text-opacity));
+}
+
+.text-gray-800{
+  --tw-text-opacity: 1;
+  color: rgb(47 49 54 / var(--tw-text-opacity));
 }
 
 .no-underline{
@@ -1859,6 +1846,23 @@ video {
 
 .boxshadowBottomReduced {
   box-shadow: 0px 2px 2px #dadada;
+}
+
+.scaleLike{
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-duration: 75ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scaleLike:focus{
+  --tw-scale-x: .75;
+  --tw-scale-y: .75;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .optionSidebar{
@@ -2411,11 +2415,6 @@ video {
   border-color: rgb(249 115 22 / var(--tw-border-opacity));
 }
 
-.hover\:border-gray-500:hover{
-  --tw-border-opacity: 1;
-  border-color: rgb(107 114 128 / var(--tw-border-opacity));
-}
-
 .hover\:bg-white:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -2469,10 +2468,6 @@ video {
 
 .hover\:opacity-100:hover{
   opacity: 1;
-}
-
-.hover\:opacity-90:hover{
-  opacity: 0.9;
 }
 
 .focus\:border:focus{

@@ -202,6 +202,9 @@ box-shadow: 0px 4px 4px #dadada;
 .boxshadowBottomReduced {
     box-shadow: 0px 2px 2px #dadada;
 }
+.scaleLike{
+    @apply transition focus:scale-75 scale-100 ease-in-out duration-75;
+}
 
 .optionSidebar{
     @apply flex;
