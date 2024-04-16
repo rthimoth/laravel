@@ -56,40 +56,13 @@
 
             {{-- Replies --}}
 {{--            <div class="mt-6 space-y-5">--}}
-            <h2 class="mb-0 text-sm font-bold uppercase">Replies</h2>
-            @foreach($thread->replies() as $reply)
-
-            <livewire:reply.update :reply="$reply" :key="$reply->id()"/>
-
-            <div class="p-5 space-y-4 text-gray-500 bg-white border-l border-blue-300 shadow">
-                <div class="grid grid-cols-8">
-                    <div class="col-span-1">
-                        <x-user.avatar :user="$reply->author()" />
-                    </div>
-                    <div class="col-span-7 space-y-4">
-                        <p>
-                            {!! $reply->body() !!}
-                        </p>
-                        <div class="flex justify-between">
-                            {{-- Likes --}}
-                            <div class="flex space-x-5 text-gray-500">
-                                <a href="" class="flex items-center space-x-2">
-                                    <x-heroicon-o-heart class="w-5 h-5 text-red-300" />
-                                    <span class="text-xs font-bold">30</span>
-                                </a>
-                            </div>
-
-                            {{-- Date Posted --}}
-                            <div class="flex items-center text-xs text-gray-500">
-                                <x-heroicon-o-clock class="w-4 h-4 mr-1" />
-                                Posted: {{ $reply->created_at->diffForHumans() }}
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="mt-6 space-y-5">
+                <h2 class="mb-0 text-sm font-bold uppercase">Replies</h2>
+                <hr>
+                @foreach($thread->replies() as $reply)
+                    <livewire:reply.update :reply="$reply" :wire:key="$reply->id()" />
+                @endforeach
             </div>
-{{--            </div>--}}
-            @endforeach
 
             {{--Replies--}}
 {{--            @foreach($thread->replies() as $reply)--}}
