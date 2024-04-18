@@ -72,7 +72,6 @@
                     ">
                     {{-- Avatar --}}
                     <x-user.avatar :user="$thread->author()"/>
-                    {{--<span class="text-xs text-gray-500">{{ $thread->author()->name }}</span>--}}
 
                         <div id="authordateContainer"
                         class="flex flex-col 
@@ -86,7 +85,7 @@
                             text-white
                             hover:cursor-pointer
                             hover:underline"
-                            > AR. Jakir</p>
+                            > {{ $thread->author()->name }}</p>
 
                             
                             {{-- Thread Date --}}

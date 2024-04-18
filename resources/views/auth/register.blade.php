@@ -30,7 +30,7 @@
             </div>
 
             @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
-            <div>
+            <div class="mt-4">
                 <x-jet-label for="terms">
                     <div class="flex items-center">
                         <x-jet-checkbox name="terms" id="terms" />

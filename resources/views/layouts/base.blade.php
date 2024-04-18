@@ -41,7 +41,7 @@
 
             <h2 id="titlePage" class=" text-lg font-bold text-white "> Authentification </h2>
 
-            <form action="/" method="post" id="homeButton" class="
+            <a href="{{ route('threads.index') }}" id="homeButton" class="
             mb-0 group p-1
             cursor-pointer 
             ">
@@ -52,7 +52,7 @@
                     shrink-0 
                     orangefilter
                     h-8 w-8
-                    "src="/frontend/src/pics/home.png" alt=" home icon">
+                    "src="/img/home/home.png" alt=" home icon">
 
                     <span class="
                     self-start
@@ -63,7 +63,7 @@
                     </span>
                 </button>
 
-            </form>
+            </a>
 
         </div>
         {{ $slot }}

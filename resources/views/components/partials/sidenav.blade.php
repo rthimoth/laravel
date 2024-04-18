@@ -6,7 +6,7 @@
         w-48
         px-2">
 
-    {{-- Categories --}}
+    <!-- {{-- Categories --}}
     <div class="w-full py-4  rounded-2xl bg-custom flex flex-col space-y-4">
         <h2 class=" pl-1 font-bold text-sm text-white">Categories</h2>
 
@@ -17,7 +17,7 @@
                 <span class="px-2 text-white bg-green-300 rounded">45</span>
             </a>
         </ul>
-    </div>
+    </div> -->
 
 
 </aside>

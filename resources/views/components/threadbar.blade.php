@@ -6,10 +6,6 @@ rounded-2xl
 flex flex-row space-x-5
 justify-center items-center" >
     
-    {{-- Avatar --}}
-    <x-user.avatar />
-    
-
     <div class=" flex flex-row space-x-5 w-5/6 m-0 ml-0">
 
         <input 
@@ -20,7 +16,7 @@ justify-center items-center" >
         />
 
         {{-- Start Discusson Button --}}
-        <a href="{{ route('create') }}" id="createPostButton" class="
+        <a href="{{ route('threads.create') }}" id="createPostButton" class="
         bg-customorange
         text-white
         font-bold
