@@ -28,11 +28,11 @@
 
                             {{-- Likes --}}
                             <div class="flex space-x-5 text-gray-500">
-{{--                                <livewire:like-reply :reply='App\Models\Reply::find($replyId)'>--}}
-                                <a href="#" class="flex items-center space-x-2">
-                                    <x-heroicon-o-heart class="w-5 h-5 text-red-300" />
-                                    <span class="text-xs font-bold">30</span>
-                                </a>
+                                <livewire:like-reply :reply='App\Models\Reply::find($replyId)'/>
+{{--                                <a href="#" class="flex items-center space-x-2">--}}
+{{--                                    <x-heroicon-o-heart class="w-5 h-5 text-red-300" />--}}
+{{--                                    <span class="text-xs font-bold">30</span>--}}
+{{--                                </a>--}}
                             </div>
 
                             {{-- Date Posted --}}
@@ -52,9 +52,9 @@
                     </x-links.secondary>
                 @endcan
 
-{{--                @can(App\Policies\ReplyPolicy::DELETE, App\Models\Reply::find($replyId))--}}
-{{--                    <livewire:reply.delete :replyId="$replyId" :wire:key="$replyId" :page="request()->fullUrl()" />--}}
-{{--                @endcan--}}
+                @can(App\Policies\ReplyPolicy::DELETE, App\Models\Reply::find($replyId))
+                    <livewire:reply.delete :replyId="$replyId" :wire:key="$replyId" :page="request()->fullUrl()" />
+                @endcan
             </div>
 
         </div>

@@ -5,6 +5,7 @@ namespace App\Models;
 
 use App\Models\ReplyAble;
 use App\Traits\HasAuthor;
+use App\Traits\HasLikes;
 use App\Traits\HasTimestamps;
 use App\Traits\ModelHelpers;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -15,13 +16,22 @@ use Illuminate\Support\Str;
 class Reply extends Model
 {
     use HasFactory;
+    use HasLikes;
     use HasAuthor;
     use HasTimestamps;
     use ModelHelpers;
 
+    const TABLE = 'replies';
+
     protected $table = 'replies';
 
-    protected $fillable = ['body'];
+    protected $fillable = [
+        'body',
+    ];
+
+    protected $with = [
+        'likesRelation',
+    ];
 
     public function id(): int
     {

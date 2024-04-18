@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Traits\HasAuthor;
+use App\Traits\HasLikes;
 use App\Traits\HasReplies;
 use App\Traits\HasTags;
 use Illuminate\Database\Eloquent\Builder;
@@ -14,6 +15,7 @@ use App\Models\ReplyAble;
 
 class Thread extends Model implements ReplyAble
 {
+    use HasLikes;
     use HasFactory;
     use HasTags;
     use HasAuthor;
@@ -35,6 +37,7 @@ class Thread extends Model implements ReplyAble
         'authorRelation',
         'category',
         'tagsRelation',
+        'likesRelation',
     ];
 
     public function category(): BelongsTo

@@ -20,6 +20,7 @@ class User extends Authenticatable implements MustVerifyEmail
     use TwoFactorAuthenticatable;
     use ModelHelpers;
 
+    const TABLE = 'users';
     const DEFAULT = 1;
     const MODERATOR = 2;
     const ADMIN = 3;
