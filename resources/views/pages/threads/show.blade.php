@@ -67,7 +67,6 @@
             {{--Replies--}}
 {{--            @foreach($thread->replies() as $reply)--}}
 {{--                <div class="p-5 space-y-4 text-gray-500 bg-white border-1 border-blue-300 shadow">--}}
-
 {{--                </div>--}}
 {{--            @endforeach--}}
 

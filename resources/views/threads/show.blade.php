@@ -26,8 +26,9 @@
                     items-center
                     rounded-lg p-2
                     ">
+
                         {{-- Avatar --}}
-                        <x-user.avatar />
+                        <x-user.avatar :user="$thread->author()"/>
                         {{-- Author --}}
                         <p class="
                         text-lg 
@@ -35,12 +36,16 @@
                         font-bold
                         hover:cursor-pointer
                         hover:underline"
-                        > AR. AKIR</p>
+                        >$thread->author()</p>
                         {{-- Date Posted --}}
                         <p class="
                         text-white
                         font-bold"
-                        >at  01/01/2000</p>
+                        > at {{ $thread->created_at->diffForHumans() }}</p>
+
+                        <x-alerts.main/>
+                        <small class="text-sm text-gray-400">Threads>{{ $category->name }}>{{ $thread->title() }}>topic</small>
+
 
                     </div>
                         
@@ -61,7 +66,7 @@
                             justify-center
                             items-center"> 
 
-                            <h3 class="w-fullrounded-t-xl text-center               bg-custom  text-xl p-2 font-bold text-white ">Title </h3>
+                            <h3 class="w-fullrounded-t-xl text-center bg-custom  text-xl p-2 font-bold text-white ">{{ $thread->title }} </h3>
                     
                             <a  href="" id="likeBtnRead" class=
                             "
@@ -136,7 +141,7 @@
                             text-lg text-white
                             font-bold
                             p-2
-                            ">Body
+                            "> {!! $thread->body() !!}
                             </div>
                             
                         </div>
@@ -188,44 +193,53 @@
                             
                                 
                         </div> -->
-            
-                        <form action="/CreationComment" method="post" class="
-                            justify-between items-center
-                            flex flex-col p-2
-                            m-0 rounded-lg bg-gray-500
-                            space-y-2
-                            w-full ">
-            
-                            <!-- <textarea name="bodyComment" id="bodyComment" class=" w-full grow h-10 rounded-lg bg-custom text-white font-bold m-0 pl-1" placeholder="insert Comment here" cols="30" rows="10"></textarea> -->
-                            <x-trix name="about" styling=" m-0 pl-1 w-full  font-bold h-40 bg-gray-100" />
-                            
-                            <button type="submit" name="buttonCommentReadPost" value="Add" class="
-                            h-full w-20 p-2
-                            self-end flex justify-center items-center
-                            hover:cursor-pointer
-                            bg-orange-500 hover:bg-orange-400
-                            font-yanice
-                            rounded-lg
-                            ">
-                            
-                                <img class="
-                                    h-5
-                                    w-5
-                                    rounded-lg 
-                                    "
-                                    src="/img/comments/paper-plane.png" alt="CommentariesSend" />
-                            
-                            </button>
-            
-                        </form>
+                        @auth
+                            <form action="{{ route('replies.store') }}" class="
+                                justify-between items-center
+                                flex flex-col p-2
+                                m-0 rounded-lg bg-gray-500
+                                space-y-2
+                                w-full ">
+                                <input type="hidden" name="replyAble_id" value="{{ $thread->id() }}">
+                                <input type="hidden" name="replyAble_type" value="threads">
+                                <textarea name="body" id="bodyComment" class=" w-full grow h-10 rounded-lg bg-custom text-white font-bold m-0 pl-1" placeholder="insert Comment here" cols="30" rows="10"></textarea>
+                                
+                                <!-- <x-trix name="about" styling=" m-0 pl-1 w-full  font-bold h-40 bg-gray-100" /> -->
+                                {{-- Button --}}
+                                <button type="submit" name="buttonCommentReadPost" value="Add" class="
+                                h-full w-20 p-2
+                                self-end flex justify-center items-center
+                                hover:cursor-pointer
+                                bg-orange-500 hover:bg-orange-400
+                                font-yanice
+                                rounded-lg
+                                ">
+                                    {{ __('Post') }}
+                                    <img class="
+                                        h-5
+                                        w-5
+                                        rounded-lg 
+                                        "
+                                        src="/img/comments/paper-plane.png" alt="CommentariesSend" />
+                                
+                                </button>
+                
+                            </form>
+                        @else
+                            <div class ="bg-blue-200 p-4 text-gray-500 flex justify-between">
+                                <h2> Please login to leave a comment</h2>
+                                <a href="{{ route('login') }}">Login</a>
+                            </div>
+                        @endauth
                         {{-- Replies --}}
                         <div id="commentsWrapper" class="
                         p-2 ml-0 w-full
                         flex flex-col space-y-1
                         text-white font-bold
                         ">
+                        {{--  @foreach($thread->replies() as $reply)--}}
                                 
-                            <div id="commentsContainer" class="
+                        {{-- <div id="commentsContainer" class="
                             w-max h-auto bg-custom rounded-lg p-2
                             flex flex-col justify-center items-center
                             ">
@@ -263,7 +277,7 @@
                                         text-xs
                                         text-gun
                                         font-bold"
-                                        >01/01/2000</p>
+                                        >Posted: {{ $thread->created_at->diffForHumans() }}</p>
 
                                         {{-- Likes --}}
                                         <a  href="" id="likeBtnRead" class=
@@ -336,7 +350,8 @@
                                 Body
                                 </div>
                                 
-                            </div>
+                            </div>--}}
+                        {{--@endforeach--}}
             
                         </div>
 
