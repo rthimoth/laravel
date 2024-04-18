@@ -242,16 +242,18 @@
                 flex flex-col space-y-1
                 text-white font-bold
                 ">
-                {{--  @foreach($thread->replies() as $reply)--}}
+                
                         
-                {{--<div id="commentsContainer" class="
-                    w-max h-auto bg-custom rounded-lg p-2
-                    flex flex-col justify-center items-center
-                    ">
-                        
-                        
-                </div>--}}
-                {{--@endforeach--}}
+                    <div id="commentsContainer" class="
+                        w-max h-auto bg-custom rounded-lg p-2
+                        flex flex-col justify-center items-center
+                        ">
+                        @foreach($thread->replies() as $reply)
+                            <livewire:reply.update :reply="$reply" :wire:key="$reply->id()" />
+                        @endforeach
+                            
+                    </div>
+                
     
                 </div>
 
