@@ -21,13 +21,11 @@
                                     <select name="category" id="category" class="w-full text-sm border-gray-300 rounded-md shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
                                         <option value="">Select Category</option>
                                         @foreach($categories as $category)
-                                            <option value="{{ $category->id() }}"
-
-                                                @if($category->id() == $selectedCategory->id()) selected @endif>
-
-                                                {{$category->name()}}
-                                            </option>
-                                        @endforeach
+                                        <option value="{{ $category->id() }}"
+                                            @if($category->id() == $selectedCategory->id()) selected @endif>
+                                            {{$category->name()}}
+                                        </option>
+                                    @endforeach
                                     </select>
                                     <x-form.error for="category" />
                                 </div>
@@ -48,9 +46,10 @@
 
                                 <div class="w-full h-auto bg-custom p-2 rounded-lg">
                                     <x-form.label for="body" value="{{ __('Description') }}" />
-                                    <x-trix name="body" class="bg-white p-2 rounded-lg" styling="shadow-inner bg-white" />
-                                    {{ $thread->body() }}
+                                    <x-trix name="body" class="bg-white p-2 rounded-lg" styling="shadow-inner bg-white">
+                                        {{ $thread->body() }}
                                     </x-trix>
+
                                     <x-form.error for="body" />
                                 </div>
                                 {{-- Button --}}

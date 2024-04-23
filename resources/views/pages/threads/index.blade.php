@@ -9,7 +9,7 @@
                 <x-alerts.main />
                 <x-threadbar/>
                 @foreach($threads as $thread)
-                <x-thread :thread="$thread" />
+                    <x-thread :thread="$thread " />
                 @endforeach
 
                 {{-- Pagination --}}

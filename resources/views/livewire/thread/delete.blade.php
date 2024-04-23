@@ -1,5 +1,5 @@
 <div class="inline-flex items-center  rounded-2xl
-                        p-4 bg-customgray text-sm font-bold leading-5 text-white focus:outline-none focus:border-gray-200 transition">
+                        p-4 bg-customgray text-sm font-bold leading-5 text-white focus:outline-none focus:border-gray-200 transition hover:text-orange-500 ">
     <a wire:click="confirmThreadDeletion"
        wire:loading.attr="disabled"
        class="cursor-pointer">
