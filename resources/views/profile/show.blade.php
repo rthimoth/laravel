@@ -7,8 +7,9 @@
 
     <div class="wrapper bg-custom p-6 rounded-lg">
         @if (Laravel\Fortify\Features::canUpdateProfileInformation())
-        @livewire('profile.update-profile-information-form')
-
+        <div class="bg-custom">
+            @livewire('profile.update-profile-information-form')
+        </div>
         <x-jet-section-border />
         @endif
 
