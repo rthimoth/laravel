@@ -45,17 +45,18 @@
                         </a>
 
                     </div>
+                    
                     {{-- tags --}}
                     <ul id="categoriesList"  class=" flex flex-row item-center justify-start w-full -ml-2">
                     @foreach($thread->tags() as $tag)
                         <a href="{{ route('threads.tags.index', $tag->slug()) }}" class="
                         rounded-2xl
                         p-2 bg-customgray
-                        text-xs/[2px]
+                        text-xxs
                         text-gun
                         font-bold
                         "
-                        > {{ $tag->name() }}</a>
+                        >  {{ $tag->name() }}</a>
                     @endforeach
                     </ul>
                     

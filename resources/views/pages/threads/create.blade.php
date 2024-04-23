@@ -2,11 +2,8 @@
     <main class="grid grid-cols-4 gap-8 mt-8 wrapper">
         <x-partials.sidenav />
         <section class="flex flex-col col-span-3 gap-y-4">
-            <small class="text-sm text-gray-400">discussion>create</small>
-
             <article class="p-5 ">
                 <div class="grid grid-cols-8 ">
-
                     {{-- Create --}}
                     <div class="col-span-7 space-y-6">
                         <x-form action="{{ route('threads.store') }}">
@@ -30,9 +27,9 @@
                                 </div>
 
                                 {{-- Tags --}}
-                                <div>
+                                <div class="w-full h-auto bg-custom p-2 rounded-lg">
                                     <x-form.label for="tags" value="{{ __('Tags') }}" />
-                                    <select name="tags[]" id="tags" x-data="{}" x-init="function () { choices($el) }" class="w-full text-sm border-gray-300 rounded-md shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50" multiple>
+                                    <select name="tags[]" id="tags" x-data="{}" x-init="function () { choices($el) }" class="w-full text-sm border-gray-300 rounded-md shadow-sm focus:border-gray-500 focus:ring focus:ring-border-gray-500 focus:ring-opacity-50" multiple>
                                         @foreach($tags as $tag)
                                             <option value="{{$tag->id()}}">{{$tag->name()}}</option>
                                         @endforeach
@@ -43,7 +40,7 @@
 
                                 <div class="w-full h-auto bg-custom p-2 rounded-lg">
                                     <x-form.label for="body" value="{{ __('Description') }}" />
-                                    <x-trix name="about" class="bg-white p-2 rounded-lg" styling="shadow-inner bg-white" />
+                                    <x-trix name="body" class="bg-white p-2 rounded-lg" styling="shadow-inner bg-white" />
                                     <x-form.error for="body" />
                                 </div>
                                 {{-- Button --}}

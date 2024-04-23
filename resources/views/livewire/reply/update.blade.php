@@ -125,7 +125,7 @@
                         <div x-show="editReply">
 
                             <form wire:submit.prevent="updateReply">
-                                <input class="w-full bg-gray-100 border-none shadow-inner focus:ring-blue-500" type="text" name="replyNewBody" wire:model.lazy="replyNewBody" x-ref="textInput" x-on:keydown.enter="editReply = false" x-on:keydown.escape="editReply = false">
+                                <input class="w-full bg-gray-100 border-none shadow-inner focus:ring-white" type="text" name="replyNewBody" wire:model.lazy="replyNewBody" x-ref="textInput" x-on:keydown.enter="editReply = false" x-on:keydown.escape="editReply = false">
 
                                 <div class="mt-2 space-x-3 text-sm">
                                     <button type="button" class="text-green-400" x-on:click="editReply = false">
