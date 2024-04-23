@@ -10,7 +10,7 @@
         bg-custom
         p-5
         hover:bg-white hover:bg-opacity-10
-        " href="{{ route('threads.show', [$thread->category->slug, $thread->slug]) }}">
+        " >
 
         <div id="mainPostContainer" class="flex flex-col space-y-2 items-center
         justify-center w-full">
@@ -26,7 +26,7 @@
             ">
                 <a href="{{ route('threads.show', [$thread->category->slug, $thread->slug]) }}"  class="space-y-2">
                     <p class="
-                    text-lg tracking-wide
+                    text-xl tracking-wide
                     text-white
                     font-bold
                     "
@@ -78,12 +78,11 @@
 
                 <div id="authordateContainer"
                 class="flex flex-col 
-                items-start
+                items-start text-xs
                 justify-between
                 ">
                 
                     <p class="
-                    text-sm 
                     font-bold
                     text-white
                     hover:cursor-pointer
@@ -93,7 +92,7 @@
                     
                     {{-- Thread Date --}}
                     <p class="
-                    text-xs
+                    text-xxs
                     font-bold
                     text-gun"
                     >{{ $thread->created_at->diffForHumans() }}</p>
@@ -104,13 +103,13 @@
             items-center justify-between ">
                 {{-- Likes Count --}}
                 <p class="
-                text-xs
+                text-xxs
                 font-bold
                 text-gun"
                 >180 likes</p>
                 {{-- Comments Count --}}
                 <p class="
-                text-xs
+                text-xxs
                 font-bold
                 text-gun"
                 >184 comments</p>
@@ -118,7 +117,7 @@
 
             </div>
             {{-- Edit Button --}}
-                <div class="flex space-x-2 text-xs
+                <div class="flex space-x-2 
                 font-bold
                 text-gun">
                         @can(App\Policies\ThreadPolicy::UPDATE, $thread)

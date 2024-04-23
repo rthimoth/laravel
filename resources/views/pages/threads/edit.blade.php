@@ -12,13 +12,13 @@
                                 {{-- Title --}}
                                 <div class=" w-full h-auto bg-custom p-2 rounded-lg ">
                                     <x-form.label for="title" value="{{ __('Title') }}" />
-                                    <x-form.input id="title" class="block w-full mt-1" type="text" name="title" :value="$thread->title()"  required autofocus />
+                                    <x-form.input id="title" class="block w-full bg-gray-500  mt-1" type="text" name="title" :value="$thread->title()"  required autofocus />
                                     <x-form.error for="title" />
                                 </div>
                                 {{-- Category --}}
                                 <div class="w-full h-auto bg-custom p-2 rounded-lg">
                                     <x-form.label for="category" value="{{ __('Category') }}" />
-                                    <select name="category" id="category" class="w-full text-sm border-gray-300 rounded-md shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+                                    <select name="category" id="category" class="w-full text-sm bg-gray-500 rounded-md focus:ring focus:ring-gray-200 ">
                                         <option value="">Select Category</option>
                                         @foreach($categories as $category)
                                         <option value="{{ $category->id() }}"
@@ -33,7 +33,7 @@
                                 {{-- Tags --}}
                                 <div class="w-full h-auto bg-custom p-2 rounded-lg">
                                     <x-form.label for="tags" value="{{ __('Tags') }}" />
-                                    <select name="tags[]" id="tags" x-data="{}" x-init="function () { choices($el) }" class="w-full text-sm border-gray-300 rounded-md shadow-sm focus:border-gray-500 focus:ring focus:ring-border-gray-500 focus:ring-opacity-50" multiple>
+                                    <select name="tags[]" id="tags" x-data="{}" x-init="function () { choices($el) }"  multiple>
                                         @foreach($tags as $tag)
                                             <option value="{{$tag->id()}}" @if(in_array($tag->id(), $oldTags)) selected @endif>
                                                 {{$tag->name()}}

@@ -2,7 +2,7 @@
     @if(Auth::guest())
         <div id="likeBtnRead" class=
             "
-            bg-custom p-5 m-2 text-sm
+            bg-custom p-4 m-2 text-xs
             text-white
             font-bold
             flex flex-row  space-x-2
@@ -23,7 +23,7 @@
     @else
         <button  wire:click="toggleLike" id="likeBtnRead" class=
         "
-        bg-custom p-5 m-2 text-sm
+        bg-custom p-5 m-2 text-xs
         text-white
         font-bold
         flex flex-row  space-x-2
