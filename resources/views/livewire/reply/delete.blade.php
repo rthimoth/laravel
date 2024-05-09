@@ -1,5 +1,5 @@
 <div>
-    <x-links.danger wire:click="deleteReply">
+    <x-links.danger class="cursor-pointer" wire:click="deleteReply">
         {{ __('Delete') }}
     </x-links.danger>
 </div>

@@ -20,7 +20,9 @@ use App\Http\Controllers\Pages\TagController;
 
 require 'admin.php';
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::redirect('/', '/threads');
+
+Route::get('/home', [ThreadController::class, 'index'])->name('home');
 
 Route::group(['prefix' => 'threads', 'as' => 'threads.'], function () {
     Route::get('/', [ThreadController::class, 'index'])->name('index');
