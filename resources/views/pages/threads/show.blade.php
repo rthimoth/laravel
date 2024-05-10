@@ -193,12 +193,12 @@
                 <textarea type="text" name="body" id="bodyComment" class=" w-full grow h-10 rounded-lg text-black font-bold bg-white m-0 pl-1" placeholder="insert Comment here" cols="30" rows="10"></textarea>
                 
                 {{-- Button --}}
-                <button type="submit" name="buttonCommentReadPost" value="Add" class="
+                <button type="submit" name="buttonCommentReadPost" class="
                 h-full w-20 
                 self-end
                 hover:cursor-pointer p-5 text-sm
-                    text-white
-                    font-bold m-2
+                text-white
+                font-bold m-2
                 flex
                 items-center justify-center bg-customgray
                 rounded-lg hover:text-orange-500
