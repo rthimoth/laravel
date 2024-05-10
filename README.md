@@ -6,46 +6,31 @@
 - Thimothee Ranvin
 
 ## Prérequis
-- Docker
-- Docker Compose
 - Composer
 - PHP 8.2
 
-## Installation de Docker et Docker Compose
-Pour installer Docker et Docker Compose, suivez ces étapes :
 
-### Docker
-#### 1. Installer Docker:
-- **Sur Ubuntu** :
-  ```bash
-  sudo apt update
-  sudo apt install apt-transport-https ca-certificates curl software-properties-common
-  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-  sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-  sudo apt update
-  sudo apt install docker-ce
+## Installation de Composer
 
-    Sur d'autres systèmes d'exploitation, veuillez consulter la documentation officielle de Docker.
+Composer est un outil de gestion des dépendances pour PHP. Suivez ces étapes pour l'installer :
 
-    Gérer Docker en tant qu'utilisateur non-root (optionnel mais recommandé):
+### Sur Ubuntu
+1. **Téléchargez le programme d'installation de Composer**:
+   ```bash
+   curl -sS https://getcomposer.org/installer | php
 
+    Déplacez le fichier composer.phar dans un répertoire global (par exemple /usr/local/bin) pour utiliser composer en tant que commande globale :
+
+   sudo mv composer.phar /usr/local/bin/composer
+   
     bash
 
-    sudo usermod -aG docker ${USER}
-    su - ${USER}
+Vérifiez que Composer est bien installé :
 
-## Docker Compose
-1. Installer Docker Compose:
-
-   Sur Ubuntu :
-
-   bash
+bash
 ```
-   sudo curl -L "https://github.com/docker/compose/releases/download/2.27.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-   sudo chmod +x /usr/local/bin/docker-compose
+composer --version
 ```
-
-   Vérifiez la dernière version sur la page des releases de Docker Compose et remplacez 2.27.0 par la dernière version si nécessaire.
 
 ## Installation de PHP 8.2
 
