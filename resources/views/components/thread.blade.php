@@ -36,15 +36,6 @@
                                 {{ $thread->excerpt(250) }}
                     </p>
                 </a>
-                
-
-                <a href="" id="LikeContainer" class="
-                flex 
-                mb-0
-                justify-center
-                items-center"> 
-                    <x-like.like />
-                </a>
 
             </div>
             
