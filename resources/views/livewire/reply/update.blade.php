@@ -76,7 +76,7 @@
                 flex flex-row 
                 justify-center items-center
                 mb-0 group hover:cursor-pointer
-                hover:scale-90
+                
                 p-1 
                 ">
                     @can(App\Policies\ReplyPolicy::UPDATE, App\Models\Reply::find($replyId))
@@ -90,7 +90,7 @@
                 flex flex-row 
                 justify-center items-center
                 mb-0 group hover:cursor-pointer
-                hover:scale-90
+                
                 p-1 
                 ">
                         @can(App\Policies\ReplyPolicy::DELETE, App\Models\Reply::find($replyId))
