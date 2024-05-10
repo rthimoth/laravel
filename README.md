@@ -8,6 +8,7 @@
 ## Prérequis
 - Composer
 - PHP 8.2
+- MYSQL
 
 
 ## Installation de Composer
@@ -42,17 +43,33 @@ sudo apt update
 sudo apt install php8.2 php8.2-cli php8.2-fpm php8.2-mysql php8.2-xml php8.2-mbstring php8.2-curl php8.2-zip php8.2-gd
 ```
 
-## Configuration du stockage des images
-
-Pour que les images fonctionnent correctement, créez un lien symbolique pour le stockage :
-
-bash
-
-```
-php artisan storage:link
-```
 
 ## Configuration de la base de données
+
+## Installation MYSQL
+
+```
+sudo apt install mysql-server
+```
+
+```
+sudo mysql_secure_installation
+```
+Ce script vous posera une série de questions; vous devriez répondre "Y" (oui) à toutes,
+surtout pour définir un mot de passe root, supprimer les utilisateurs anonymes,
+désactiver les connexions root à distance, et charger ces nouvelles règles.
+
+```
+sudo systemctl status mysql.service
+```
+
+```
+sudo systemctl start mysql
+```
+
+```
+sudo mysql -u root -p
+```
 
 Créez une base de données MySQL en utilisant la commande suivante :
 
@@ -70,6 +87,16 @@ Exécutez les migrations et les seeders avec la commande suivante :
 bash
 ```
 php artisan migrate:fresh --seed
+```
+
+## Configuration du stockage des images
+
+Pour que les images fonctionnent correctement, créez un lien symbolique pour le stockage :
+
+bash
+
+```
+php artisan storage:link
 ```
 
 ## Installation de Purifier
