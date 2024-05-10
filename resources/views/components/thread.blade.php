@@ -64,7 +64,7 @@
             
         </div>
         <div id="footerPostContainer" class="flex flex-row 
-        items-center
+        items-center justify-between
         space-x-96
         w-full
         m-0">
@@ -99,23 +99,7 @@
                 </div>
             </div>
             {{-- Indicators --}}
-            <div id="reactionsContainer" class="flex flex-row space-x-8
-            items-center justify-between ">
-                {{-- Likes Count --}}
-                <p class="
-                text-xxs
-                font-bold
-                text-gun"
-                >180 likes</p>
-                {{-- Comments Count --}}
-                <p class="
-                text-xxs
-                font-bold
-                text-gun"
-                >184 comments</p>
 
-
-            </div>
             {{-- Edit Button --}}
                 <div class="flex space-x-2 
                 font-bold
