@@ -8,134 +8,111 @@
                         }" x-cloak>
 
 <div id="commentsContainer" x-show="!editReply" class="
-                    w-max h-auto bg-custom rounded-lg p-2
-                    flex flex-col justify-center items-center
-                    ">
-                        
-
-                        <div id="infosPostContainer" class="
-                        shrink-0
-                        h-max
-                        justify-between
-                        w-full
-                        flex-row flex
-                        items-center
-                        rounded-lg
-                        
-                        ">
-                            <div id="authorDateCommentContainer"
-                            class="flex flex-row 
-                            space-x-2
-                            items-center
-                            rounded-lg p-0.5
-                            ">
-
-                                <x-user.avatar :user="$author" />
-
-                                {{-- Author --}}         
-                                <p id="authorComment" class="
-                                text-sm
-                                text-customorange
-                                font-bold
-                                "
-                                > {{$author}}</p>
-                                
-                                {{-- Date Posted --}}
-                                <p id="dateComment" class="
-                                text-xs
-                                text-gun
-                                font-bold"
-                                >{{ $createdAt->diffForHumans() }}</p>
-
-                                {{-- Likes --}}
-                                <a  href="" id="likeBtnRead" class=
-                                "
-                                bg-custom
-                                flex flex-row 
-                                items-center
-                                space-x-1
-                                w-max h-max
-                                hover:bg-orange-500 p-1 rounded-lg
-                                ">
-                                    <livewire:like-reply :reply='App\Models\Reply::find($replyId)'/>
-                                    <img id="likeImage" class="
-                                    h-6
-                                    w-6
-                                    rounded-lg  
-                                    scaleLike
-                                    "
-                                    src="/img/like/like.png" alt="likelogo" />
-                                    {{-- Likes --}}
-                                    <p class="
-                                    text-sm
-                                    text-white
-                                    font-bold
-                                    "
-                                    >Likes </p>
+    w-full h-auto bg-custom rounded-lg p-2 my-4
+    flex flex-col justify-center items-center
+    ">
         
-                                </a>
+        <div id="infosPostContainer" class="
+        shrink 
+        h-auto 
+        justify-between items-center
+        w-full
+        flex flex-row
+        rounded-t-lg
+        ">
+            <div class="flex flex-row space-x-1 justify-center items-center ">
+                {{-- Avatar --}}
+                <x-user.avatar :user="$author"/>
 
-                            </div>
-                            
-                            <div class="
-                            flex flex-row 
-                            justify-center items-center
-                            mb-0 group hover:cursor-pointer
-                            hover:scale-90
-                            p-1 
-                            ">
-                                @can(App\Policies\ReplyPolicy::DELETE, App\Models\Reply::find($replyId))
-                                <button type="submit" id="deleteCommentButton" >
-                                    <img class="
-                                        h-3
-                                        w-3
-                                        rounded-lg 
-                                        "
-                                        src="/frontend/src/pics/trash.png" alt="trash icon" />
-                                </button>
-                                @endcan
-                            </div>
-
-                            <div class="
-                            flex flex-row 
-                            justify-center items-center
-                            mb-0 group hover:cursor-pointer
-                            hover:scale-90
-                            p-1 
-                            ">
-                                @can(App\Policies\ReplyPolicy::UPDATE, App\Models\Reply::find($replyId))
-                                <button type="submit" name="editCommentButton" id="editCommentButton" >
-                                    {{ __('Edit') }}
-                                    <img class="
-                                        h-3
-                                        w-3
-                                        "
-                                        src="/frontend/src/pics/edit.png" alt="edit icon" />
-                                </button>
-                                @endcan
-                            </div>
-                            
-                
-                        </div>
-
-                        <div id="bodyComment">
-                            {{ $replyOrigBody }}
-                        </div>
-
-                        <div x-show="editReply">
-
-                            <form wire:submit.prevent="updateReply">
-                                <input class="w-full bg-gray-100 border-none shadow-inner focus:ring-white" type="text" name="replyNewBody" wire:model.lazy="replyNewBody" x-ref="textInput" x-on:keydown.enter="editReply = false" x-on:keydown.escape="editReply = false">
-
-                                <div class="mt-2 space-x-3 text-sm">
-                                    <button type="button" class="text-green-400" x-on:click="editReply = false">
-                                        Cancel
-                                    </button>
-                                    <button type="submit" class="text-red-400" x-on:click="editReply = false">
-                                        Save
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
+                <div class="mt-2
+                    flex flex-col justify-center items-start space-y-0.5">
                         
+                    {{-- Author --}}
+                    <p class="
+
+                    text-customorange
+                    font-bold"
+                    >{{$author->name}}</p>                                      
+
+                    {{-- Date Posted --}}
+                    <p id="dateComment" class="
+                    text-xxs
+                    text-gun
+                    font-bold"
+                    >{{ $createdAt->diffForHumans() }}</p>
+
                 </div>
+                
+            </div>  
+            <div id="Like&ReplyReadPostContainer" class="
+                flex flex-row w-full
+                justify-end
+                items-center">
+                {{-- Likes --}}
+                    <div>
+                        <livewire:like-reply :reply='App\Models\Reply::find($replyId)'/>
+                    </div>
+                </div>
+        </div>
+        <div id="bodyComment"
+        class=" bg-custom flex flex-col w-full h-auto justify-center items-center "
+        >
+
+            <div id="bodyPost" class="
+            w-full h-auto
+            text-lg text-white
+            font-bold
+            p-2
+            "> {{ $replyOrigBody }}
+            </div>
+
+            <div id="Like&ReplyReadPostContainer" class="
+            flex flex-row w-full
+            justify-end
+            items-center">
+
+                
+                <div class="
+                flex flex-row 
+                justify-center items-center
+                mb-0 group hover:cursor-pointer
+                hover:scale-90
+                p-1 
+                ">
+                    @can(App\Policies\ReplyPolicy::UPDATE, App\Models\Reply::find($replyId))
+                        <x-links.secondary x-on:click="editReply = true; $nextTick(() => focus())" class="cursor-pointer">
+                            {{ __('Edit') }}
+                        </x-links.secondary>
+                    @endcan
+                </div>
+
+                <div class="
+                flex flex-row 
+                justify-center items-center
+                mb-0 group hover:cursor-pointer
+                hover:scale-90
+                p-1 
+                ">
+                        @can(App\Policies\ReplyPolicy::DELETE, App\Models\Reply::find($replyId))
+                    <livewire:reply.delete :replyId="$replyId" :wire:key="$replyId" :page="request()->fullUrl()" />
+                    @endcan
+                </div>
+
+                
+            </div>
+        </div>  
+</div>
+<div x-show="editReply">
+    <form wire:submit.prevent="updateReply">
+        <input class="focus:ring focus:ring-gray-200 bg-gray-500 sm:text-sm rounded-lg  block mb-4 w-full p-2.5" type="text" name="replyNewBody" wire:model.lazy="replyNewBody" x-ref="textInput" x-on:keydown.enter="editReply = false" x-on:keydown.escape="editReply = false">
+
+        <div class="mt-2 space-x-3 text-sm">
+            <button type="button" class="text-green-400" x-on:click="editReply = false">
+                Cancel
+            </button>
+            <button type="submit" class="text-red-400" x-on:click="editReply = false">
+                Save
+            </button>
+        </div>
+    </form>
+</div>

@@ -34,7 +34,6 @@
                             items-center
                             rounded-lg text-sm
                             ">
-
                                 
                                 {{-- Author --}}
                                 <p class="
@@ -47,8 +46,6 @@
                                 text-white
                                 font-bold"
                                 >{{ $thread->created_at->diffForHumans() }}</p>
-                                
-
 
                             </div>
                             {{-- Category--}}
@@ -102,31 +99,6 @@
                             <div>
                                 <livewire:like-thread :thread="$thread" />
                             </div>
-                            <!-- <a href="" id="replyBtnRead" class=
-                            "
-                            bg-custom
-                            flex flex-row 
-                            items-center
-                            space-x-1
-                            w-max h-max
-                            hover:bg-orange-500 p-1 rounded-lg
-                            ">
-                                <img id="replyImage" class="
-                                h-6
-                                w-6
-                                rounded-lg  
-                                scaleLike
-                                "
-                                src="/img/comments/commentWhite.png" alt="replylogo" />
-                                {{-- Reply --}}
-                                <p class="
-                                text-sm
-                                text-white
-                                font-bold
-                                "
-                                >Replies </p>
-
-                            </a> -->
                         </div>
                     </div>          
                     <!-- <div id="footerReadPostContainer"
@@ -181,19 +153,20 @@
                 </div>
             </div>
             @auth
-            <form action="{{ route('replies.store') }}" class="
-                justify-between items-center
-                flex flex-col p-2 
-                rounded-lg bg-custom
-                space-y-5 h-auto
-                w-full ">
+            <form action="{{ route('replies.store') }}" method="post" class="
+            justify-between items-center
+            flex flex-col p-2 
+            rounded-lg bg-custom
+            space-y-5 h-auto
+            w-full ">
+                @csrf
                 <input type="hidden" name="replyAble_id" value="{{ $thread->id() }}">
                 <input type="hidden" name="replyAble_type" value="threads">
                 <x-form.error for="body"/>
-                <textarea type="text" name="body" id="bodyComment" class=" w-full grow h-10 rounded-lg text-black font-bold bg-white m-0 pl-1" placeholder="insert Comment here" cols="30" rows="10"></textarea>
-                
+                <input type="text" name="body" class=" w-full grow h-10 rounded-lg text-black font-bold bg-white m-0 pl-1" placeholder="insert Comment here" cols="30" rows="10"></input>
+                    
                 {{-- Button --}}
-                <button type="submit" name="buttonCommentReadPost" class="
+                <button type="submit" class="
                 h-full w-20 
                 self-end
                 hover:cursor-pointer p-5 text-sm
@@ -215,21 +188,15 @@
             @endauth
             {{-- Replies --}}
             <div id="commentsWrapper" class="
-            p-2 ml-0 w-full
-            flex flex-col space-y-1
+            ml-0 w-full
+            flex flex-col space-y-4
             text-white font-bold
             ">
-            
-                    
-                <div id="commentsContainer" class="
-                    w-max h-auto bg-custom rounded-lg p-2
-                    flex flex-col justify-center items-center
-                    ">
-                    @foreach($thread->replies() as $reply)
-                        <livewire:reply.update :reply="$reply" :wire:key="$reply->id()" />
-                    @endforeach
-                        
-                </div>
+
+                @foreach($thread->replies() as $reply)
+                    <livewire:reply.update :reply="$reply" :wire:key="$reply->id()" />
+                @endforeach
+
             
 
             </div>
