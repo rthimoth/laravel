@@ -1,13 +1,23 @@
-<div class="flex flex-col items-center min-h-screen pt-6 sm:justify-center sm:pt-0">
+<div class="h-full w-full rounded-lg 
+		bg-custom
+		flex flex-row 
+		space-x-96
+		justify-center
+		items-center p-12
+		pb-24">
 
-    <div class="flex items-center justify-center w-full py-4 bg-white sm:max-w-md rounded-t-md">
-        <a href="{{ route('home') }}">
-            {{ $logo }}
-        </a>
-    </div>
-
-    <div class="w-full px-6 py-4 overflow-hidden bg-white shadow-md sm:max-w-md rounded-b-md">
+    <div class="h-max w-full
+			flex flex-col 
+			justify-center items-center">
+        <div class="flex items-center justify-center py-4 sm:max-w-md ">
+            <a href="{{ route('home') }}">
+                {{ $logo }}
+            </a>
+        </div>
         {{ $slot }}
+    </div>
+    <div id="authentificationImageContainer" class="w-full">
+        <img src="/img/login/login.png"  class="self-center w-3/4 h-3/4" alt="formIcon">
     </div>
 
 </div>

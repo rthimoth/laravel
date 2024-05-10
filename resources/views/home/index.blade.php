@@ -4,7 +4,7 @@
 
             <x-partials.sidenav />
 
-            <div class="flex flex-col col-span-3 gap-y-4">
+            <div class="flex flex-col col-span-2 gap-y-4">
 {{--                <x-thread />--}}
 {{--                <x-thread />--}}
 {{--                <x-thread />--}}
@@ -14,6 +14,7 @@
 {{--                <x-thread />--}}
 {{--                <x-thread />--}}
             </div>
+
         </section>
     </main>
 </x-guest-layout>

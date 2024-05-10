@@ -4,7 +4,26 @@
 
 @layer base {
     .wrapper {
-        @apply px-4 mx-auto max-w-7xl sm:px-6 lg:px-8;
+        @apply px-4 mx-auto sm:px-6 lg:px-8;
+    }
+    .scaleLike{
+        @apply transition focus:scale-75 scale-100 ease-in-out duration-75;
+    }
+    .textareaHome{
+        @apply font-normal text-sm w-full mb-0;
+        @apply rounded-lg bg-customgray;
+        @apply pl-1;
+    }
+    .optionSidebar{
+        @apply flex;
+        @apply flex-row;
+        @apply items-center;
+        @apply justify-start ;
+        @apply p-2 space-x-2;
+        @apply w-full;
+        @apply hover:bg-white hover:bg-opacity-5 ;
+        @apply text-white text-sm font-bold;
+    
     }
 
     [x-cloak] {

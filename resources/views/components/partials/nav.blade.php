@@ -1,26 +1,36 @@
-<nav x-data="{ open: false }" class="bg-white shadow">
+<nav x-data="{ open: false }" >
     <!-- Primary Navigation Menu -->
-    <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between h-16 space-x-12">
-            <div class="flex">
+    <div class="px-2 sm:px-6 lg:px-8 w-full pb-2
+    z-10">
+        <div class="py-2
+        px-4
+        w-full
+        flex flex-row
+        items-center
+        justify-between 
+        bg-custom">
+            <!-- Logo -->
+            <a class="flex items-center flex-row p-2 space-x-2"  href="{{ route('threads.index') }}">
+    
+                <x-logos.main class="h-12 w-12 " alt="Logo" />
+                <span class="
+                text-xl
+                text-customorange
+                font-bold
+                "
+                >FORUM
+                </span>
 
-                <!-- Logo -->
-                <div class="flex items-center flex-shrink-0">
-                    <a href="{{ route('threads.index') }}">
-                        <x-logos.main class="block w-auto h-12" />
-                    </a>
-                </div>
+            </a>
 
-            </div>
-
-            {{-- Search Topic --}}
-            <div class="flex items-center flex-grow">
+            <!-- {{-- Search Topic --}} -->
+            <!-- <div class="flex items-center flex-grow">
 
                 <div class="p-2 text-white bg-blue-200 border rounded-l">
                     <x-heroicon-o-search class="w-6 h-6" />
                 </div>
                 <input type="search" name="" id="" class="w-full border-none rounded-r shadow-inner bg-blue-50 focus:ring-blue-200" placeholder="Search Topics">
-            </div>
+            </div> -->
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">
 
@@ -46,9 +56,9 @@
                             @endif
                         </x-slot>
 
-                        <x-slot name="content">
+                        <x-slot name="content" class="bg-custom" >
                             <!-- Account Management -->
-                            <div class="block px-4 py-2 text-xs text-gray-400">
+                            <div class="block px-4 py-2 text-xs bg-custom text-white">
                                 {{ __('Manage Account') }}
                             </div>
 

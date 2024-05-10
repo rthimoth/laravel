@@ -18,11 +18,11 @@
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}" defer></script>
 </head>
-<body class="font-sans antialiased">
+<body class="font-bold bg-gray-900 ">
 
     <x-jet-banner />
 
-    <div class="min-h-screen bg-gray-100">
+    <div class="min-h-screen bg-gray-900">
 
         <x-dashboard.nav />
 
@@ -34,7 +34,7 @@
             <div class="col-span-7">
                 <!-- Page Heading -->
                 @if (isset($header))
-                <header class="mx-6 mt-6 text-gray-600 shadow bg-blue-50">
+                <header class="mx-6 mt-6 bg-custom rounded-lg ">
                     <div class="px-4 py-6 wrapper">
                         {{ $header }}
                     </div>
@@ -47,8 +47,8 @@
                 </div>
 
                 <!-- Page Content -->
-                <main class="m-6 bg-white shadow">
-                    <div class="py-6">
+                <main class="m-6 ">
+                    <div class="py-10">
                         {{ $slot }}
                     </div>
                 </main>

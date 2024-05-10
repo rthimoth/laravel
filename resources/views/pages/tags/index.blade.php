@@ -4,7 +4,7 @@
             {{-- Sidenavbar --}}
             <x-partials.sidenav />
 
-            <div class="flex flex-col col-span-3 gap-y-4">
+            <div class="flex flex-col col-span-2 gap-y-4">
                 {{-- Alerts --}}
                 <x-alerts.main />
                 @foreach($threads as $thread)

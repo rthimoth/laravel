@@ -1,4 +1,5 @@
-<div class="px-2 py-1 text-xs text-gray-500 transition duration-100 bg-red-300 rounded hover:bg-red-400">
+<div class="inline-flex items-center  rounded-2xl
+                        p-4 bg-customgray text-xs font-bold leading-5 text-white focus:outline-none focus:border-gray-200 transition hover:text-orange-500 ">
     <a wire:click="confirmThreadDeletion"
        wire:loading.attr="disabled"
        class="cursor-pointer">

@@ -10,9 +10,25 @@ module.exports = {
 
     theme: {
         extend: {
+            fontSize: {
+                'xxs': '.625rem', // 10px
+                'xxx-small': '.5rem', // 8px
+              },
+            minHeight: {
+                '1/2': '50%',
+            },
+            screens: {
+                '3xl': '2000px',
+            },
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
             },
+            colors: {
+                'custom':'#262D34',
+                'gun':'#C5D0E6',
+                'customorange' : '#FF571A',
+                'customgray': '#2C353D',
+            }
         },
     },
 

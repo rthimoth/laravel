@@ -1,18 +1,31 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100 shadow">
+<nav x-data="{ open: false }" class=" -b -gray-100 shadow">
     <!-- Primary Navigation Menu -->
-    <div class="px-8">
-        <div class="flex justify-between h-20">
+    <div class="px-2 sm:px-6 lg:px-8 w-full pb-2
+    z-10">
+        <div class="py-2
+        px-4
+        w-full
+        flex flex-row
+        items-center
+        justify-between 
+        bg-custom">
             <div class="flex">
 
                 <!-- Logo -->
-                <div class="flex items-center w-36">
-                    <a href="{{ route('home') }}">
-                        <x-logos.main class="block w-auto h-12" />
-                    </a>
-                </div>
-
+                <a class="flex items-center flex-row p-2 space-x-2"  href="{{ route('home') }}">
+    
+                    <x-logos.main class="h-12 w-12 " alt="Logo" />
+                    <span class="
+                    text-xl
+                    text-customorange
+                    font-bold
+                    "
+                    >FORUM
+                    </span>
+    
+                </a>
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <!-- <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('home') }}" :active="request()->routeIs('home')">
                         {{ __('Home') }}
                     </x-jet-nav-link>
@@ -21,7 +34,7 @@
                     <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
-                </div>
+                </div> -->
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">
@@ -31,7 +44,7 @@
                     <x-jet-dropdown align="right" width="60">
                         <x-slot name="trigger">
                             <span class="inline-flex rounded-md">
-                                <button type="button" class="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 text-gray-500 transition bg-white border border-transparent rounded-md hover:bg-gray-50 hover:text-gray-700 focus:outline-none focus:bg-gray-50 active:bg-gray-50">
+                                <button type="button" class="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 text-gray-500 transition   -transparent rounded-md hover:bg-gray-50 hover:text-gray-700 focus:outline-none focus:bg-gray-50 active:bg-gray-50">
                                     {{ Auth::user()->currentTeam->name }}
 
                                     <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
@@ -59,7 +72,7 @@
                                 </x-jet-dropdown-link>
                                 @endcan
 
-                                <div class="border-t border-gray-100"></div>
+                                <div class="-t -gray-100"></div>
 
                                 <!-- Team Switcher -->
                                 <div class="block px-4 py-2 text-xs text-gray-400">
@@ -80,12 +93,12 @@
                     <x-jet-dropdown align="right" width="48">
                         <x-slot name="trigger">
                             @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
-                            <button class="flex text-sm transition border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300">
+                            <button class="flex text-sm transition -2 -transparent rounded-full focus:outline-none focus:-gray-300">
                                 <img class="object-cover w-8 h-8 rounded-full" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
                             </button>
                             @else
                             <span class="inline-flex rounded-md">
-                                <button type="button" class="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 text-gray-500 transition bg-white border border-transparent rounded-md hover:text-gray-700 focus:outline-none">
+                                <button type="button" class="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 text-gray-500 transition  -transparent rounded-md hover:text-gray-700 focus:outline-none">
                                     {{ Auth::user()->name }}
 
                                     <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
@@ -112,7 +125,7 @@
                             </x-jet-dropdown-link>
                             @endif
 
-                            <div class="border-t border-gray-100"></div>
+                            <div class="-t -gray-100"></div>
 
                             <!-- Authentication -->
                             <form method="POST" action="{{ route('logout') }}">
@@ -149,7 +162,7 @@
         </div>
 
         <!-- Responsive Settings Options -->
-        <div class="pt-4 pb-1 border-t border-gray-200">
+        <div class="pt-4 pb-1 -t -gray-200">
             <div class="flex items-center px-4">
                 @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
                 <div class="flex-shrink-0 mr-3">
@@ -187,7 +200,7 @@
 
                 <!-- Team Management -->
                 @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
-                <div class="border-t border-gray-200"></div>
+                <div class="-t -gray-200"></div>
 
                 <div class="block px-4 py-2 text-xs text-gray-400">
                     {{ __('Manage Team') }}
@@ -204,7 +217,7 @@
                 </x-jet-responsive-nav-link>
                 @endcan
 
-                <div class="border-t border-gray-200"></div>
+                <div class="-t -gray-200"></div>
 
                 <!-- Team Switcher -->
                 <div class="block px-4 py-2 text-xs text-gray-400">

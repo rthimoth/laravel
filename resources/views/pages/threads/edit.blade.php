@@ -3,43 +3,37 @@
         <x-partials.sidenav />
         <section class="flex flex-col col-span-3 gap-y-4">
             <small class="text-sm text-gray-400">threads>{{ $thread->title() }}>update</small>
-            <article class="p-5 bg-white shadow">
-                <div class="grid grid-cols-8">
-                    {{-- Avatar --}}
-                    <div class="col-span-1">
-                        <x-user.avatar />
-                    </div>
+            <article class="p-5 ">
+                <div class="grid grid-cols-8 ">
                     {{-- Create --}}
                     <div class="col-span-7 space-y-6">
                         <x-form action="{{ route('threads.update', $thread->slug) }}">
                             <div class="space-y-8">
                                 {{-- Title --}}
-                                <div>
+                                <div class=" w-full h-auto bg-custom p-2 rounded-lg ">
                                     <x-form.label for="title" value="{{ __('Title') }}" />
-                                    <x-form.input id="title" class="block w-full mt-1" type="text" name="title" :value="$thread->title()" required autofocus />
+                                    <x-form.input id="title" class="block w-full bg-gray-500  mt-1" type="text" name="title" :value="$thread->title()"  required autofocus />
                                     <x-form.error for="title" />
                                 </div>
                                 {{-- Category --}}
-                                <div>
+                                <div class="w-full h-auto bg-custom p-2 rounded-lg">
                                     <x-form.label for="category" value="{{ __('Category') }}" />
-                                    <select name="category" id="category" class="w-full text-sm border-gray-300 rounded-md shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
-
+                                    <select name="category" id="category" class="w-full text-sm bg-gray-500 rounded-md focus:ring focus:ring-gray-200 ">
+                                        <option value="">Select Category</option>
                                         @foreach($categories as $category)
-                                            <option value="{{ $category->id() }}"
-
-                                                @if($category->id() == $selectedCategory->id()) selected @endif>
-
-                                                {{$category->name()}}
-                                            </option>
-                                        @endforeach
+                                        <option value="{{ $category->id() }}"
+                                            @if($category->id() == $selectedCategory->id()) selected @endif>
+                                            {{$category->name()}}
+                                        </option>
+                                    @endforeach
                                     </select>
                                     <x-form.error for="category" />
                                 </div>
 
                                 {{-- Tags --}}
-                                <div>
+                                <div class="w-full h-auto bg-custom p-2 rounded-lg">
                                     <x-form.label for="tags" value="{{ __('Tags') }}" />
-                                    <select name="tags[]" id="tags" x-data="{}" x-init="function () { choices($el) }" class="w-full text-sm border-gray-300 rounded-md shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50" multiple>
+                                    <select name="tags[]" id="tags" x-data="{}" x-init="function () { choices($el) }"  multiple>
                                         @foreach($tags as $tag)
                                             <option value="{{$tag->id()}}" @if(in_array($tag->id(), $oldTags)) selected @endif>
                                                 {{$tag->name()}}
@@ -50,11 +44,12 @@
                                 </div>
                                 {{-- Body --}}
 
-                                <div>
+                                <div class="w-full h-auto bg-custom p-2 rounded-lg">
                                     <x-form.label for="body" value="{{ __('Description') }}" />
-                                    <x-trix name="body" styling="shadow-inner bg-gray-100 h-56">
+                                    <x-trix name="body" class="bg-white p-2 rounded-lg" styling="shadow-inner bg-white">
                                         {{ $thread->body() }}
                                     </x-trix>
+
                                     <x-form.error for="body" />
                                 </div>
                                 {{-- Button --}}
