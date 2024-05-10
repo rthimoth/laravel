@@ -44,6 +44,8 @@ sudo apt install php8.2 php8.2-cli php8.2-fpm php8.2-mysql php8.2-xml php8.2-mbs
 ```
 
 
+
+
 ## Configuration de la base de données
 
 ## Installation MYSQL
@@ -78,6 +80,12 @@ sql
 CREATE DATABASE forum;
 ```
 
+## Installation des paquets 
+
+```
+composer install
+```
+
 ## Mettez à jour les informations de la base de données dans le fichier .env de votre projet Laravel, notamment le nom de la base de données, l'utilisateur, et le mot de passe.
 
 Migration et Seeding
@@ -85,6 +93,7 @@ Migration et Seeding
 Exécutez les migrations et les seeders avec la commande suivante :
 
 bash
+
 ```
 php artisan migrate:fresh --seed
 ```
@@ -97,16 +106,6 @@ bash
 
 ```
 php artisan storage:link
-```
-
-## Installation de Purifier
-
-Installez le package Purifier pour nettoyer les données de l'entrée HTML :
-
-bash
-```
-composer require mews/purifier
-php artisan vendor:publish --provider="Mews\Purifier\PurifierServiceProvider"
 ```
 
 ## Lancement de l'application
