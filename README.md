@@ -1,52 +1,14 @@
-# Installation du Forum
-
 ## Membres du Groupe
 - Erwan Sinck
 - Clement Penot
 - Thimothee Ranvin
 
 ## Prérequis
-- Composer
-- PHP 8.2
 - MYSQL
+- PHP 8.2
+- Composer
 
-
-## Installation de Composer
-
-Composer est un outil de gestion des dépendances pour PHP. Suivez ces étapes pour l'installer :
-
-### Sur Ubuntu
-1. **Téléchargez le programme d'installation de Composer**:
-   ```bash
-   curl -sS https://getcomposer.org/installer | php
-
-    Déplacez le fichier composer.phar dans un répertoire global (par exemple /usr/local/bin) pour utiliser composer en tant que commande globale :
-
-   sudo mv composer.phar /usr/local/bin/composer
-   
-    bash
-
-Vérifiez que Composer est bien installé :
-
-bash
-```
-composer --version
-```
-
-## Installation de PHP 8.2
-
-Installez PHP 8.2 et les extensions nécessaires avec les commandes suivantes :
-
-bash
-```
-sudo apt update
-sudo apt install php8.2 php8.2-cli php8.2-fpm php8.2-mysql php8.2-xml php8.2-mbstring php8.2-curl php8.2-zip php8.2-gd
-```
-
-
-
-
-## Configuration de la base de données
+# Installation du Forum
 
 ## Installation MYSQL
 
@@ -80,11 +42,63 @@ sql
 CREATE DATABASE forum;
 ```
 
+## Installation de PHP 8.2
+
+Installez PHP 8.2 et les extensions nécessaires avec les commandes suivantes :
+
+bash
+```
+sudo apt update
+sudo apt install php8.2 php8.2-cli php8.2-fpm php8.2-mysql php8.2-xml php8.2-mbstring php8.2-curl php8.2-zip php8.2-gd
+```
+
+## Installation de Composer
+
+Composer est un outil de gestion des dépendances pour PHP. Suivez ces étapes pour l'installer :
+
+### Sur Ubuntu
+1. **Téléchargez le programme d'installation de Composer**:
+   ```bash
+   curl -sS https://getcomposer.org/installer | php
+
+    Déplacez le fichier composer.phar dans un répertoire global (par exemple /usr/local/bin) pour utiliser composer en tant que commande globale :
+
+   sudo mv composer.phar /usr/local/bin/composer
+   
+    bash
+
+Vérifiez que Composer est bien installé :
+
+bash
+```
+composer --version
+```
+
 ## Installation des paquets 
+
+```
+composer update
+```
 
 ```
 composer install
 ```
+
+## Installation de PHP 8.2
+
+Installez PHP 8.2 et les extensions nécessaires avec les commandes suivantes :
+
+bash
+```
+sudo apt update
+sudo apt install php8.2 php8.2-cli php8.2-fpm php8.2-mysql php8.2-xml php8.2-mbstring php8.2-curl php8.2-zip php8.2-gd
+```
+
+
+
+
+## Configuration de la base de données
+
 
 ## Mettez à jour les informations de la base de données dans le fichier .env de votre projet Laravel, notamment le nom de la base de données, l'utilisateur, et le mot de passe.
 
