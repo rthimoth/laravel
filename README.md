@@ -5,8 +5,9 @@
 
 ## Compte administrateur 
 
-admin@example.com
-password
+-  admin@example.com
+
+-  password
 
 ## Prérequis
 - MYSQL
