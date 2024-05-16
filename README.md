@@ -3,6 +3,11 @@
 - Clement Penot
 - Thimothee Ranvin
 
+## Compte administrateur 
+
+admin@example.com
+password
+
 ## Prérequis
 - MYSQL
 - PHP 8.2
